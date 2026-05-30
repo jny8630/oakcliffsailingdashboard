@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#080e18">
+<title>Weather Forecast — NYC Harbor</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌦</text></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--bg:#080e18;--card:#131f2e;--card2:#0c1520;--bdr:#1a2d42;--bdr2:#2a4060;--txt:#f0f4f8;--dim:#c4d0de;--mut:#8fa3b8;--fnt:#6b8299;--accent:#4fd1c5;--blue:#63b3ed;--orange:#ed8936;--green:#48bb78;--red:#f56565;--yellow:#ecc94b;--purple:#9f7aea;--mono:'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;background:linear-gradient(170deg,var(--bg),#0c1822 40%,var(--bg));color:var(--txt);max-width:440px;margin:0 auto;min-height:100vh;-webkit-font-smoothing:antialiased}
+.hdr{background:linear-gradient(135deg,#0e1f30,#162d46);padding:18px 16px 14px;border-bottom:1px solid var(--bdr)}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-start}
+.hdr-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.hdr-title{font-size:20px;font-weight:800;letter-spacing:-.03em;margin-top:2px}
+.hdr-meta{font-size:10px;color:var(--fnt);margin-top:4px}
+.back-btn{background:var(--bdr);border:1px solid var(--bdr2);border-radius:8px;color:var(--accent);padding:6px 12px;font-size:12px;font-weight:600;font-family:inherit;text-decoration:none;display:inline-block;white-space:nowrap}
+.cnt{padding:10px 10px 30px}
+.card{background:linear-gradient(145deg,var(--card),var(--card2));border:1px solid var(--bdr);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.card-bar{height:2px}
+.card-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;color:var(--dim)}
+.card-t{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.card-body{padding:0 16px 16px}
+.state-box{padding:20px 16px;text-align:center;color:var(--mut);font-size:12px;line-height:1.7}
+.spinner{display:inline-block;width:18px;height:18px;border:2px solid var(--bdr2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.footer{text-align:center;padding:14px 0;font-size:10px;color:var(--fnt);border-top:1px solid var(--bdr);margin-top:6px}
+.footer a{color:var(--accent);text-decoration:none}
+
+/* Selector buttons */
+.sel-row{display:flex;gap:6px;margin-bottom:12px}
+.sel-btn{flex:1;padding:7px 0;background:var(--bdr);border:1px solid var(--bdr2);border-radius:8px;color:var(--mut);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;text-align:center}
+.sel-btn.sel-active{background:var(--accent);border-color:var(--accent);color:#000}
+.sel-btn:active{opacity:.7}
+
+/* Summary band */
+.fc-summary{padding:8px 12px;margin-bottom:10px;border-radius:6px;font-size:13px;font-weight:700;border-left-width:3px;border-left-style:solid}
+
+/* Forecast table */
+.wx-hdr,.wx-row{display:grid;grid-template-columns:52px 62px 1fr 36px 36px 54px;gap:2px;padding:3px 4px;font-size:12px;font-family:var(--mono);align-items:center;border-radius:4px}
+.wx-hdr{font-size:9px;color:var(--mut);font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--bdr);padding-bottom:6px;margin-bottom:2px;font-family:-apple-system,system-ui,sans-serif}
+.wx-row.now{background:#1a2d4260;border-left:2px solid var(--accent);padding-left:2px}
+.temp-c{display:block;font-size:12px;font-weight:700}
+.temp-f{display:block;font-size:10px;color:var(--mut)}
+
+/* Thunder strip */
+.fc-thunder{margin-top:8px;padding:7px 10px;background:rgba(245,101,101,.08);border:1px solid rgba(245,101,101,.2);border-radius:6px;font-size:11px;color:var(--mut)}
+
+/* Freshness strip */
+.fc-freshness{margin-top:10px;padding:7px 10px;background:rgba(12,21,32,.6);border:1px solid var(--bdr);border-radius:6px;font-size:10px;color:var(--fnt);line-height:1.6}
+
+/* Marine forecast */
+.marine-row{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid rgba(26,45,66,.5)}
+.marine-row:last-child{border-bottom:none}
+.marine-period{flex:0 0 72px;font-size:12px;font-weight:700;color:var(--accent);font-family:var(--mono);padding-top:1px}
+.marine-detail{flex:1;font-size:12px;color:var(--dim);line-height:1.55}
+.marine-warn .marine-period{color:var(--orange)}
+.marine-warn .marine-detail{color:var(--txt)}
+.marine-note{margin-top:8px;padding:7px 10px;background:rgba(236,201,75,.07);border:1px solid rgba(236,201,75,.15);border-radius:6px;font-size:11px;color:var(--yellow);line-height:1.5;font-style:italic}
+.marine-meta{margin-top:10px;padding:7px 10px;background:rgba(12,21,32,.6);border:1px solid var(--bdr);border-radius:6px;font-size:10px;color:var(--fnt)}
+
+/* Radar map */
+#radar-map{width:100%;height:320px;border-radius:8px;overflow:hidden;background:var(--card2)}
+.radar-controls{display:flex;align-items:center;gap:8px;margin-top:10px}
+.radar-btn{background:var(--bdr);border:1px solid var(--bdr2);border-radius:7px;color:var(--accent);padding:6px 12px;font-size:14px;cursor:pointer;font-family:inherit;font-weight:600}
+.radar-btn:active{opacity:.7}
+.radar-ts{font-size:12px;font-family:var(--mono);color:var(--dim);margin-left:auto}
+.radar-ctr{font-size:11px;color:var(--fnt)}
+.radar-note{margin-top:8px;font-size:10px;color:var(--fnt);text-align:center}
+
+/* Leaflet overrides */
+.leaflet-control-attribution{background:rgba(8,14,24,.8)!important;color:var(--fnt)!important;font-size:9px!important}
+.leaflet-control-attribution a{color:var(--accent)!important}
+
+@media(max-width:360px){.wx-hdr,.wx-row{grid-template-columns:44px 54px 1fr 32px 32px 46px;font-size:11px}}
+.alert-banner{border-radius:10px;padding:11px 14px;margin-bottom:10px;border-left:4px solid}
+.alert-warning{background:rgba(245,101,101,.1);border-color:var(--red)}
+.alert-watch{background:rgba(237,137,54,.1);border-color:var(--orange)}
+.alert-advisory{background:rgba(236,201,75,.08);border-color:var(--yellow)}
+.alert-event{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.alert-hl{font-size:11px;color:var(--dim);margin-top:3px;line-height:1.5}
+.alert-exp{font-size:10px;color:var(--fnt);margin-top:3px}
+.marine-watchline{padding:8px 12px;background:rgba(237,137,54,.1);border:1px solid rgba(237,137,54,.3);border-radius:6px;font-size:12px;font-weight:700;color:var(--orange);margin-bottom:8px;text-transform:uppercase;letter-spacing:.02em}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-row">
+    <div>
+      <div class="hdr-label">⛵ NYC Harbor · G1 Buoy</div>
+      <div class="hdr-title">Weather Forecast</div>
+      <div class="hdr-meta" id="hdr-updated">Loading…</div>
+    </div>
+    <a class="back-btn" href="index.html">← Dashboard</a>
+  </div>
+</div>
+
+<div class="cnt">
+
+  <!-- CARD 1: OPEN-METEO HOURLY FORECAST -->
+  <div class="card">
+    <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--blue),transparent)"></div>
+    <div class="card-hdr">
+      <div class="card-t">☁️ Hourly Forecast</div>
+      <div style="font-size:10px;color:var(--fnt)" id="fc-updated"></div>
+    </div>
+    <div class="card-body">
+      <div class="sel-row">
+        <button class="sel-btn sel-active" data-h="4"  onclick="setSelector(4)">Next 4h</button>
+        <button class="sel-btn" data-h="8"  onclick="setSelector(8)">Next 8h</button>
+        <button class="sel-btn" data-h="12" onclick="setSelector(12)">Next 12h</button>
+      </div>
+      <div id="fc-body">
+        <div class="state-box"><div class="spinner"></div><br>Loading forecast…</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="alert-banner"></div>
+
+  <!-- CARD 2: NWS MARINE — TODAY & TOMORROW -->
+  <div class="card">
+    <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--accent),transparent)"></div>
+    <div class="card-hdr">
+      <div class="card-t">⚓ Marine Forecast — Today &amp; Tomorrow</div>
+      <div style="font-size:10px;color:var(--fnt)" id="marine-updated"></div>
+    </div>
+    <div class="card-body" id="marine-near-body">
+      <div class="state-box"><div class="spinner"></div><br>Loading marine forecast…</div>
+    </div>
+  </div>
+
+  <!-- CARD 2b: NWS MARINE — EXTENDED (collapsed, shown only if data exists) -->
+  <div class="card" id="marine-ext-card" style="display:none">
+    <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--bdr2),transparent)"></div>
+    <div class="card-hdr" onclick="toggleMarineExt()" style="cursor:pointer;user-select:none">
+      <div class="card-t" style="color:var(--mut)">⚓ ANZ338 Extended Outlook</div>
+      <span id="marine-ext-caret" style="color:var(--mut);font-size:12px">▶ Show</span>
+    </div>
+    <div class="card-body" id="marine-ext-body" style="display:none"></div>
+  </div>
+
+  <!-- CARD 3: RADAR -->
+  <div class="card">
+    <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--purple),transparent)"></div>
+    <div class="card-hdr">
+      <div class="card-t">📡 Observed Radar</div>
+      <div style="font-size:10px;color:var(--fnt)">Last 2 hours · 10-min steps</div>
+    </div>
+    <div class="card-body" id="radar-body">
+      <div id="radar-map"></div>
+      <div class="radar-controls">
+        <button class="radar-btn" onclick="radarPrev()">◀</button>
+        <button class="radar-btn" id="radar-play" onclick="toggleRadar()">⏸</button>
+        <button class="radar-btn" onclick="radarNext()">▶</button>
+        <span class="radar-ctr" id="radar-ctr"></span>
+        <span class="radar-ts" id="radar-ts"></span>
+      </div>
+      <div class="radar-note" id="radar-note">Observed past precipitation only — not a future forecast · Radar visible at zoom ≤ 7</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Forecast: <a href="https://open-meteo.com" target="_blank">Open-Meteo HRRR</a> ·
+    Marine: <a href="https://www.weather.gov" target="_blank">NWS OKX</a> ·
+    Radar: <a href="https://www.rainviewer.com" target="_blank">RainViewer</a><br>
+    For planning only — not for navigation · Auto-refreshes
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const LAT = 40.6797;
+const LON = -74.0288;
+
+let forecastData = null;
+let selectedHours = 4;
+let marineData = null;
+let radarFrames = [];
+let radarLayers = [];
+let radarMap = null;
+let radarIdx = 0;
+let radarTimer = null;
+let radarPlaying = true;
+
+const $ = id => document.getElementById(id);
+
+const fmtT = d => d.toLocaleTimeString('en-US', {
+  hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York'
+});
+
+const c2f = c => Math.round(c * 9 / 5 + 32);
+
+const WX = {
+  0:{l:'Clear',i:'☀️'}, 1:{l:'Mostly Clear',i:'🌤'},
+  2:{l:'Partly Cloudy',i:'⛅'}, 3:{l:'Overcast',i:'☁️'},
+  45:{l:'Fog',i:'🌫'}, 48:{l:'Icing Fog',i:'🌫'},
+  51:{l:'Lt Drizzle',i:'🌦'}, 53:{l:'Drizzle',i:'🌦'}, 55:{l:'Hvy Drizzle',i:'🌧'},
+  61:{l:'Lt Rain',i:'🌧'}, 63:{l:'Rain',i:'🌧'}, 65:{l:'Hvy Rain',i:'🌧'},
+  71:{l:'Lt Snow',i:'🌨'}, 73:{l:'Snow',i:'❄️'}, 75:{l:'Hvy Snow',i:'❄️'},
+  77:{l:'Snow Grains',i:'🌨'},
+  80:{l:'Showers',i:'🌦'}, 81:{l:'Showers',i:'🌧'}, 82:{l:'Hvy Showers',i:'⛈'},
+  85:{l:'Snow Showers',i:'🌨'}, 86:{l:'Hvy Snow Showers',i:'🌨'},
+  95:{l:'T-Storm',i:'⛈'}, 96:{l:'T-Storm+Hail',i:'⛈'}, 99:{l:'Hvy T-Storm',i:'⛈'}
+};
+
+const wCode = c => WX[c] || {l:'—', i:'?'};
+
+const precipColor = p => p >= 70 ? 'var(--orange)' : p >= 40 ? 'var(--yellow)' : p >= 20 ? 'var(--green)' : 'var(--fnt)';
+const cloudColor  = c => c >= 80 ? 'var(--mut)' : c >= 50 ? 'var(--dim)' : 'var(--accent)';
+// Visibility thresholds in nautical miles (1 nm = 1852 m)
+// < 0.5 nm = restricted visibility (mariners' threshold); < 2 nm = poor
+const visColor = v => {
+  const nm = v / 1852;
+  return nm < 0.5 ? 'var(--red)' : nm < 2 ? 'var(--yellow)' : 'var(--dim)';
+};
+const visFmt = v => {
+  const nm = v / 1852;
+  if (nm < 0.1) return '<0.1nm';
+  if (nm < 10)  return nm.toFixed(1) + 'nm';
+  return Math.round(nm) + 'nm';
+};
+
+function makeSummary(hrs) {
+  const maxThunder = Math.max(...hrs.map(h => h.thunder ?? 0));
+  const maxPrecipP = Math.max(...hrs.map(h => h.precipProb));
+  const minVis     = Math.min(...hrs.map(h => h.vis));
+  const avgCloud   = hrs.reduce((s, h) => s + h.cloud, 0) / hrs.length;
+  const hasThunder = hrs.some(h => h.thunder != null);
+
+  if (hasThunder && maxThunder >= 30) return {t: 'Thunderstorm caution',     c: 'var(--red)'};
+  if (maxPrecipP >= 70)               return {t: 'Rain likely',               c: 'var(--orange)'};
+  if (maxPrecipP >= 40)               return {t: 'Rain possible',             c: 'var(--yellow)'};
+  if (minVis < 1852)                  return {t: 'Reduced visibility',        c: 'var(--yellow)'};
+  if (avgCloud < 25)                  return {t: 'Generally fair conditions', c: 'var(--green)'};
+  if (avgCloud < 60)                  return {t: 'Partly cloudy',             c: 'var(--accent)'};
+  return                                     {t: 'Mostly cloudy, likely dry', c: 'var(--dim)'};
+}
+
+// ── OPEN-METEO FORECAST ──────────────────────────────────────────────────────
+
+async function loadForecast() {
+  try {
+    const url = `https://api.open-meteo.com/v1/forecast`
+      + `?latitude=${LAT}&longitude=${LON}`
+      + `&hourly=temperature_2m,precipitation,precipitation_probability,`
+      + `thunderstorm_probability,cloud_cover,visibility,weather_code`
+      + `&forecast_hours=12&timezone=auto&timeformat=unixtime`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(r.status);
+    forecastData = await r.json();
+    $('fc-updated').textContent = 'Updated ' + fmtT(new Date());
+    $('hdr-updated').textContent = 'Updated ' + fmtT(new Date());
+    renderForecast();
+  } catch(e) {
+    console.error('Forecast:', e);
+    if (!forecastData) {
+      $('fc-body').innerHTML = '<div class="state-box">Forecast temporarily unavailable</div>';
+    }
+  }
+}
+
+function renderForecast() {
+  if (!forecastData) return;
+  const h = forecastData.hourly;
+  const hasThunder = Array.isArray(h.thunderstorm_probability)
+    && h.thunderstorm_probability.some(v => v != null);
+  const now = Date.now();
+
+  const hours = h.time.map((t, i) => ({
+    time: new Date(t * 1000),
+    temp:       h.temperature_2m[i],
+    precip:     h.precipitation[i] ?? 0,
+    precipProb: h.precipitation_probability[i] ?? 0,
+    thunder:    hasThunder ? (h.thunderstorm_probability[i] ?? 0) : null,
+    cloud:      h.cloud_cover[i] ?? 0,
+    vis:        h.visibility[i] ?? 10000,
+    wx:         h.weather_code[i] ?? 0
+  }));
+
+  const slice = hours.slice(0, selectedHours);
+  const summary = makeSummary(slice);
+
+  let html = `
+    <div class="fc-summary" style="background:${summary.c}18;border-color:${summary.c};color:${summary.c}">${summary.t}</div>
+    <div class="wx-hdr">
+      <span>Time</span><span>Temp</span><span>Condition</span><span>💧%</span><span>☁️%</span><span>👁 nm</span>
+    </div>`;
+
+  for (const hr of slice) {
+    const isNow = hr.time.getTime() <= now && now < hr.time.getTime() + 3600000;
+    const wx = wCode(hr.wx);
+    html += `
+    <div class="wx-row${isNow ? ' now' : ''}">
+      <span>${fmtT(hr.time)}</span>
+      <span><span class="temp-c">${Math.round(hr.temp)}°C</span><span class="temp-f">${c2f(hr.temp)}°F</span></span>
+      <span>${wx.i} ${wx.l}</span>
+      <span style="color:${precipColor(hr.precipProb)}">${hr.precipProb}%</span>
+      <span style="color:${cloudColor(hr.cloud)}">${hr.cloud}%</span>
+      <span style="color:${visColor(hr.vis)}">${visFmt(hr.vis)}</span>
+    </div>`;
+  }
+
+  if (hasThunder) {
+    const maxT = Math.max(...slice.map(h => h.thunder ?? 0));
+    const tc = maxT >= 30 ? 'var(--red)' : maxT >= 15 ? 'var(--orange)' : 'var(--yellow)';
+    html += `<div class="fc-thunder">⚡ Max thunder risk this window: <strong style="color:${tc}">${maxT}%</strong></div>`;
+  }
+
+  // Freshness: HRRR runs hourly; estimate next update at next top-of-hour + 10min buffer
+  const nextRun = new Date(Math.ceil(Date.now() / 3600000) * 3600000 + 600000);
+  const dataFrom = new Date(h.time[0] * 1000);
+  html += `<div class="fc-freshness">
+    Model data from ${fmtT(dataFrom)} ·
+    Next update ~${fmtT(nextRun)} <span style="color:var(--fnt)">(est.)</span>
+  </div>`;
+
+  $('fc-body').innerHTML = html;
+}
+
+function setSelector(h) {
+  selectedHours = h;
+  document.querySelectorAll('.sel-btn').forEach(b => {
+    b.classList.toggle('sel-active', +b.dataset.h === h);
+  });
+  renderForecast();
+}
+
+// ── NWS MARINE ZONE FORECAST (ANZ338) ───────────────────────────────────────
+
+async function loadMarineForecast() {
+  try {
+    // Step 1: latest CWF product list from OKX
+    const listR = await fetch('https://api.weather.gov/products/types/CWF/locations/OKX',
+      {headers: {'Accept': 'application/ld+json'}});
+    if (!listR.ok) throw new Error('CWF list ' + listR.status);
+    const listD = await listR.json();
+    const productUrl = listD['@graph']?.[0]?.['@id'];
+    if (!productUrl) throw new Error('No CWF product found');
+
+    // Step 2: fetch product text
+    const prodR = await fetch(productUrl, {headers: {'Accept': 'application/ld+json'}});
+    if (!prodR.ok) throw new Error('CWF product ' + prodR.status);
+    const prodD = await prodR.json();
+    const text = prodD.productText || '';
+    const issued = prodD.issuanceTime || '';
+
+    // Step 3: extract ANZ338 section
+    const sectionMatch = text.match(/ANZ338[\s\S]*?(?=\nANZ\d{3}|\n\$\$)/);
+    if (!sectionMatch) throw new Error('ANZ338 not found in CWF');
+    const section = sectionMatch[0];
+
+    // Step 4: extract watch/warning/advisory headlines (appear before first .PERIOD block)
+    const firstPeriodIdx = section.search(/\n\.[A-Z]/);
+    const preamble = firstPeriodIdx > 0 ? section.slice(0, firstPeriodIdx) : '';
+    const watchLines = [];
+    const wRe = /\.\.\.(.*?)\.\.\./g;
+    let wm;
+    while ((wm = wRe.exec(preamble)) !== null) {
+      const line = wm[1].trim();
+      if (line.length > 10) watchLines.push(line);
+    }
+
+    // Step 5: parse forecast periods
+    const periods = [];
+    const re = /\n\.([A-Z][A-Z ]+)\.\.\.([\s\S]*?)(?=\n\.[A-Z]|\n\nWinds|\n\$\$|$)/g;
+    let m;
+    while ((m = re.exec(section)) !== null) {
+      const name = m[1].trim();
+      const detail = m[2].replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+      if (name && detail) periods.push({name, detail});
+    }
+
+    // General disclaimer line
+    const noteMatch = section.match(/\n\n(Winds and waves[\s\S]*?)(?:\n\$\$|$)/);
+    const note = noteMatch ? noteMatch[1].replace(/\n/g, ' ').trim() : null;
+
+    if (periods.length === 0) throw new Error('No periods parsed');
+    marineData = {periods, note, watchLines};
+    $('marine-updated').textContent = fmtIssuance(issued);
+    renderMarineForecast();
+  } catch(e) {
+    console.error('Marine:', e);
+    if (!marineData) {
+      $('marine-near-body').innerHTML = '<div class="state-box">Marine forecast temporarily unavailable</div>';
+    }
+  }
+}
+
+function fmtIssuance(iso) {
+  if (!iso) return '';
+  try {
+    const d = new Date(iso);
+    return 'Issued ' + d.toLocaleString('en-US', {
+      month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit',
+      hour12: true, timeZone: 'America/New_York'
+    }) + ' ET';
+  } catch(_) { return ''; }
+}
+
+function titlePeriod(name) {
+  return name.toLowerCase().split(' ')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
+function renderMarineForecast() {
+  if (!marineData) return;
+  const {periods, note, watchLines} = marineData;
+
+  // Split today+tomorrow vs extended.
+  // Count distinct daytime periods (not OVERNIGHT/TONIGHT/x NIGHT).
+  // Stop when we've seen 2 daytime periods — covers today + tomorrow.
+  let dayCount = 0;
+  let splitIdx = periods.length;
+  for (let i = 0; i < periods.length; i++) {
+    const n = periods[i].name.toUpperCase();
+    if (n !== 'OVERNIGHT' && n !== 'TONIGHT' && !n.endsWith('NIGHT')) {
+      dayCount++;
+      if (dayCount > 2) { splitIdx = i; break; }
+    }
+  }
+
+  function buildRows(list) {
+    return list.map(p => {
+      const isDanger = /1[5-9] to \d+|2\d to \d+|\d{2,} kt|tstm/i.test(p.detail);
+      return `<div class="marine-row${isDanger ? ' marine-warn' : ''}">
+        <div class="marine-period">${titlePeriod(p.name)}</div>
+        <div class="marine-detail">${p.detail}</div>
+      </div>`;
+    }).join('');
+  }
+
+  const nearPeriods = periods.slice(0, splitIdx);
+  const extPeriods  = periods.slice(splitIdx);
+
+  const watchHtml = (watchLines || []).map(w =>
+    `<div class="marine-watchline">⚠ ${w}</div>`
+  ).join('');
+  let nearHtml = watchHtml + buildRows(nearPeriods);
+  if (note) nearHtml += `<div class="marine-note">${note}</div>`;
+  nearHtml += `<div class="marine-meta">Source: NWS OKX · New York Harbor (ANZ338) · Issued twice daily</div>`;
+  $('marine-near-body').innerHTML = nearHtml;
+
+  if (extPeriods.length > 0) {
+    $('marine-ext-body').innerHTML = buildRows(extPeriods);
+    $('marine-ext-card').style.display = '';
+  }
+}
+
+function toggleMarineExt() {
+  const body  = $('marine-ext-body');
+  const caret = $('marine-ext-caret');
+  const show  = body.style.display === 'none';
+  body.style.display  = show ? 'block' : 'none';
+  caret.textContent   = show ? '▼ Hide' : '▶ Show';
+}
+
+// ── RAINVIEWER RADAR ─────────────────────────────────────────────────────────
+
+const RADAR_MAX_ZOOM = 7;
+
+function initMap() {
+  radarMap = L.map('radar-map', {center: [40.72, -74.05], zoom: 7, zoomControl: true});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
+    maxZoom: 18
+  }).addTo(radarMap);
+
+  // RainViewer free tier only serves radar tiles at zoom ≤ 7.
+  // Remove the overlay when user zooms in past that and restore when they zoom back out.
+  radarMap.on('zoomend', () => {
+    const z = radarMap.getZoom();
+    const note = $('radar-note');
+    if (z > RADAR_MAX_ZOOM) {
+      radarLayers.forEach(l => { try { radarMap.removeLayer(l); } catch(_){} });
+      note.textContent = 'Zoom ≤ 7 to see radar overlay · Observed past precipitation only';
+      note.style.color = 'var(--yellow)';
+    } else {
+      showFrame(radarIdx);
+      note.textContent = 'Observed past precipitation only — not a future forecast · Radar visible at zoom ≤ 7';
+      note.style.color = '';
+    }
+  });
+}
+
+async function loadRadar() {
+  if (!radarMap) initMap();
+  try {
+    const r = await fetch('https://api.rainviewer.com/public/weather-maps.json');
+    if (!r.ok) throw new Error(r.status);
+    const data = await r.json();
+    const frames = data.radar?.past || [];
+    if (frames.length === 0) throw new Error('No radar frames');
+
+    // Remove old overlay layers
+    radarLayers.forEach(l => { try { radarMap.removeLayer(l); } catch(_){} });
+    radarLayers = frames.map(f =>
+      L.tileLayer(`https://tilecache.rainviewer.com${f.path}/256/{z}/{x}/{y}/2/1_1.png`, {
+        opacity: 0.6, tileSize: 256, zIndex: 10,
+        attribution: '© <a href="https://rainviewer.com">RainViewer</a>'
+      })
+    );
+    radarFrames = frames;
+    radarIdx = frames.length - 1;
+    showFrame(radarIdx);
+    startAnim();
+  } catch(e) {
+    console.error('Radar:', e);
+    if (radarLayers.length === 0) {
+      $('radar-body').innerHTML = '<div class="state-box">Radar temporarily unavailable</div>';
+    }
+  }
+}
+
+function showFrame(idx) {
+  if (!radarMap || radarLayers.length === 0) return;
+  radarLayers.forEach(l => { try { radarMap.removeLayer(l); } catch(_){} });
+  if (radarMap.getZoom() > RADAR_MAX_ZOOM) return;
+  radarLayers[idx].addTo(radarMap);
+  const ts = new Date(radarFrames[idx].time * 1000);
+  $('radar-ts').textContent = fmtT(ts) + ' ET';
+  $('radar-ctr').textContent = `${idx + 1}/${radarFrames.length}`;
+}
+
+function startAnim() {
+  if (radarTimer) clearInterval(radarTimer);
+  radarTimer = setInterval(() => {
+    if (!radarPlaying || radarLayers.length === 0) return;
+    radarIdx = (radarIdx + 1) % radarLayers.length;
+    showFrame(radarIdx);
+  }, 700);
+}
+
+function radarPrev() {
+  radarIdx = (radarIdx - 1 + radarLayers.length) % radarLayers.length;
+  showFrame(radarIdx);
+}
+
+function radarNext() {
+  radarIdx = (radarIdx + 1) % radarLayers.length;
+  showFrame(radarIdx);
+}
+
+function toggleRadar() {
+  radarPlaying = !radarPlaying;
+  $('radar-play').textContent = radarPlaying ? '⏸' : '▶';
+}
+
+// ── ALERTS ───────────────────────────────────────────────────────────────────
+
+async function loadAlerts() {
+  try {
+    const r = await fetch('https://api.weather.gov/alerts/active?zone=ANZ338',
+      {headers:{'User-Agent':'(NYC Harbor Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}});
+    if (!r.ok) return;
+    const d = await r.json();
+    const now = new Date();
+    const alerts = (d.features || []).filter(a => {
+      const exp = a.properties?.expires;
+      return !exp || new Date(exp) > now;
+    });
+    const el = $('alert-banner');
+    if (!alerts.length) { el.innerHTML = ''; return; }
+    el.innerHTML = alerts.map(a => {
+      const p = a.properties;
+      const evt = p.event || 'Weather Alert';
+      const hl = p.headline || '';
+      const exp = p.expires ? 'Until ' + fmtAlertTime(p.expires) : '';
+      const evtLC = evt.toLowerCase();
+      const cls = evtLC.includes('warning') ? 'alert-warning' : evtLC.includes('watch') ? 'alert-watch' : 'alert-advisory';
+      const col = evtLC.includes('warning') ? 'var(--red)' : evtLC.includes('watch') ? 'var(--orange)' : 'var(--yellow)';
+      const alertUrl = 'https://forecast.weather.gov/MapClick.php?x=258&y=69&site=phi&zmx=1&zmy=1&map_x=257.5&map_y=69.13333129882812';
+      return `<a href="${alertUrl}" target="_blank" rel="noopener" style="display:block;text-decoration:none"><div class="alert-banner ${cls}"><div class="alert-event" style="color:${col}">⚠ ${evt} ↗</div>${hl?`<div class="alert-hl">${hl}</div>`:''}${exp?`<div class="alert-exp">${exp}</div>`:''}</div></a>`;
+    }).join('');
+  } catch(e) { console.warn('Alerts:', e); }
+}
+
+function fmtAlertTime(iso) {
+  try {
+    return new Date(iso).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/New_York'}) + ' ET';
+  } catch(_) { return ''; }
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+
+loadAlerts();
+loadForecast();
+loadMarineForecast();
+loadRadar();
+
+setInterval(loadAlerts,        10 * 60 * 1000);   // 10 min
+setInterval(loadForecast,      30 * 60 * 1000);   // 30 min
+setInterval(loadMarineForecast, 60 * 60 * 1000);  // 60 min
+setInterval(loadRadar,          10 * 60 * 1000);  // 10 min
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){loadAlerts();loadForecast();loadMarineForecast();}});
+</script>
+</body>
+</html>

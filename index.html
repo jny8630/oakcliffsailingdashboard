@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#080e18">
+<title>NYC Harbor Sailing</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#080e18;--card:#131f2e;--card2:#0c1520;--bdr:#1a2d42;--bdr2:#2a4060;--txt:#f0f4f8;--dim:#c4d0de;--mut:#8fa3b8;--fnt:#6b8299;--accent:#4fd1c5;--blue:#63b3ed;--orange:#ed8936;--green:#48bb78;--red:#f56565;--yellow:#ecc94b;--purple:#9f7aea;--mono:'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;background:linear-gradient(170deg,var(--bg),#0c1822 40%,var(--bg));color:var(--txt);max-width:440px;margin:0 auto;min-height:100vh;-webkit-font-smoothing:antialiased}
+.hdr{background:linear-gradient(135deg,#0e1f30,#162d46);padding:18px 16px 14px;border-bottom:1px solid var(--bdr)}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-start}
+.hdr-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.hdr-title{font-size:20px;font-weight:800;letter-spacing:-.03em;margin-top:2px}
+.hdr-meta{font-size:10px;color:var(--fnt);margin-top:6px}
+.btn{background:var(--bdr);border:1px solid var(--bdr2);border-radius:8px;color:var(--accent);padding:6px 12px;font-size:12px;cursor:pointer;font-weight:600;font-family:inherit}
+.btn:active{opacity:.7}
+.cnt{padding:10px 10px 30px}
+.glance{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px}
+.gl{background:linear-gradient(145deg,var(--card),var(--card2));border:1px solid var(--bdr);border-radius:12px;padding:12px 8px;text-align:center}
+.gl-l{font-size:9px;color:var(--mut);font-weight:700;letter-spacing:.1em}
+.gl-v{font-size:26px;font-weight:800;font-family:var(--mono);margin-top:2px}
+.gl-s{font-size:10px;color:var(--mut);margin-top:2px}
+.card{background:linear-gradient(145deg,var(--card),var(--card2));border:1px solid var(--bdr);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.card-bar{height:2px}
+.card-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;cursor:pointer;color:var(--dim);user-select:none}
+.card-t{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.card-body{padding:0 16px 16px}
+.card-body.collapsed{display:none}
+.wind-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:4px}
+.bv{font-size:30px;font-weight:800;font-family:var(--mono);text-align:center}
+.bv-l{font-size:10px;color:var(--mut);text-align:center}
+.status-pill{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;margin-bottom:6px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.tide-ev{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:10px;margin-bottom:3px;border:1px solid transparent}
+.tide-ev.hl{background:#1a2d4250}
+.tide-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.tide-bar-wrap{margin:12px 0 6px;padding:0 4px}
+.tide-bar-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--mut);margin-bottom:4px}
+.tide-bar{height:8px;background:var(--card2);border-radius:4px;position:relative;overflow:visible}
+.tide-bar-dot{position:absolute;top:-4px;width:14px;height:14px;border-radius:50%;border:2px solid var(--card2);transform:translateX(-50%);z-index:2}
+.upcoming{margin-top:6px;padding:8px 12px;background:rgba(12,21,32,.5);border-radius:8px}
+.upcoming-l{font-size:10px;color:var(--mut);margin-bottom:5px;font-weight:600;letter-spacing:.05em}
+.upcoming-r{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);padding:2px 0}
+.tbtn{width:100%;margin-top:8px;padding:9px;background:transparent;border:1px solid var(--bdr);border-radius:8px;color:var(--accent);font-size:12px;cursor:pointer;font-weight:500;font-family:inherit}
+.tbtn:active{opacity:.7}
+.tbtn.active{background:var(--bdr)}
+.wx-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.wx-icon{font-size:40px}
+.storm-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:8px;margin-bottom:8px;font-size:12px}
+.fc-hdr,.fc-row{display:grid;grid-template-columns:56px 52px 42px 34px 34px 44px 36px;gap:2px;padding:4px 6px;font-size:12px;font-family:var(--mono);color:var(--dim);border-radius:4px}
+.fc-hdr{font-size:9px;color:var(--mut);font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--bdr);margin-bottom:3px;font-family:-apple-system,system-ui,sans-serif}
+.fc-row.now{background:#1a2d4260;border-left:2px solid var(--accent)}
+.links-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.link-c{display:block;padding:10px 12px;background:rgba(12,21,32,.5);border:1px solid var(--bdr);border-radius:8px;text-decoration:none;color:var(--dim)}
+.link-c:active{opacity:.7}
+.link-n{font-size:12px;font-weight:700;color:var(--accent)}
+.link-d{font-size:10px;color:var(--mut)}
+.footer{text-align:center;padding:14px 0;font-size:10px;color:var(--fnt);border-top:1px solid var(--bdr);margin-top:6px}
+.radar-links{display:flex;gap:6px;margin-top:8px}
+.radar-links a{flex:1;text-align:center;padding:8px;background:var(--bdr);border:1px solid var(--bdr2);border-radius:6px;color:var(--accent);font-size:11px;text-decoration:none;font-weight:600}
+canvas{display:block;border-radius:8px}
+.chart-wrap{margin-top:10px;background:var(--card2);border:1px solid var(--bdr);border-radius:10px;padding:10px 8px 6px;overflow:hidden}
+.chart-title{font-size:10px;color:var(--mut);font-weight:600;letter-spacing:.06em;margin-bottom:6px}
+.chart-legend{display:flex;gap:14px;justify-content:center;margin-top:5px;font-size:10px;color:var(--mut)}
+.hidden{display:none}
+.sunset-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(12,21,32,.5);border:1px solid var(--bdr);border-radius:10px;margin-top:8px}
+@media(max-width:360px){.fc-hdr,.fc-row{grid-template-columns:48px 46px 38px 30px 30px 40px 32px;font-size:11px}}
+.alert-banner{border-radius:10px;padding:11px 14px;margin-bottom:10px;border-left:4px solid}
+.alert-warning{background:rgba(245,101,101,.1);border-color:var(--red)}
+.alert-watch{background:rgba(237,137,54,.1);border-color:var(--orange)}
+.alert-advisory{background:rgba(236,201,75,.08);border-color:var(--yellow)}
+.alert-event{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.alert-hl{font-size:11px;color:var(--dim);margin-top:3px;line-height:1.5}
+.alert-exp{font-size:10px;color:var(--fnt);margin-top:3px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-row">
+    <div><div class="hdr-label">⛵ NYC Harbor</div><div class="hdr-title">Sailing Conditions</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+      <button class="btn" onclick="loadAll()"><span id="ri">↻</span> Refresh</button>
+      <div class="hdr-meta" id="meta" style="text-align:right">Loading…</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px">
+    <a href="weather.html" class="btn" style="text-align:center;text-decoration:none">Weather</a>
+    <a href="wind-tactics.html" class="btn" style="text-align:center;text-decoration:none">Wind</a>
+    <a href="harbor-context.html" class="btn" style="text-align:center;text-decoration:none">Pressure</a>
+    <a href="nyhops.html" class="btn" style="text-align:center;text-decoration:none">Currents</a>
+    <a href="nyhops-overlay.html" class="btn" style="text-align:center;text-decoration:none">Chart</a>
+    <a href="lnm.html" class="btn" style="text-align:center;text-decoration:none">LNM</a>
+    <a href="feedback.html" class="btn" style="text-align:center;text-decoration:none">Feedback</a>
+  </div>
+</div>
+
+<div class="cnt">
+  <div class="glance">
+    <div class="gl"><div class="gl-l">WIND</div><div class="gl-v" id="gw" style="color:var(--green)">—</div><div class="gl-s" id="gwd"></div></div>
+    <div class="gl"><div class="gl-l">TEMP</div><div class="gl-v" id="gt">—</div><div class="gl-s" id="gts"></div></div>
+    <div class="gl"><div class="gl-l">TIDE</div><div id="gtd" style="font-size:13px;font-weight:800;color:var(--blue);margin-top:4px">—</div><div class="gl-s" id="gtn"></div></div>
+  </div>
+
+  <div id="alert-banner"></div>
+
+  <!-- WIND -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--green),transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🌬️</span> Wind — Robbins Reef</div><span class="caret">▼</span></div>
+    <div class="card-body">
+      <div class="wind-grid">
+        <div><div class="bv" id="ws" style="color:var(--green)">—</div><div class="bv-l">kt sustained</div></div>
+        <div><div class="bv" id="wg">—</div><div class="bv-l">kt gusts</div></div>
+        <div><div class="bv" id="wdir" style="font-size:24px;margin-top:4px">—</div><div class="bv-l" id="wdeg"></div></div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">WIND SPEED — LAST 2 HOURS</div>
+        <canvas id="cvSpeed" style="width:100%;height:140px"></canvas>
+        <div class="chart-legend"><span style="color:#48bb78">━</span> Sustained &nbsp;<span style="color:#ed893680">━</span> Gusts &nbsp;<span style="color:#ecc94b60">┈</span> Avg</div>
+      </div>
+      <div style="font-size:10px;color:var(--fnt);text-align:right;margin-top:6px" id="wtime"></div>
+      <a class="tbtn" href="https://forecast.weather.gov/MapClick.php?x=258&y=69&site=phi&zmx=1&zmy=1&map_x=257.5&map_y=69.13333129882812" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-bottom:6px;background:rgba(245,101,101,.08);border-color:rgba(245,101,101,.3);color:var(--red)">⚠ NWS Harbor Forecast &amp; Warnings ↗</a>
+      <a class="tbtn" href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8530973" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">View Full NOAA Station ↗</a>
+    </div>
+  </div>
+
+  <!-- B&G VERTICAL WIND PLOT -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,#8bc34a,transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>📟</span> B&G WindPlot — 2 hr</div><span class="caret">▼</span></div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:6px">
+        <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--mut);font-weight:700;letter-spacing:.08em">TWD</div><div style="font-size:13px;font-weight:800;color:#63b3ed;font-family:var(--mono)" id="bgd-val">—</div></div>
+        <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--mut);font-weight:700;letter-spacing:.08em">TWS / GUST</div><div style="font-size:13px;font-weight:800;color:#48bb78;font-family:var(--mono)" id="bgs-val">—</div></div>
+      </div>
+      <div style="display:flex;gap:4px">
+        <div style="flex:1"><canvas id="cvBGdir" style="width:100%;height:340px"></canvas></div>
+        <div style="flex:1"><canvas id="cvBGspd" style="width:100%;height:340px"></canvas></div>
+      </div>
+      <div style="font-size:9px;color:var(--fnt);text-align:center;margin-top:6px">
+        Top = now · Bottom = 2 hr ago · <span style="color:#ecc94b;opacity:.5">┈</span> rolling avg · <span style="color:#ed893680">━</span> gusts (TWS)
+      </div>
+    </div>
+  </div>
+
+  <!-- TIDES -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--blue),transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🌊</span> Tides — The Battery</div><span class="caret">▼</span></div>
+    <div class="card-body">
+      <div class="status-pill" style="background:rgba(99,179,237,.08);border:1px solid rgba(99,179,237,.15)">
+        <span class="dot" id="tdot" style="background:var(--blue);box-shadow:0 0 8px rgba(99,179,237,.5)"></span>
+        <span id="tstat" style="font-size:14px;font-weight:700;color:var(--blue)">Loading…</span>
+      </div>
+      <div id="tbar"></div>
+      <div id="tevents"></div>
+      <div id="tupcoming" class="upcoming hidden"><div class="upcoming-l">UPCOMING</div><div id="tulist"></div></div>
+      <div id="sunset-info"></div>
+    </div>
+  </div>
+
+  <!-- BAROMETRIC PRESSURE -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,#78909c,transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🔵</span> Barometric Pressure</div><span class="caret">▼</span></div>
+    <div class="card-body">
+      <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:3px">
+        <div style="font-size:22px;font-weight:800;font-family:var(--mono)" id="baro-now">—</div>
+        <div style="font-size:10px;color:var(--fnt)">avg 1015</div>
+      </div>
+      <div style="font-size:11px;color:var(--mut);margin-bottom:8px" id="baro-sub">Loading…</div>
+      <div style="display:flex;gap:16px;font-size:11px;color:var(--mut);margin-bottom:10px">
+        <span><span style="font-size:9px;color:var(--fnt);letter-spacing:.06em">3H </span><span id="baro-3h">—</span></span>
+        <span><span style="font-size:9px;color:var(--fnt);letter-spacing:.06em">6H </span><span id="baro-6h">—</span></span>
+      </div>
+      <div class="chart-wrap" style="margin-top:0">
+        <div class="chart-title">PRESSURE — LAST 6 HOURS (mbar)</div>
+        <canvas id="cvBaro" style="width:100%;height:130px"></canvas>
+      </div>
+      <div style="font-size:9px;color:var(--fnt);text-align:right;margin-top:4px">NOAA Robbins Reef · 6-min data</div>
+    </div>
+  </div>
+
+  <!-- WEATHER -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--yellow),transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>☀️</span> Weather & Temperature</div><span class="caret">▼</span></div>
+    <div class="card-body">
+      <div class="wx-row"><span class="wx-icon" id="wxi">🌤️</span><div><div style="font-size:22px;font-weight:800" id="wxt">—</div><div style="font-size:12px;color:var(--mut)" id="wxd">Loading…</div></div></div>
+      <div class="storm-bar" style="border:1px solid rgba(72,187,120,.2)"><span style="color:var(--mut)">⛈ Thunderstorm Risk</span><span id="stormv" style="font-weight:700;color:var(--green)">—</span></div>
+      <div id="wtemp" style="font-size:12px;color:var(--mut)"></div>
+    </div>
+  </div>
+
+  <!-- FORECAST -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--purple),transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>📊</span> Wind Forecast — HRRR (3km)</div><span class="caret">▼</span></div>
+    <div class="card-body">
+      <div class="fc-hdr"><span>Time</span><span>Wind</span><span>Gust</span><span>Dir</span><span>Deg</span><span>Temp</span><span>Rain</span></div>
+      <div id="fcrows"></div>
+      <div style="font-size:9px;color:var(--fnt);margin-top:8px;text-align:right">Open-Meteo HRRR (3km) · Updated hourly</div>
+    </div>
+  </div>
+
+  <!-- RADAR -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--red),transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>📡</span> Radar — NYC Harbor</div><span class="caret">▼</span></div>
+    <div class="card-body">
+      <button id="radar-btn" class="tbtn" style="font-size:13px;font-weight:600" onclick="toggleRadar()">Show Live Radar Map (Windy)</button>
+      <div id="radar-wrap" class="hidden" style="margin-top:10px">
+        <div id="radar-ct"></div>
+        <div style="font-size:10px;color:var(--fnt);margin-top:4px;text-align:center">Windy.com interactive radar</div>
+        <div class="radar-links">
+          <a href="https://www.windy.com/40.689/-74.045?radar,40.689,-74.045,10" target="_blank">Windy ↗</a>
+          <a href="https://www.accuweather.com/en/us/new-york/10007/weather-radar/349727" target="_blank">AccuWeather ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--mut),transparent)"></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🔗</span> Quick Links</div><span class="caret">▲</span></div>
+    <div class="card-body collapsed">
+      <div class="links-grid">
+        <a href="https://www.windy.com/40.689/-74.045?wind,40.689,-74.045,10" target="_blank" class="link-c"><div class="link-n">Windy HRRR</div><div class="link-d">Open in app</div></a>
+        <a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8518750" target="_blank" class="link-c"><div class="link-n">NOAA Tides</div><div class="link-d">The Battery</div></a>
+        <a href="https://www.usharbors.com/harbor/new-york/new-york-the-battery-ny/tides/" target="_blank" class="link-c"><div class="link-n">Battery Tides</div><div class="link-d">US Harbors</div></a>
+        <a href="https://tidesandcurrents.noaa.gov/noaacurrents/Predictions?id=NYH1905_6&d=2025-02-09&r=1&tz=LST%2FLDT" target="_blank" class="link-c"><div class="link-n">Currents Map</div><div class="link-d">NYC Harbor</div></a>
+        <a href="https://forecast.weather.gov/MapClick.php?x=258&y=69&site=phi&zmx=1&zmy=1&map_x=257.5&map_y=69.13333129882812" target="_blank" class="link-c"><div class="link-n">NOAA Marine</div><div class="link-d">Harbor forecast</div></a>
+        <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8530973" target="_blank" class="link-c"><div class="link-n">Robbins Reef</div><div class="link-d">NOAA station</div></a>
+        <a href="nyhops.html" class="link-c"><div class="link-n">NYHOPS Currents</div><div class="link-d">Manhattan Waters</div></a>
+        <a href="lnm.html" class="link-c"><div class="link-n">LNM Digest</div><div class="link-d">Notice to Mariners</div></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Data: NOAA CO-OPS · Open-Meteo HRRR · Windy<br>For planning only — not for navigation · Auto-refreshes 10 min</div>
+</div>
+
+<script>
+const ST={BAT:'8518750',ROB:'8530973'};
+const NYC={lat:40.6892,lon:-74.0445};
+const $=id=>document.getElementById(id);
+const cardinal=d=>{if(d==null||isNaN(d))return'—';return['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'][Math.round(d/22.5)%16]};
+const fmtT=d=>d?d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/New_York'}):'—';
+const fmtHM=d=>d?d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/New_York'}):'—';
+const c2f=c=>(c*9/5+32).toFixed(0);
+const mUntil=(f,n)=>{const m=(f-n)/6e4;if(m<1)return'now';if(m<60)return Math.round(m)+'m';const h=Math.floor(m/60),r=Math.round(m%60);return r>0?h+'h '+r+'m':h+'h'};
+const wCSS=k=>k>=25?'var(--red)':k>=18?'var(--orange)':k>=12?'var(--yellow)':k>=6?'var(--green)':'var(--dim)';
+const fColor=f=>f==='flooding'?'var(--blue)':f==='ebbing'?'var(--orange)':'var(--dim)';
+const wxI=c=>{if(c<=1)return'☀️';if(c<=3)return'⛅';if(c<=48)return'🌫️';if(c<=67)return'🌧️';if(c>=95)return'⛈️';return'🌤️'};
+const wxD=c=>({0:'Clear',1:'Mostly Clear',2:'Partly Cloudy',3:'Overcast',45:'Fog',51:'Lt Drizzle',61:'Lt Rain',63:'Rain',65:'Heavy Rain',80:'Showers',95:'Thunderstorm',96:'T-Storm+Hail'})[c]||'—';
+const fmt2=d=>`${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+
+function parseNOAA(ts){
+  if(!ts)return null;
+  const p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',timeZoneName:'shortOffset'}).formatToParts(new Date());
+  const tz=p.find(x=>x.type==='timeZoneName');let off='-05:00';
+  if(tz){const m=tz.value.match(/GMT([+-]?\d+)/);if(m){const h=parseInt(m[1]);off=(h>=0?'+':'-')+String(Math.abs(h)).padStart(2,'0')+':00'}}
+  const d=new Date(ts.replace(' ','T')+off);return isNaN(d)?null:d;
+}
+
+function setupCanvas(cv){
+  const dpr=window.devicePixelRatio||1;const r=cv.getBoundingClientRect();
+  cv.width=Math.round(r.width*dpr);cv.height=Math.round(r.height*dpr);
+  const ctx=cv.getContext('2d');ctx.scale(dpr,dpr);ctx.clearRect(0,0,r.width,r.height);
+  return{ctx,w:r.width,h:r.height};
+}
+
+function toggle(hdr){const b=hdr.nextElementSibling;b.classList.toggle('collapsed');hdr.querySelector('.caret').textContent=b.classList.contains('collapsed')?'▲':'▼'}
+function toggleEl(id){$(id).classList.toggle('hidden')}
+
+async function loadAlerts() {
+  try {
+    const r = await fetch('https://api.weather.gov/alerts/active?zone=ANZ338',
+      {headers:{'User-Agent':'(NYC Harbor Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}});
+    if (!r.ok) return;
+    const d = await r.json();
+    const now = new Date();
+    const alerts = (d.features || []).filter(a => {
+      const exp = a.properties?.expires;
+      return !exp || new Date(exp) > now;
+    });
+    const el = $('alert-banner');
+    if (!alerts.length) { el.innerHTML = ''; return; }
+    el.innerHTML = alerts.map(a => {
+      const p = a.properties;
+      const evt = p.event || 'Weather Alert';
+      const hl = p.headline || '';
+      const exp = p.expires ? 'Until ' + fmtAlertTime(p.expires) : '';
+      const evtLC = evt.toLowerCase();
+      const cls = evtLC.includes('warning') ? 'alert-warning' : evtLC.includes('watch') ? 'alert-watch' : 'alert-advisory';
+      const col = evtLC.includes('warning') ? 'var(--red)' : evtLC.includes('watch') ? 'var(--orange)' : 'var(--yellow)';
+      const alertUrl = 'https://forecast.weather.gov/MapClick.php?x=258&y=69&site=phi&zmx=1&zmy=1&map_x=257.5&map_y=69.13333129882812';
+      return `<a href="${alertUrl}" target="_blank" rel="noopener" style="display:block;text-decoration:none"><div class="alert-banner ${cls}"><div class="alert-event" style="color:${col}">⚠ ${evt} ↗</div>${hl?`<div class="alert-hl">${hl}</div>`:''}${exp?`<div class="alert-exp">${exp}</div>`:''}</div></a>`;
+    }).join('');
+  } catch(e) { console.warn('Alerts:', e); }
+}
+function fmtAlertTime(iso) {
+  try {
+    return new Date(iso).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/New_York'}) + ' ET';
+  } catch(_) { return ''; }
+}
+let radarOn=false;
+function toggleRadar(){radarOn=!radarOn;$('radar-wrap').classList.toggle('hidden',!radarOn);$('radar-btn').textContent=radarOn?'Hide Radar Map':'Show Live Radar Map (Windy)';if(radarOn&&!$('radar-ct').innerHTML)$('radar-ct').innerHTML='<iframe src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricWind=kt&metricTemp=°C&zoom=10&overlay=radar&product=radar&level=surface&lat=40.67&lon=-74.04" style="width:100%;height:340px;border:1px solid var(--bdr);border-radius:8px" frameborder="0"></iframe>'}
+
+// ═══════════════════════════════════
+// FETCHERS
+// ═══════════════════════════════════
+
+async function getJ(u){const r=await fetch(u);if(!r.ok)throw new Error(r.status);return r.json()}
+
+async function fetchWindHistory(){
+  const now=new Date(),start=new Date(now.getTime()-2*3600000);
+  const bd=fmt2(start)+' '+String(start.getHours()).padStart(2,'0')+':'+String(start.getMinutes()).padStart(2,'0');
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${encodeURIComponent(bd)}&range=3&station=${ST.ROB}&product=wind&units=english&time_zone=lst_ldt&format=json`);
+  if(!d.data?.length)return null;
+  return d.data.map(w=>({time:parseNOAA(w.t),speed:parseFloat(w.s),gusts:parseFloat(w.g),dir:parseFloat(w.d)})).filter(w=>w.time);
+}
+
+async function fetchPressure(){
+  const now=new Date(),start=new Date(now.getTime()-6.5*3600000);
+  const bd=fmt2(start)+' '+String(start.getHours()).padStart(2,'0')+':'+String(start.getMinutes()).padStart(2,'0');
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${encodeURIComponent(bd)}&range=7&station=${ST.ROB}&product=air_pressure&units=metric&time_zone=lst_ldt&format=json`);
+  if(!d.data?.length)return null;
+  return d.data.map(p=>({time:parseNOAA(p.t),val:parseFloat(p.v)})).filter(p=>p.time&&!isNaN(p.val));
+}
+
+async function fetchWaterTemp(){
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=${ST.BAT}&product=water_temperature&datum=MLLW&units=english&time_zone=lst_ldt&format=json`);
+  if(!d.data?.[0])return null;const f=parseFloat(d.data[0].v);return{f:f.toFixed(1),c:((f-32)*5/9).toFixed(1)};
+}
+
+async function fetchTides(){
+  const now=new Date(),s=new Date(now),e=new Date(now);s.setDate(s.getDate()-1);e.setDate(e.getDate()+2);
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${fmt2(s)}&end_date=${fmt2(e)}&station=${ST.BAT}&product=predictions&datum=MLLW&units=english&time_zone=lst_ldt&format=json&interval=hilo`);
+  if(!d.predictions?.length)return null;
+  const tides=d.predictions.filter(p=>p.type).map(p=>({time:parseNOAA(p.t),type:p.type.toUpperCase(),height:parseFloat(p.v).toFixed(1)})).filter(t=>t.time).sort((a,b)=>a.time-b.time);
+  const past=tides.filter(t=>t.time<now),future=tides.filter(t=>t.time>=now);
+  const prev=past.length?past[past.length-1]:null,next=future[0]||null,following=future[1]||null;
+  let status='Unknown',flow='unknown';
+  if(prev&&next){const mn=(next.time-now)/6e4,mp=(now-prev.time)/6e4;
+    if(mn<=30){status='Slack → '+(next.type==='H'?'High':'Low');flow='slack'}
+    else if(mp<=30){status='Slack after '+(prev.type==='H'?'High':'Low');flow='slack'}
+    else if(next.type==='H'){status='Flooding (Rising)';flow='flooding'}
+    else{status='Ebbing (Falling)';flow='ebbing'}}
+  return{prev,next,following,status,flow,allFuture:future.slice(0,6),allTides:tides};
+}
+
+async function fetchSunset(){
+  const d=await getJ(`https://api.open-meteo.com/v1/forecast?latitude=${NYC.lat}&longitude=${NYC.lon}&daily=sunrise,sunset&timezone=America/New_York&forecast_days=1`);
+  if(!d.daily?.sunset?.[0])return null;
+  return{sunset:new Date(d.daily.sunset[0]),sunrise:new Date(d.daily.sunrise[0])};
+}
+
+async function fetchWeather(){return await getJ(`https://api.open-meteo.com/v1/gfs?latitude=${NYC.lat}&longitude=${NYC.lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m&hourly=cape&wind_speed_unit=kn&temperature_unit=celsius&timezone=America/New_York&forecast_hours=3&past_hours=0`)}
+async function fetchHRRR(){return await getJ(`https://api.open-meteo.com/v1/gfs?latitude=${NYC.lat}&longitude=${NYC.lon}&minutely_15=temperature_2m,precipitation,wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=kn&temperature_unit=celsius&timezone=America/New_York&forecast_minutely_15=72&past_minutely_15=4`)}
+
+// ═══════════════════════════════════
+// RULE OF TWELFTHS
+// Returns a CSS gradient string for the tide bar
+// Segments: 1/12, 2/12, 3/12, 3/12, 2/12, 1/12
+// ═══════════════════════════════════
+
+function twelfthsGradient(flowColor){
+  // Colors: green(weak) → yellow → orange(strongest) → orange → yellow → green
+  const c1='rgba(72,187,120,0.5)';   // 1/12 green
+  const c2='rgba(236,201,75,0.55)';  // 2/12 yellow
+  const c3='rgba(237,137,54,0.6)';   // 3/12 orange
+  return `linear-gradient(90deg, ${c1} 0%, ${c1} 16.67%, ${c2} 16.67%, ${c2} 33.33%, ${c3} 33.33%, ${c3} 50%, ${c3} 50%, ${c3} 66.67%, ${c2} 66.67%, ${c2} 83.33%, ${c1} 83.33%, ${c1} 100%)`;
+}
+
+// Get current strength label from position (0-1)
+function currentStrength(pct){
+  const p=pct/100;
+  if(p<0.1667||p>0.8333)return{label:'Weak (1/12)',color:'var(--green)'};
+  if(p<0.3333||p>0.6667)return{label:'Moderate (2/12)',color:'var(--yellow)'};
+  return{label:'Strong (3/12)',color:'var(--orange)'};
+}
+
+// ═══════════════════════════════════
+// HORIZONTAL CHARTS
+// ═══════════════════════════════════
+
+function drawSpeedH(cv,data){
+  if(!data||data.length<2)return;const{ctx,w:W,h:H}=setupCanvas(cv);
+  const aW=10,avgs=data.map((_,i)=>{const s=Math.max(0,i-aW+1);return data.slice(s,i+1).reduce((a,d)=>a+d.speed,0)/(i-s+1)});
+  const all=[...data.map(d=>d.speed),...data.map(d=>d.gusts),...avgs];
+  const mn=Math.max(0,Math.min(...all)-2),mx=Math.max(...all)+2;
+  const P={t:10,b:22,l:36,r:10},cw=W-P.l-P.r,ch=H-P.t-P.b;
+  const xS=i=>(i/(data.length-1))*cw+P.l,yS=v=>P.t+ch-((v-mn)/(mx-mn))*ch;
+  ctx.strokeStyle='#1a2d42';ctx.lineWidth=.5;
+  for(let i=0;i<=4;i++){const v=mn+(mx-mn)*(i/4),y=yS(v);ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();ctx.fillStyle='#6b8299';ctx.font='10px system-ui';ctx.textAlign='right';ctx.fillText(v.toFixed(0),P.l-5,y+4)}
+  ctx.fillStyle='#6b8299';ctx.font='10px system-ui';ctx.textAlign='center';
+  const le=Math.max(1,Math.floor(data.length/5));for(let i=0;i<data.length;i+=le)ctx.fillText(fmtHM(data[i].time),xS(i),H-4);
+  if(mn<12&&mx>12){ctx.strokeStyle='#ecc94b30';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(P.l,yS(12));ctx.lineTo(W-P.r,yS(12));ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#ecc94b60';ctx.font='9px system-ui';ctx.textAlign='right';ctx.fillText('12kt',W-P.r,yS(12)-4)}
+  ctx.beginPath();for(let i=0;i<data.length;i++){let x=xS(i),y=yS(data[i].gusts);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}for(let i=data.length-1;i>=0;i--)ctx.lineTo(xS(i),yS(data[i].speed));ctx.closePath();ctx.fillStyle='rgba(237,137,54,.12)';ctx.fill();
+  ctx.beginPath();ctx.strokeStyle='rgba(237,137,54,.45)';ctx.lineWidth=1.5;for(let i=0;i<data.length;i++){let x=xS(i),y=yS(data[i].gusts);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();
+  ctx.beginPath();ctx.moveTo(xS(0),yS(mn));for(let i=0;i<data.length;i++)ctx.lineTo(xS(i),yS(data[i].speed));ctx.lineTo(xS(data.length-1),yS(mn));ctx.closePath();const g=ctx.createLinearGradient(0,P.t,0,H-P.b);g.addColorStop(0,'rgba(72,187,120,.3)');g.addColorStop(1,'rgba(72,187,120,.02)');ctx.fillStyle=g;ctx.fill();
+  ctx.beginPath();ctx.strokeStyle='#48bb78';ctx.lineWidth=2;for(let i=0;i<data.length;i++){let x=xS(i),y=yS(data[i].speed);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();
+  ctx.beginPath();ctx.strokeStyle='#ecc94b55';ctx.lineWidth=1.5;ctx.setLineDash([5,3]);for(let i=0;i<avgs.length;i++){let x=xS(i),y=yS(avgs[i]);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();ctx.setLineDash([]);
+  const li=data.length-1;ctx.beginPath();ctx.arc(xS(li),yS(data[li].speed),5,0,Math.PI*2);ctx.fillStyle='#48bb78';ctx.fill();ctx.strokeStyle='#0c1520';ctx.lineWidth=2;ctx.stroke();
+}
+
+function drawDirH(cv,data){
+  if(!data||data.length<2)return;const{ctx,w:W,h:H}=setupCanvas(cv);
+  const dirs=[data[0].dir];for(let i=1;i<data.length;i++){let d=data[i].dir,p=dirs[i-1];while(d-p>180)d-=360;while(p-d>180)d+=360;dirs.push(d)}
+  const aW=10,avgs=dirs.map((_,i)=>{const s=Math.max(0,i-aW+1);return dirs.slice(s,i+1).reduce((a,v)=>a+v,0)/(i-s+1)});
+  const allD=[...dirs,...avgs];const mn=Math.min(...allD)-5,mx=Math.max(...allD)+5;
+  const P={t:10,b:22,l:36,r:10},cw=W-P.l-P.r,ch=H-P.t-P.b;
+  const xS=i=>(i/(data.length-1))*cw+P.l,yS=v=>P.t+ch-((v-mn)/(mx-mn))*ch;
+  const rng=mx-mn,step=rng>60?20:rng>30?10:5;
+  ctx.strokeStyle='#1a2d42';ctx.lineWidth=.5;
+  for(let v=Math.ceil(mn/step)*step;v<=mx;v+=step){const y=yS(v);ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();ctx.fillStyle='#6b8299';ctx.font='10px system-ui';ctx.textAlign='right';ctx.fillText((((v%360)+360)%360).toFixed(0)+'°',P.l-5,y+4)}
+  ctx.fillStyle='#6b8299';ctx.font='10px system-ui';ctx.textAlign='center';const le=Math.max(1,Math.floor(data.length/5));for(let i=0;i<data.length;i+=le)ctx.fillText(fmtHM(data[i].time),xS(i),H-4);
+  ctx.beginPath();for(let i=0;i<dirs.length;i++){let x=xS(i),y=yS(dirs[i]);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}for(let i=dirs.length-1;i>=0;i--)ctx.lineTo(xS(i),yS(avgs[i]));ctx.closePath();ctx.fillStyle='rgba(99,179,237,.1)';ctx.fill();
+  ctx.beginPath();ctx.strokeStyle='#ecc94b55';ctx.lineWidth=1.5;ctx.setLineDash([5,3]);for(let i=0;i<avgs.length;i++){let x=xS(i),y=yS(avgs[i]);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();ctx.setLineDash([]);
+  ctx.beginPath();ctx.strokeStyle='#63b3ed';ctx.lineWidth=2;for(let i=0;i<dirs.length;i++){let x=xS(i),y=yS(dirs[i]);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();
+  const li=dirs.length-1;ctx.beginPath();ctx.arc(xS(li),yS(dirs[li]),5,0,Math.PI*2);ctx.fillStyle='#63b3ed';ctx.fill();ctx.strokeStyle='#0c1520';ctx.lineWidth=2;ctx.stroke();
+}
+
+// ═══════════════════════════════════
+// B&G VERTICAL WIND PLOTS
+// ═══════════════════════════════════
+
+function drawBGV(cv,data,opt){
+  if(!data||data.length<2)return;const{ctx,w:W,h:H}=setupCanvas(cv);
+  const now=data[data.length-1].time.getTime(),winMs=120*60000,cut=now-winMs;
+  const pts=data.filter(d=>d.time.getTime()>=cut);if(pts.length<2)return;
+  let vals=pts.map(d=>d[opt.key]);
+  if(opt.unwrap){const uw=[vals[0]];for(let i=1;i<vals.length;i++){let v=vals[i],p=uw[i-1];while(v-p>180)v-=360;while(p-v>180)v+=360;uw.push(v)}vals=uw}
+  const aW=5,avgs=vals.map((_,i)=>{const s=Math.max(0,i-aW+1);return vals.slice(s,i+1).reduce((a,v)=>a+v,0)/(i-s+1)});
+  const avg=vals.reduce((a,v)=>a+v,0)/vals.length;
+  let gVals=opt.gustKey?pts.map(d=>d[opt.gustKey]):null;
+  const allV=[...vals,...avgs];if(gVals)allV.push(...gVals);
+  const spread=Math.max(...allV)-Math.min(...allV);const margin=Math.max(spread*.15,opt.minM||2);
+  const mn=Math.min(...allV)-margin,mx=Math.max(...allV)+margin;
+  const P={t:16,b:16,l:8,r:8},cw=W-P.l-P.r,ch=H-P.t-P.b;
+  const xS=v=>P.l+((v-mn)/(mx-mn))*cw,yS=t=>P.t+((now-t)/winMs)*ch;
+  ctx.fillStyle='#060b12';ctx.beginPath();ctx.roundRect(0,0,W,H,8);ctx.fill();
+  const rng=mx-mn;const step=opt.unwrap?(rng>40?10:rng>15?5:2):(rng>15?5:rng>6?2:1);
+  ctx.strokeStyle='#1a2d4260';ctx.lineWidth=.5;ctx.fillStyle='#6b829990';ctx.font='9px system-ui';ctx.textAlign='center';
+  for(let v=Math.ceil(mn/step)*step;v<=mx;v+=step){const x=xS(v);ctx.beginPath();ctx.moveTo(x,P.t);ctx.lineTo(x,H-P.b);ctx.stroke();const lbl=opt.unwrap?(((v%360)+360)%360).toFixed(0):v.toFixed(0);ctx.fillText(lbl,x,P.t-4)}
+  ctx.strokeStyle='#1a2d4240';ctx.fillStyle='#6b829980';ctx.font='9px system-ui';ctx.textAlign='left';
+  [0,30,60,90,120].forEach(m=>{const y=yS(now-m*60000);if(y>=P.t&&y<=H-P.b){ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();ctx.fillText(m===0?'NOW':'-'+m+'m',P.l+2,m===0?y+11:y-3)}});
+  ctx.strokeStyle='#ecc94b40';ctx.lineWidth=1.5;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(xS(avg),P.t);ctx.lineTo(xS(avg),H-P.b);ctx.stroke();ctx.setLineDash([]);
+  ctx.beginPath();for(let i=0;i<pts.length;i++){const x=xS(vals[i]),y=yS(pts[i].time.getTime());i?ctx.lineTo(x,y):ctx.moveTo(x,y)}
+  for(let i=pts.length-1;i>=0;i--)ctx.lineTo(xS(avgs[i]),yS(pts[i].time.getTime()));ctx.closePath();ctx.fillStyle=opt.fill;ctx.fill();
+  ctx.beginPath();ctx.strokeStyle='#ecc94b45';ctx.lineWidth=1.5;ctx.setLineDash([4,3]);
+  for(let i=0;i<pts.length;i++){const x=xS(avgs[i]),y=yS(pts[i].time.getTime());i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();ctx.setLineDash([]);
+  if(gVals){ctx.beginPath();ctx.strokeStyle='rgba(237,137,54,.4)';ctx.lineWidth=1;for(let i=0;i<pts.length;i++){const x=xS(gVals[i]),y=yS(pts[i].time.getTime());i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke()}
+  ctx.beginPath();ctx.strokeStyle=opt.color;ctx.lineWidth=2.5;
+  for(let i=0;i<pts.length;i++){const x=xS(vals[i]),y=yS(pts[i].time.getTime());i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();
+  const lx=xS(vals[vals.length-1]),ly=yS(pts[pts.length-1].time.getTime());
+  ctx.beginPath();ctx.arc(lx,ly,5,0,Math.PI*2);ctx.fillStyle=opt.color;ctx.fill();ctx.strokeStyle='#060b12';ctx.lineWidth=2;ctx.stroke();
+}
+
+// ═══════════════════════════════════
+// BAROMETRIC PRESSURE
+// ═══════════════════════════════════
+
+function drawBaroChart(cv,data){
+  if(!data||data.length<2)return;const{ctx,w:W,h:H}=setupCanvas(cv);
+  const all=data.map(d=>d.val),mn=Math.min(...all)-.5,mx=Math.max(...all)+.5;
+  const P={t:10,b:22,l:40,r:10},cw=W-P.l-P.r,ch=H-P.t-P.b;
+  const xS=i=>(i/(data.length-1))*cw+P.l,yS=v=>P.t+ch-((v-mn)/(mx-mn))*ch;
+  const rng=mx-mn,step=rng>10?5:rng>4?2:1;
+  ctx.strokeStyle='#1a2d42';ctx.lineWidth=.5;
+  for(let v=Math.ceil(mn/step)*step;v<=mx;v+=step){const y=yS(v);ctx.beginPath();ctx.moveTo(P.l,y);ctx.lineTo(W-P.r,y);ctx.stroke();ctx.fillStyle='#6b8299';ctx.font='10px system-ui';ctx.textAlign='right';ctx.fillText(v.toFixed(0),P.l-5,y+4)}
+  ctx.fillStyle='#6b8299';ctx.font='10px system-ui';ctx.textAlign='center';const le=Math.max(1,Math.floor(data.length/5));for(let i=0;i<data.length;i+=le)ctx.fillText(fmtHM(data[i].time),xS(i),H-4);
+  ctx.beginPath();ctx.moveTo(xS(0),yS(mn));for(let i=0;i<data.length;i++)ctx.lineTo(xS(i),yS(data[i].val));ctx.lineTo(xS(data.length-1),yS(mn));ctx.closePath();const g=ctx.createLinearGradient(0,P.t,0,H-P.b);g.addColorStop(0,'rgba(120,144,156,.25)');g.addColorStop(1,'rgba(120,144,156,.02)');ctx.fillStyle=g;ctx.fill();
+  ctx.beginPath();ctx.strokeStyle='#90a4ae';ctx.lineWidth=2;for(let i=0;i<data.length;i++){let x=xS(i),y=yS(data[i].val);i?ctx.lineTo(x,y):ctx.moveTo(x,y)}ctx.stroke();
+  const li=data.length-1;ctx.beginPath();ctx.arc(xS(li),yS(data[li].val),5,0,Math.PI*2);ctx.fillStyle='#90a4ae';ctx.fill();ctx.strokeStyle='#0c1520';ctx.lineWidth=2;ctx.stroke();
+}
+
+// ═══════════════════════════════════
+// RENDERERS
+// ═══════════════════════════════════
+
+function renderWind(h){
+  if(!h?.length)return;const l=h[h.length-1],s=l.speed.toFixed(1),g=l.gusts.toFixed(1);
+  $('ws').textContent=s;$('ws').style.color=wCSS(l.speed);$('wg').textContent=g<.1?'—':g;
+  $('wdir').innerHTML='<span style="display:inline-block;transform:rotate('+l.dir+'deg);margin-right:4px">↓</span>'+cardinal(l.dir);
+  $('wdeg').textContent=isNaN(l.dir)?'':'('+l.dir.toFixed(0)+'°)';
+  $('wtime').textContent=l.time?'NOAA 6-min data · Latest: '+fmtT(l.time):'';
+  $('gw').textContent=s;$('gw').style.color=wCSS(l.speed);$('gwd').textContent='kt '+cardinal(l.dir);
+  $('bgd-val').textContent=cardinal(l.dir)+' ('+l.dir.toFixed(0)+'°)';
+  $('bgs-val').textContent=s+' kt  G'+g;
+  drawSpeedH($('cvSpeed'),h);
+  drawBGV($('cvBGdir'),h,{key:'dir',unwrap:true,color:'#63b3ed',fill:'rgba(99,179,237,.12)',minM:5});
+  drawBGV($('cvBGspd'),h,{key:'speed',gustKey:'gusts',unwrap:false,color:'#48bb78',fill:'rgba(72,187,120,.12)',minM:2});
+}
+
+function renderPressure(p){
+  if(!p?.length)return;const l=p[p.length-1],nv=l.val,nt=l.time.getTime();
+  $('baro-now').textContent=nv.toFixed(1)+' mbar';
+  function vAt(ms){let c=p[0];for(const x of p)if(Math.abs(x.time.getTime()-(nt-ms))<Math.abs(c.time.getTime()-(nt-ms)))c=x;return c.val}
+  const d3=nv-vAt(3*36e5),d6=nv-vAt(6*36e5);
+  function fc(v){const s=v>=0?'+':'',c=Math.abs(v)<1?'#90a4ae':v>0?'#48bb78':'#ed8936';return'<span style="color:'+c+'">'+s+v.toFixed(1)+'</span>'}
+  $('baro-3h').innerHTML=fc(d3)+' <span style="font-size:11px;color:var(--mut)">mbar</span>';
+  $('baro-6h').innerHTML=fc(d6)+' <span style="font-size:11px;color:var(--mut)">mbar</span>';
+  let t='Steady';if(d3>1.5)t='Rising rapidly ↑';else if(d3>.5)t='Rising ↑';else if(d3<-1.5)t='Falling rapidly ↓';else if(d3<-.5)t='Falling ↓';
+  $('baro-sub').textContent=t+' · Robbins Reef';drawBaroChart($('cvBaro'),p);
+}
+
+function renderTides(t,sunData){
+  if(!t)return;const fc=fColor(t.flow),now=new Date();
+  $('tstat').textContent=t.status;$('tstat').style.color=fc;$('tdot').style.background=fc;$('tdot').style.boxShadow='0 0 8px '+fc;
+  $('gtd').textContent=t.status;$('gtd').style.color=fc;$('gtn').textContent=t.next?'Next: '+fmtT(t.next.time):'';
+
+  // Progress bar with Rule of Twelfths coloring
+  if(t.prev&&t.next){
+    const pct=Math.max(0,Math.min(100,((now-t.prev.time)/(t.next.time-t.prev.time))*100));
+    const range=Math.abs(parseFloat(t.next.height)-parseFloat(t.prev.height));
+    const cs=currentStrength(pct);
+    $('tbar').innerHTML='<div class="tide-bar-wrap"><div class="tide-bar-labels"><span>'+(t.prev.type==='H'?'▲ HIGH':'▼ LOW')+' '+fmtT(t.prev.time)+'</span><span>'+(t.next.type==='H'?'▲ HIGH':'▼ LOW')+' '+fmtT(t.next.time)+'</span></div><div class="tide-bar" style="background:'+twelfthsGradient()+';border:1px solid var(--bdr)"><div class="tide-bar-dot" style="left:'+pct+'%;background:var(--blue);box-shadow:0 0 12px rgba(99,179,237,.7)"></div></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:5px"><span style="font-size:10px;color:var(--mut)">'+mUntil(t.next.time,now)+' until '+(t.next.type==='H'?'high':'low')+' tide</span><span style="font-size:10px;font-weight:700;color:'+cs.color+'">Current: '+cs.label+'</span></div></div>';
+  }
+
+  // Events
+  let html='';[{l:'Previous',t:t.prev,hl:0},{l:'Next',t:t.next,hl:1},{l:'Following',t:t.following,hl:0}].forEach(({l,t:td,hl})=>{if(!td)return;const isH=td.type==='H',c=isH?'var(--blue)':'var(--orange)';html+='<div class="tide-ev'+(hl?' hl':'')+'" '+(hl?'style="border-color:'+c+'30"':'')+'><div style="display:flex;align-items:center;gap:10px"><div class="tide-icon" style="background:'+c+'18">'+(isH?'⬆':'⬇')+'</div><div><div style="font-size:13px;font-weight:700;color:'+c+'">'+(isH?'High':'Low')+' Tide</div><div style="font-size:10px;color:var(--mut)">'+l+'</div></div></div><div style="text-align:right"><div style="font-size:16px;font-weight:800;font-family:var(--mono)">'+fmtT(td.time)+'</div><div style="font-size:10px;color:var(--mut)">'+td.height+' ft'+(hl&&td.time>now?' · in '+mUntil(td.time,now):'')+'</div></div></div>'});
+  $('tevents').innerHTML=html;
+
+  if(t.allFuture?.length>2){$('tupcoming').classList.remove('hidden');$('tulist').innerHTML=t.allFuture.slice(2).map(u=>'<div class="upcoming-r"><span>'+(u.type==='H'?'↑ High':'↓ Low')+'</span><span style="font-family:var(--mono)">'+fmtT(u.time)+' ('+u.height+' ft)</span></div>').join('')}
+
+  // Sunset + tide at sunset
+  if(sunData?.sunset){
+    const ss=sunData.sunset;
+    // Find what tide phase is happening at sunset
+    let sunsetFlow='—';
+    if(t.allTides){
+      const tides=t.allTides;
+      let prevTide=null,nextTide=null;
+      for(let i=0;i<tides.length;i++){
+        if(tides[i].time<=ss)prevTide=tides[i];
+        if(tides[i].time>ss&&!nextTide)nextTide=tides[i];
+      }
+      if(prevTide&&nextTide){
+        if(nextTide.type==='H')sunsetFlow='Flooding (Rising)';
+        else sunsetFlow='Ebbing (Falling)';
+        const totalMs=nextTide.time-prevTide.time;
+        const elapsedMs=ss-prevTide.time;
+        const sunPct=Math.max(0,Math.min(100,(elapsedMs/totalMs)*100));
+        const sunCS=currentStrength(sunPct);
+        sunsetFlow+=' · '+sunCS.label;
+      }
+    }
+    $('sunset-info').innerHTML='<div class="sunset-row"><div style="font-size:24px">🌅</div><div style="flex:1"><div style="font-size:13px;font-weight:700;color:var(--yellow)">Sunset '+fmtT(ss)+'</div><div style="font-size:11px;color:var(--mut)">Tide at sunset: '+sunsetFlow+'</div></div></div>';
+  }
+}
+
+function renderWeather(wx,wt){
+  if(!wx?.current)return;const c=wx.current,tc=c.temperature_2m,tf=c2f(tc),code=c.weather_code;
+  $('wxi').textContent=wxI(code);$('wxt').textContent=tc.toFixed(1)+'°C / '+tf+'°F';$('wxd').textContent=wxD(code)+' · Feels '+c.apparent_temperature.toFixed(0)+'°C';
+  $('gt').textContent=tc.toFixed(0)+'°';$('gts').textContent=tf+'°F '+wxI(code);
+  const cape=wx.hourly?.cape?.[0]||0;let risk='None',sc='var(--green)';
+  if(cape>2000){risk='HIGH';sc='var(--red)'}else if(cape>1000){risk='Moderate';sc='var(--orange)'}else if(cape>500){risk='Low';sc='var(--yellow)'}
+  $('stormv').textContent=risk+(cape?' (CAPE: '+cape.toFixed(0)+')':'');$('stormv').style.color=sc;
+  if(wt)$('wtemp').textContent='🌊 Water: '+wt.f+'°F / '+wt.c+'°C';
+}
+
+function renderForecast(hr){
+  if(!hr?.minutely_15?.time)return;const m=hr.minutely_15,now=Date.now();let rows='',cnt=0;
+  for(let i=0;i<m.time.length;i+=4){const t=new Date(m.time[i]),diff=(t-now)/36e5;if(diff<-.5)continue;if(cnt>=10)break;
+    const isN=diff>=-.25&&diff<.75,w=m.wind_speed_10m?.[i],g=m.wind_gusts_10m?.[i],d=m.wind_direction_10m?.[i],tp=m.temperature_2m?.[i],pr=m.precipitation?.[i];
+    rows+='<div class="fc-row'+(isN?' now':'')+'"><span style="font-weight:'+(isN?700:400)+';color:'+(isN?'var(--accent)':'var(--mut)')+';font-size:11px">'+fmtT(t)+'</span><span style="color:'+(w!=null?wCSS(w):'var(--mut)')+';font-weight:700">'+(w!=null?w.toFixed(0):'—')+' kt</span><span style="color:var(--mut)">G'+(g!=null?g.toFixed(0):'—')+'</span><span>'+cardinal(d)+'</span><span style="color:var(--mut)">'+(d!=null?d.toFixed(0):'—')+'°</span><span>'+(tp!=null?tp.toFixed(0):'—')+'°</span><span style="text-align:center">'+(pr>0?'💧':'·')+'</span></div>';cnt++}
+  $('fcrows').innerHTML=rows||'<div style="padding:8px;color:var(--mut)">No HRRR data</div>';
+}
+
+// ═══════════════════════════════════
+// MAIN LOADER
+// ═══════════════════════════════════
+
+async function loadAll(){
+  $('ri').textContent='⟳';
+  try{
+    const[wh,wt,td,wx,hr,pr,ss]=await Promise.allSettled([
+      fetchWindHistory(),fetchWaterTemp(),fetchTides(),fetchWeather(),fetchHRRR(),fetchPressure(),fetchSunset()
+    ]);
+    if(wh.status==='fulfilled')renderWind(wh.value);
+    if(td.status==='fulfilled')renderTides(td.value,ss.status==='fulfilled'?ss.value:null);
+    if(wx.status==='fulfilled')renderWeather(wx.value,wt.status==='fulfilled'?wt.value:null);
+    if(hr.status==='fulfilled')renderForecast(hr.value);
+    if(pr.status==='fulfilled')renderPressure(pr.value);
+    const now=new Date();$('meta').textContent='Updated '+fmtT(now)+' · '+now.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'America/New_York'});
+  }catch(e){console.error(e)}$('ri').textContent='↻';
+}
+
+window.addEventListener('resize',()=>{if(window._wh)renderWind(window._wh);if(window._pr)renderPressure(window._pr)});
+const _fw=fetchWindHistory;fetchWindHistory=async()=>{const d=await _fw();window._wh=d;return d};
+const _fp=fetchPressure;fetchPressure=async()=>{const d=await _fp();window._pr=d;return d};
+loadAlerts();loadAll();setInterval(loadAll,600000);setInterval(loadAlerts,600000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){loadAlerts();loadAll();}});
+</script>
+</body>
+</html>

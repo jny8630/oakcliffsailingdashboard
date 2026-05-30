@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#080e18">
+<title>Manhattan Currents — NYHOPS</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+<style>
+:root{--bg:#080e18;--card:#131f2e;--card2:#0c1520;--bdr:#1a2d42;--bdr2:#2a4060;--txt:#f0f4f8;--dim:#c4d0de;--mut:#8fa3b8;--fnt:#6b8299;--accent:#4fd1c5;--blue:#63b3ed;--orange:#ed8936;--green:#48bb78;--red:#f56565;--yellow:#ecc94b;--mono:'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;background:linear-gradient(170deg,var(--bg),#0c1822 40%,var(--bg));color:var(--txt);max-width:440px;margin:0 auto;min-height:100vh;-webkit-font-smoothing:antialiased}
+.hdr{background:linear-gradient(135deg,#0e1f30,#162d46);padding:18px 16px 14px;border-bottom:1px solid var(--bdr)}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-start}
+.hdr-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.hdr-title{font-size:20px;font-weight:800;letter-spacing:-.03em;margin-top:2px}
+.hdr-meta{font-size:10px;color:var(--fnt);margin-top:6px}
+.back-btn{background:var(--bdr);border:1px solid var(--bdr2);border-radius:8px;color:var(--accent);padding:6px 12px;font-size:12px;font-weight:600;font-family:inherit;text-decoration:none;display:inline-block;white-space:nowrap}
+.cnt{padding:10px 10px 30px}
+.slot{margin-bottom:14px;border-radius:14px;overflow:hidden;border:1px solid var(--bdr);background:linear-gradient(145deg,var(--card),var(--card2));box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.slot.current{border-color:var(--accent);box-shadow:0 0 20px rgba(79,209,197,.12)}
+.slot-hdr{padding:11px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdr)}
+.slot-time{font-size:14px;font-weight:800;font-family:var(--mono)}
+.slot-badge{font-size:10px;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:4px;background:rgba(79,209,197,.15);color:var(--accent)}
+.slot-offset{font-size:11px;color:var(--mut)}
+.slot-frame{margin-left:auto;font-size:10px;color:var(--fnt);font-family:var(--mono)}
+.slot-img-wrap{overflow:hidden;height:400px;position:relative;background:var(--card2)}
+.slot-img{position:absolute;bottom:0;left:-15%;width:160%;display:block}
+.slot-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:12px;letter-spacing:.05em}
+.slot-error{display:flex;align-items:center;justify-content:center;padding:20px;color:var(--red);font-size:12px;text-align:center}
+.cb{padding:8px 14px 10px}
+.cb-bar{height:10px;border-radius:4px;background:linear-gradient(to right,#5500bb,#0055ff,#00ffcc,#ffdd00,#ff6600,#ff0000,#8b0000)}
+.cb-labels{display:flex;justify-content:space-between;margin-top:3px;font-size:9px;color:var(--mut);font-family:var(--mono)}
+.cb-title{font-size:9px;color:var(--fnt);text-align:right;margin-top:2px}
+.err-card{background:rgba(245,101,101,.08);border:1px solid rgba(245,101,101,.2);border-radius:12px;padding:20px;text-align:center;color:var(--red);font-size:13px;line-height:1.6;margin-top:10px}
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid var(--bdr2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin-right:8px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.footer{text-align:center;padding:14px 0;font-size:10px;color:var(--fnt);border-top:1px solid var(--bdr);margin-top:6px}
+.footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-row">
+    <div>
+      <div class="hdr-label">🌊 NYHOPS · Stevens Institute</div>
+      <div class="hdr-title">Manhattan Currents</div>
+      <div style="font-size:11px;color:var(--dim);font-weight:600;margin-top:2px">NYHOPS Images</div>
+    </div>
+    <a class="back-btn" href="index.html">← Dashboard</a>
+  </div>
+  <div class="hdr-meta" id="meta"><span class="spinner"></span>Finding latest model run…</div>
+</div>
+
+<div class="cnt" id="slots"></div>
+
+<div class="footer">
+  Data: <a href="https://hudson.dl.stevens-tech.edu/maritimeforecast/maincontrol.shtml" target="_blank">Stevens NYHOPS</a> — Surface currents, Manhattan Waters<br>
+  For planning only — not for navigation
+</div>
+
+<script>
+const BASE = 'https://hudson.dl.stevens-tech.edu/maritimeforecast/data/FORECAST/';
+const BASE_FRAME = 25;
+
+function yyyymmdd(d) {
+  return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function etNow() {
+  const s = new Date().toLocaleString('en-US', {timeZone: 'America/New_York'});
+  return new Date(s);
+}
+
+function fmtRange(baseDate, offsetHours) {
+  const base = new Date(baseDate);
+  base.setMinutes(0, 0, 0);
+  const start = new Date(base.getTime() + offsetHours * 3600000);
+  const end   = new Date(base.getTime() + (offsetHours + 1) * 3600000);
+  const fmt = d => d.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true});
+  return `${fmt(start)} – ${fmt(end)}`;
+}
+
+function imgUrl(dateStr, frame) {
+  const year = dateStr.slice(0, 4);
+  return `${BASE}${year}/${dateStr}/T${frame}manhspeedtop.png`;
+}
+
+function probeDate(dateStr, frame) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(dateStr);
+    img.onerror = () => reject();
+    img.src = imgUrl(dateStr, frame) + '?_=' + Date.now();
+  });
+}
+
+function renderSlots(dateStr, etDate, currentHour) {
+  const slots = document.getElementById('slots');
+  slots.innerHTML = '';
+
+  const now = new Date();
+  document.getElementById('meta').textContent =
+    'As of ' + now.toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York'}) +
+    ' ET · Model date: ' + dateStr.slice(0,4) + '-' + dateStr.slice(4,6) + '-' + dateStr.slice(6);
+
+  [0, 1, 2, 3, 4].forEach(offset => {
+    const frame = BASE_FRAME + currentHour + offset;
+    const label = fmtRange(etDate, offset);
+    const isNow = offset === 0;
+
+    const div = document.createElement('div');
+    div.className = 'slot' + (isNow ? ' current' : '');
+
+    div.innerHTML = `
+      <div class="slot-hdr">
+        <span class="slot-time" style="color:${isNow ? 'var(--accent)' : 'var(--txt)'}">${label}</span>
+        ${isNow
+          ? '<span class="slot-badge">NOW</span>'
+          : `<span class="slot-offset">+${offset}h</span>`}
+        <span class="slot-frame">T${frame}</span>
+      </div>
+      <div class="slot-img-wrap">
+        <div class="slot-loading" id="load-${offset}"><span class="spinner"></span>Loading…</div>
+        <img class="slot-img" id="img-${offset}" src="" alt="NYHOPS surface currents ${label}" style="display:none">
+        <div class="slot-error" id="err-${offset}" style="display:none">Image not available for this time slot</div>
+      </div>
+      <div class="cb">
+        <div class="cb-bar"></div>
+        <div class="cb-labels"><span>0</span><span>1</span><span>2</span><span>3</span><span>4 kt</span></div>
+        <div class="cb-title">Surface current speed</div>
+      </div>
+    `;
+    slots.appendChild(div);
+
+    const img = div.querySelector(`#img-${offset}`);
+    const loader = div.querySelector(`#load-${offset}`);
+    const err = div.querySelector(`#err-${offset}`);
+
+    img.onload = () => {
+      loader.style.display = 'none';
+      img.style.display = 'block';
+    };
+    img.onerror = () => {
+      loader.style.display = 'none';
+      err.style.display = 'flex';
+    };
+    img.src = imgUrl(dateStr, frame);
+  });
+}
+
+async function init() {
+  const etDate = etNow();
+  const currentHour = etDate.getHours();
+  const probeFrame = BASE_FRAME + currentHour;
+
+  const today = yyyymmdd(etDate);
+  const yesterday = yyyymmdd(new Date(etDate.getTime() - 86400000));
+
+  try {
+    const dateStr = await probeDate(today, probeFrame)
+      .catch(() => probeDate(yesterday, probeFrame));
+    renderSlots(dateStr, etDate, currentHour);
+  } catch {
+    document.getElementById('slots').innerHTML =
+      '<div class="err-card">Could not load NYHOPS model data.<br>The model may not have run yet today.<br>Try again in a few minutes.</div>';
+    document.getElementById('meta').textContent = 'Data unavailable';
+  }
+}
+
+init();
+</script>
+</body>
+</html>

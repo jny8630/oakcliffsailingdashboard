@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s *)",
+      "Bash(curl -sI *)",
+      "Bash(curl -I *)",
+      "Bash(curl -v *)",
+      "Bash(/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless *)"
+    ]
+  }
+}

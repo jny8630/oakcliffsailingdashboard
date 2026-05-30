@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#080e18">
+<title>Manhattan Currents — Chart Overlay</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{--bg:#080e18;--card:#131f2e;--card2:#0c1520;--bdr:#1a2d42;--bdr2:#2a4060;--txt:#f0f4f8;--dim:#c4d0de;--mut:#8fa3b8;--fnt:#6b8299;--accent:#4fd1c5;--blue:#63b3ed;--mono:'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);max-width:440px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+.hdr{background:linear-gradient(135deg,#0e1f30,#162d46);padding:18px 16px 14px;border-bottom:1px solid var(--bdr);flex-shrink:0}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.hdr-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.hdr-title{font-size:20px;font-weight:800;letter-spacing:-.03em;margin-top:2px}
+.hdr-meta{font-size:10px;color:var(--fnt);margin-top:6px}
+.hdr-links{display:flex;gap:6px;flex-shrink:0}
+.back-btn{background:var(--bdr);border:1px solid var(--bdr2);border-radius:8px;color:var(--accent);padding:6px 12px;font-size:12px;font-weight:600;font-family:inherit;text-decoration:none;display:inline-block;white-space:nowrap}
+.slots{display:flex;gap:5px;padding:10px 10px 6px;flex-shrink:0;overflow-x:auto}
+.slot-btn{flex:1;min-width:0;padding:7px 4px;background:var(--card);border:1px solid var(--bdr);border-radius:8px;color:var(--mut);font-size:10px;font-weight:600;font-family:var(--mono);cursor:pointer;text-align:center;line-height:1.3;white-space:nowrap}
+.slot-btn.active{background:rgba(79,209,197,.15);border-color:var(--accent);color:var(--accent)}
+.slot-btn:active{opacity:.7}
+.slot-now{font-size:8px;font-weight:700;letter-spacing:.06em;color:var(--accent);display:block;margin-bottom:1px}
+#map{flex:1;min-height:0}
+.cb-wrap{padding:8px 12px 10px;flex-shrink:0;border-top:1px solid var(--bdr);background:var(--bg)}
+.cb-bar{height:10px;border-radius:4px;background:linear-gradient(to right,#5500bb,#0055ff,#00ffcc,#ffdd00,#ff6600,#ff0000,#8b0000)}
+.cb-labels{display:flex;justify-content:space-between;margin-top:3px;font-size:9px;color:var(--mut);font-family:var(--mono)}
+.cb-title{font-size:9px;color:var(--fnt);text-align:right;margin-top:2px}
+.footer{text-align:center;padding:8px;font-size:9px;color:var(--fnt);border-top:1px solid var(--bdr);flex-shrink:0;line-height:1.6}
+.footer a{color:var(--accent);text-decoration:none}
+.spinner{display:inline-block;width:10px;height:10px;border:1.5px solid var(--bdr2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin-right:5px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.buoy-dot{display:flex;align-items:center;justify-content:center;border-radius:50%;border:1.5px solid rgba(0,0,0,.5);font-size:9px;font-weight:800;color:#000;font-family:'SF Mono','Cascadia Code',monospace;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+/* Override Leaflet attribution to match dark theme */
+.leaflet-control-attribution{background:rgba(8,14,24,.8)!important;color:var(--fnt)!important;font-size:9px!important}
+.leaflet-control-attribution a{color:var(--accent)!important}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-row">
+    <div>
+      <div class="hdr-label">🌊 NYHOPS · Stevens Institute</div>
+      <div class="hdr-title">Manhattan Currents</div>
+      <div style="font-size:11px;color:var(--dim);font-weight:600;margin-top:2px">NYHOPS Chart Overlay</div>
+    </div>
+    <a class="back-btn" href="index.html">← Dashboard</a>
+  </div>
+  <div class="hdr-meta" id="meta"><span class="spinner"></span>Finding latest model run…</div>
+</div>
+
+<div class="slots" id="slots"></div>
+
+<div id="map"></div>
+
+<div class="cb-wrap">
+  <div class="cb-bar"></div>
+  <div class="cb-labels"><span>0</span><span>1</span><span>2</span><span>3</span><span>4 kt</span></div>
+  <div class="cb-title">Surface current speed (knots)</div>
+</div>
+
+<div class="footer">
+  <a href="https://hudson.dl.stevens-tech.edu/maritimeforecast/maincontrol.shtml" target="_blank">Stevens NYHOPS</a> ·
+  <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a> ·
+  <a href="https://www.openseamap.org" target="_blank">OpenSeaMap</a><br>
+  For planning only — not for navigation
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const BASE_FRAME = 25;
+const BOUNDS = [[40.632, -74.102], [40.785, -73.943]];
+const BASE_URL = 'https://hudson.dl.stevens-tech.edu/maritimeforecast/data/FORECAST/';
+
+function yyyymmdd(d) {
+  return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function etNow() {
+  return new Date(new Date().toLocaleString('en-US', {timeZone:'America/New_York'}));
+}
+
+function fmtRange(baseDate, offsetHours) {
+  const base = new Date(baseDate);
+  base.setMinutes(0, 0, 0);
+  const start = new Date(base.getTime() + offsetHours * 3600000);
+  const end   = new Date(base.getTime() + (offsetHours + 1) * 3600000);
+  const fmt = d => d.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true});
+  return `${fmt(start)}\n${fmt(end)}`;
+}
+
+function imgUrl(dateStr, frame) {
+  const year = dateStr.slice(0, 4);
+  return `${BASE_URL}${year}/${dateStr}/T${frame}manhspeedtop.png`;
+}
+
+function probeDate(dateStr, frame) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(dateStr);
+    img.onerror = () => reject();
+    img.src = imgUrl(dateStr, frame) + '?_=' + Date.now();
+  });
+}
+
+// Leaflet map
+const map = L.map('map', {
+  center: [40.672, -74.034],
+  zoom: 13,
+  minZoom: 10,
+  maxZoom: 15,
+  zoomControl: true
+});
+
+// Custom pane for NYHOPS — sits below OpenSeaMap (overlayPane z=400)
+map.createPane('nyhopsPane');
+map.getPane('nyhopsPane').style.zIndex = 350;
+
+// OSM base
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  maxZoom: 19
+}).addTo(map);
+
+// OpenSeaMap nautical overlay (buoys, depth marks, channels)
+L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
+  attribution: '© <a href="https://www.openseamap.org">OpenSeaMap</a>',
+  maxZoom: 18,
+  opacity: 1
+}).addTo(map);
+
+// Uncomment to use NOAA RNC chart tiles instead of OSM:
+// L.tileLayer('https://tileservice.charts.noaa.gov/tiles/50000_1/{z}/{x}/{y}.png', {
+//   attribution: 'NOAA RNC',
+//   maxZoom: 15
+// }).addTo(map);
+
+// Buoys — OSM/USCG verified coordinates
+const BUOYS = [
+  {name:'G1',  lat:40.67970, lon:-74.02875, color:'#48bb78'},
+  {name:'G5',  lat:40.64571, lon:-74.04124, color:'#48bb78'},
+  {name:'G7',  lat:40.65467, lon:-74.03187, color:'#48bb78'},
+  {name:'G9',  lat:40.66357, lon:-74.02244, color:'#48bb78'},
+  {name:'G11', lat:40.67216, lon:-74.02401, color:'#48bb78'},
+  {name:'33',  lat:40.68392, lon:-74.04020, color:'#48bb78'},
+  {name:'31',  lat:40.66503, lon:-74.05259, color:'#48bb78'},
+  {name:'Y-A', lat:40.66661, lon:-74.02943, color:'#ecc94b'},
+  {name:'Y-C', lat:40.65095, lon:-74.04014, color:'#ecc94b'},
+  {name:'R26', lat:40.63427, lon:-74.05054, color:'#f56565'},
+  {name:'R28', lat:40.64411, lon:-74.05389, color:'#f56565'},
+  {name:'R30', lat:40.65547, lon:-74.05051, color:'#f56565'},
+  {name:'R32', lat:40.67164, lon:-74.04026, color:'#f56565'},
+];
+
+BUOYS.forEach(b => {
+  const label = b.name.replace(/^[GRY]-?/, '');
+  const size = label.length > 2 ? 26 : 22;
+  L.marker([b.lat, b.lon], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div class="buoy-dot" style="background:${b.color};width:${size}px;height:${size}px">${label}</div>`,
+      iconSize: [size, size],
+      iconAnchor: [size/2, size/2]
+    })
+  }).addTo(map);
+});
+
+let currentOverlay = null;
+let activeBtn = null;
+
+function showSlot(dateStr, frame, btn) {
+  if (currentOverlay) map.removeLayer(currentOverlay);
+  currentOverlay = L.imageOverlay(imgUrl(dateStr, frame), BOUNDS, {
+    opacity: 1,
+    interactive: false,
+    pane: 'nyhopsPane'
+  }).addTo(map);
+  if (activeBtn) activeBtn.classList.remove('active');
+  btn.classList.add('active');
+  activeBtn = btn;
+}
+
+async function init() {
+  const etDate = etNow();
+  const currentHour = etDate.getHours();
+  const probeFrame = BASE_FRAME + currentHour;
+  const today = yyyymmdd(etDate);
+  const yesterday = yyyymmdd(new Date(etDate.getTime() - 86400000));
+
+  let dateStr;
+  try {
+    dateStr = await probeDate(today, probeFrame)
+      .catch(() => probeDate(yesterday, probeFrame));
+  } catch {
+    document.getElementById('meta').textContent = 'Could not load NYHOPS data — try again later';
+    return;
+  }
+
+  const now = new Date();
+  document.getElementById('meta').textContent =
+    'As of ' + now.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true, timeZone:'America/New_York'}) +
+    ' ET · Model date: ' + dateStr.slice(0,4) + '-' + dateStr.slice(4,6) + '-' + dateStr.slice(6);
+
+  // Build time-slot buttons
+  const slotsEl = document.getElementById('slots');
+  const buttons = [];
+  [0,1,2,3,4,5].forEach(offset => {
+    const frame = BASE_FRAME + currentHour + offset;
+    const range = fmtRange(etDate, offset);
+    const [line1, line2] = range.split('\n');
+    const btn = document.createElement('button');
+    btn.className = 'slot-btn';
+    btn.innerHTML = (offset === 0 ? '<span class="slot-now">NOW</span>' : '') +
+      `<span>${line1}</span><br><span>${line2}</span>`;
+    btn.onclick = () => showSlot(dateStr, frame, btn);
+    slotsEl.appendChild(btn);
+    buttons.push({btn, frame});
+  });
+
+  // Auto-select first slot
+  showSlot(dateStr, buttons[0].frame, buttons[0].btn);
+}
+
+init();
+</script>
+</body>
+</html>

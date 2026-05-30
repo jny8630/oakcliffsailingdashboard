@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#080e18">
+<title>Feedback — NYC Harbor</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<style>
+:root{--bg:#080e18;--card:#131f2e;--card2:#0c1520;--bdr:#1a2d42;--bdr2:#2a4060;--txt:#f0f4f8;--dim:#c4d0de;--mut:#8fa3b8;--fnt:#6b8299;--accent:#4fd1c5;--blue:#63b3ed;--orange:#ed8936;--green:#48bb78;--red:#f56565;--yellow:#ecc94b;--purple:#9f7aea;--mono:'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;background:linear-gradient(170deg,var(--bg),#0c1822 40%,var(--bg));color:var(--txt);max-width:440px;margin:0 auto;min-height:100vh;-webkit-font-smoothing:antialiased}
+.hdr{background:linear-gradient(135deg,#0e1f30,#162d46);padding:18px 16px 14px;border-bottom:1px solid var(--bdr)}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.hdr-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.hdr-title{font-size:20px;font-weight:800;letter-spacing:-.03em;margin-top:2px}
+.hdr-meta{font-size:10px;color:var(--fnt);margin-top:4px}
+.back-btn{background:var(--bdr);border:1px solid var(--bdr2);border-radius:8px;color:var(--accent);padding:6px 12px;font-size:12px;font-weight:600;font-family:inherit;text-decoration:none;display:inline-block;white-space:nowrap}
+.back-btn:active{opacity:.7}
+.cnt{padding:10px 10px 30px}
+.card{background:linear-gradient(145deg,var(--card),var(--card2));border:1px solid var(--bdr);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.card-bar{height:2px}
+.card-body{padding:14px 16px 16px}
+.intro-text{font-size:13px;color:var(--dim);line-height:1.7;margin-bottom:10px}
+.intro-list{list-style:none;padding:0}
+.intro-list li{font-size:12px;color:var(--mut);padding:4px 0;padding-left:16px;position:relative}
+.intro-list li::before{content:'→';position:absolute;left:0;color:var(--accent)}
+.form-wrap{position:relative;min-height:480px}
+.form-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--mut);font-size:12px}
+.spinner{width:20px;height:20px;border:2px solid var(--bdr2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.setup-notice{background:rgba(79,209,197,.06);border:1px solid rgba(79,209,197,.2);border-radius:10px;padding:16px;text-align:center}
+.setup-notice-title{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px}
+.setup-notice-body{font-size:11px;color:var(--mut);line-height:1.6}
+.fallback-link{display:block;margin-top:14px;padding:10px;background:transparent;border:1px solid var(--bdr2);border-radius:8px;color:var(--accent);font-size:12px;font-weight:600;text-align:center;text-decoration:none}
+.fallback-link:active{opacity:.7}
+.footer{text-align:center;padding:14px 0;font-size:10px;color:var(--fnt);border-top:1px solid var(--bdr);margin-top:6px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-row">
+    <div>
+      <div class="hdr-label">⛵ NYC Harbor · Submissions</div>
+      <div class="hdr-title">Suggest a Change</div>
+      <div class="hdr-meta">Bug reports · feature requests · what's working</div>
+    </div>
+  </div>
+  <div style="margin-top:12px">
+    <a class="back-btn" href="index.html">← Dashboard</a>
+  </div>
+</div>
+
+<div class="cnt">
+
+  <!-- Intro -->
+  <div class="card">
+    <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--accent),transparent)"></div>
+    <div class="card-body">
+      <p class="intro-text">Help improve the dashboard. Jens reviews all submissions and works with Claude Code to implement approved changes.</p>
+      <ul class="intro-list">
+        <li>Describe what you'd change or what's not working</li>
+        <li>Attach a screenshot or photo from your camera roll (optional)</li>
+        <li>Leave your name if you'd like follow-up (optional)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="card">
+    <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--blue),transparent)"></div>
+    <div class="card-body" style="padding:14px">
+      <div class="form-wrap" id="form-wrap">
+        <!-- Populated by JS below -->
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Submissions reviewed by Jens · Changes implemented via GitHub pull request</div>
+</div>
+
+<script>
+// ─── CONFIG ──────────────────────────────────────────────
+// Replace this URL with your Airtable embed URL after running FEEDBACK_SETUP.md
+// Format: https://airtable.com/embed/shrXXXXXXXXXXXXXX
+const AIRTABLE_EMBED_URL = 'PASTE_YOUR_EMBED_URL_HERE';
+// ─────────────────────────────────────────────────────────
+
+const wrap = document.getElementById('form-wrap');
+const configured = AIRTABLE_EMBED_URL && AIRTABLE_EMBED_URL !== 'PASTE_YOUR_EMBED_URL_HERE';
+
+if (configured) {
+  // Show loading spinner, then reveal iframe once it loads
+  wrap.innerHTML = `
+    <div class="form-loading" id="form-loading">
+      <div class="spinner"></div>
+      <span>Loading form…</span>
+    </div>
+    <iframe
+      id="airtable-iframe"
+      src="${AIRTABLE_EMBED_URL}"
+      frameborder="0"
+      onmousewheel=""
+      style="width:100%;height:600px;display:none;background:transparent;border-radius:8px"
+      title="NYC Harbor feedback form"
+    ></iframe>
+  `;
+
+  const iframe = document.getElementById('airtable-iframe');
+  const loader = document.getElementById('form-loading');
+
+  iframe.addEventListener('load', () => {
+    loader.style.display = 'none';
+    iframe.style.display = 'block';
+  });
+
+  // Fallback: hide spinner and show iframe after 5s regardless
+  setTimeout(() => {
+    loader.style.display = 'none';
+    iframe.style.display = 'block';
+  }, 5000);
+
+} else {
+  // Not yet configured — show setup notice
+  wrap.innerHTML = `
+    <div class="setup-notice">
+      <div class="setup-notice-title">Form not yet configured</div>
+      <div class="setup-notice-body">
+        Follow <strong>FEEDBACK_SETUP.md</strong> to create your Airtable account and paste the embed URL into this file.<br><br>
+        In the meantime, you can submit feedback by email.
+      </div>
+      <a class="fallback-link" href="mailto:jens.nachtigal@gmail.com?subject=NYC Harbor Dashboard Feedback">
+        Email feedback instead →
+      </a>
+    </div>
+  `;
+}
+</script>
+</body>
+</html>
