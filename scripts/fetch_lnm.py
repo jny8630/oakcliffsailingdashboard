@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-fetch_lnm.py — Download current USCG D1 LNM PDF, extract NYC Harbor notices
+fetch_lnm.py — Download current USCG D1 LNM PDF, extract Oyster Bay / Long Island Sound notices
 using keyword filtering and regex parsing (no LLM or external API required).
 
 Usage:
@@ -26,59 +26,58 @@ LNM_BASE          = "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/"
 MAX_WEEKS_BACK    = 4
 SUMMARY_MAX_CHARS = 400
 
-# Section header terms that identify NYC-relevant pages
+# Section header terms that identify Oyster Bay / Long Island Sound relevant pages
 NYC_SECTION_TERMS = [
-    "ambrose",
-    "buttermilk channel",
-    "kill van kull",
-    "arthur kill",
-    "raritan bay",
-    "great kills",
-    "sheepshead",
-    "shooters island",
-    "east river",
-    "main channel - hudson",
+    "oyster bay",
+    "long island sound",
+    "western long island sound",
+    "cold spring harbor",
+    "huntington bay",
+    "manhasset bay",
+    "hempstead harbor",
+    "centre island",
+    "lloyd neck",
+    "cold spring",
+    "port jefferson",
+    "northport bay",
+    "nissequogue",
+    "stony brook",
+    "smithtown bay",
+    "sector long island sound",
     "sector new york",
-    "beach channel",
-    "jamaica bay",
-    "gravesend",
-    "upper new york bay", "lower new york bay",
-    "upper bay", "lower bay",
-    "new york harbor", "new york bay",
-    "governors island",
-    "verrazzano", "verrazano",
-    "newark bay",
-    "sandy hook",
-    "staten island",
-    "kill van kull",
-    "raritan river",
+    "east river",
+    "throgs neck",
+    "city island",
 ]
 
 # Body text terms for secondary page check (kept narrow to reduce false positives)
 NYC_BODY_TERMS = [
-    "ambrose channel",
-    "verrazzano narrows", "verrazano narrows",
-    "narrows bridge",
-    "buttermilk channel",
-    "governors island",
-    "kill van kull",
-    "great kills harbor",
-    "sheepshead bay",
-    "robbins reef light",
-    "morris canal basin",
-    "upper new york harbor",
-    "lower new york harbor",
+    "oyster bay harbor",
+    "long island sound",
+    "cold spring harbor",
+    "huntington bay",
+    "lloyd harbor",
+    "centre island",
+    "hempstead harbor",
+    "manhasset bay",
+    "throgs neck",
+    "port jefferson harbor",
 ]
 
-# Terms that identify clearly non-NYC locations to exclude after filtering
+# Terms that identify clearly non-relevant locations to exclude after filtering
 NON_NYC_EXCLUSIONS = [
     "boston", "cape ann", "eastern point yacht", "broad sound",
     "long ledge", "egg rock", "block island", "new england",
     "southeastern new england", "cape cod", "nantucket",
-    "maine", "rhode island", "connecticut", "massachusetts",
-    "vermont", "new hampshire", "long island sound", "gardiners bay",
+    "maine", "rhode island", "massachusetts",
+    "vermont", "new hampshire", "gardiners bay",
     "buzzards bay", "vineyard sound", "narragansett",
     "apponaganset", "mount hope", "mount desert",
+    "ambrose channel", "kill van kull", "arthur kill",
+    "raritan bay", "sheepshead bay", "jamaica bay",
+    "great kills", "buttermilk channel", "governors island",
+    "verrazzano", "verrazano", "upper bay", "lower bay",
+    "newark bay", "staten island",
 ]
 
 # Lines/pages to strip as boilerplate
@@ -169,15 +168,15 @@ def get_section_header(page_text):
         return s
     return ""
 
-def is_nyc_relevant(header):
+def is_ob_relevant(header):
     h = header.lower()
     return any(term in h for term in NYC_SECTION_TERMS)
 
-def page_contains_nyc_content(page_text):
+def page_contains_ob_content(page_text):
     body = page_text.lower()
     return any(t in body for t in NYC_BODY_TERMS)
 
-def is_non_nyc_location(location):
+def is_non_ob_location(location):
     ll = location.lower()
     return any(t in ll for t in NON_NYC_EXCLUSIONS)
 
@@ -302,10 +301,10 @@ def parse_page_notices(page_text):
     Parse one filtered page into notice dicts, each with a location field.
     """
     raw_header = get_section_header(page_text)
-    location   = extract_location(raw_header) if raw_header else "NYC Harbor"
+    location   = extract_location(raw_header) if raw_header else "Oyster Bay"
 
-    # Drop pages whose resolved location is clearly outside NYC Harbor
-    if is_non_nyc_location(location):
+    # Drop pages whose resolved location is clearly outside Oyster Bay / LIS area
+    if is_non_ob_location(location):
         return []
 
     cleaned = clean_page(page_text)
@@ -337,7 +336,7 @@ def parse_page_notices(page_text):
             seen.add(key)
             unique.append(n)
 
-    # Drop notices whose summary references clearly non-NYC locations
+    # Drop notices whose summary references clearly non-relevant locations
     unique = [
         n for n in unique
         if not any(t in n["summary"].lower() for t in NON_NYC_EXCLUSIONS)
@@ -379,7 +378,7 @@ def main():
     relevant_count = 0
     for page in pages:
         header = get_section_header(page)
-        if not is_nyc_relevant(header) and not page_contains_nyc_content(page):
+        if not is_ob_relevant(header) and not page_contains_ob_content(page):
             continue
         relevant_count += 1
         all_notices.extend(parse_page_notices(page))

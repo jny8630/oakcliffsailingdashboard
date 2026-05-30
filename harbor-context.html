@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080e18">
-<title>Pressure — NYC Harbor</title>
+<title>Pressure — Oyster Bay</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
@@ -63,7 +63,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 <div class="hdr">
   <div class="hdr-row">
     <div>
-      <div class="hdr-label">⛵ NYC Harbor · Multi-Station</div>
+      <div class="hdr-label">⛵ Oyster Bay · Multi-Station</div>
       <div class="hdr-title">Pressure</div>
       <div class="hdr-meta" id="hdr-updated">Loading…</div>
     </div>
@@ -125,7 +125,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
   <div id="stations-grid" style="display:none"></div>
 
   <div class="footer">
-    CO-OPS: Sandy Hook · Robbins Reef · The Battery &nbsp;·&nbsp; ASOS: JFK · LaGuardia · Newark · Central Park<br>
+    CO-OPS: Kings Point · Oyster Bay &nbsp;·&nbsp; ASOS: JFK · Islip · White Plains · Bridgeport CT<br>
     Heuristic reference only — not a forecast, not for navigation · Refreshes every 10 min
   </div>
 </div>
@@ -145,14 +145,13 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const STATIONS = [
-  // Geographic order S→N (coastal), then inland — drives pressure chart display order
-  {id:'8531680', src:'coops', group:'coastal', name:'Sandy Hook',   short:'S.Hook',  lat:40.4668, lon:-74.0099, note:'Entrance'},
-  {id:'8530973', src:'coops', group:'coastal', name:'Robbins Reef', short:'Rob.Reef',lat:40.6566, lon:-74.0649, note:'S. Harbor'},
-  {id:'8518750', src:'coops', group:'coastal', name:'The Battery',  short:'Battery', lat:40.7006, lon:-74.0142, note:'N. Harbor'},
-  {id:'KJFK',    src:'nws',   group:'coastal', name:'JFK Airport',  short:'JFK',     lat:40.6413, lon:-73.7781, note:'S. Queens'},
-  {id:'KLGA',    src:'nws',   group:'coastal', name:'LaGuardia',    short:'LGA',     lat:40.7769, lon:-73.8740, note:'N. Queens'},
-  {id:'KEWR',    src:'nws',   group:'inland',  name:'Newark',       short:'Newark',  lat:40.6895, lon:-74.1745, note:'NJ Urban'},
-  {id:'KNYC',    src:'nws',   group:'inland',  name:'Central Park', short:'Cen.Pk',  lat:40.7789, lon:-73.9692, note:'Manhattan'},
+  // Geographic order: LIS coastal, then inland LI, then CT — sea breeze gradient
+  {id:'8516945', src:'coops', group:'coastal', name:'Kings Point',   short:'K.Point', lat:40.8110, lon:-73.7650, note:'W. LIS'},
+  {id:'8516201', src:'coops', group:'coastal', name:'Oyster Bay',    short:'Oys.Bay', lat:40.8732, lon:-73.5332, note:'Oyster Bay'},
+  {id:'KJFK',    src:'nws',   group:'coastal', name:'JFK Airport',   short:'JFK',     lat:40.6413, lon:-73.7781, note:'S. Shore'},
+  {id:'KISP',    src:'nws',   group:'inland',  name:'Islip (LI)',    short:'Islip',   lat:40.7952, lon:-73.1003, note:'Inland LI'},
+  {id:'KHPN',    src:'nws',   group:'inland',  name:'White Plains',  short:'W.Plains',lat:41.0670, lon:-73.7076, note:'Inland NY'},
+  {id:'KBDR',    src:'nws',   group:'inland',  name:'Bridgeport CT', short:'Bridgept',lat:41.1635, lon:-73.1262, note:'CT across LIS'},
 ];
 
 const $ = id => document.getElementById(id);
@@ -195,7 +194,7 @@ async function fetchCOOPSStation(station) {
 
 async function fetchNWSStation(station) {
   const r = await fetch(`https://api.weather.gov/stations/${station.id}/observations/latest`, {
-    headers:{'User-Agent':'(NYC Harbor Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}
+    headers:{'User-Agent':'(Oak Cliff Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}
   });
   if (!r.ok) throw new Error(`NWS ${r.status} for ${station.id}`);
   const d = await r.json();

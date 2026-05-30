@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080e18">
-<title>LNM Digest — NYC Harbor</title>
+<title>LNM Digest — Oyster Bay</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
 <style>
 :root{--bg:#080e18;--card:#131f2e;--card2:#0c1520;--bdr:#1a2d42;--bdr2:#2a4060;--txt:#f0f4f8;--dim:#c4d0de;--mut:#8fa3b8;--fnt:#6b8299;--accent:#4fd1c5;--blue:#63b3ed;--orange:#ed8936;--green:#48bb78;--red:#f56565;--yellow:#ecc94b;--mono:'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',monospace}
@@ -67,7 +67,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 <div class="hdr">
   <div class="hdr-row">
     <div>
-      <div class="hdr-label">USCG District 1 · NYC Harbor</div>
+      <div class="hdr-label">USCG District 1 · Oyster Bay</div>
       <div class="hdr-title">Notice to Mariners</div>
     </div>
     <a class="back-btn" href="index.html">← Dashboard</a>
@@ -80,7 +80,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
   <div class="card">
     <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--orange),transparent)"></div>
     <div class="card-hdr">
-      <div class="card-t">⚠ Active Notices — NYC Harbor</div>
+      <div class="card-t">⚠ Active Notices — Oyster Bay</div>
     </div>
     <div class="card-body" id="notices-body">
       <div class="state-box">
@@ -171,7 +171,7 @@ function renderNotices(data) {
   }
 
   if (!notices.length) {
-    body.innerHTML = gapHtml + '<div class="state-box" style="color:var(--green)">✓ No relevant notices found for NYC Harbor.</div>';
+    body.innerHTML = gapHtml + '<div class="state-box" style="color:var(--green)">✓ No relevant notices found for Oyster Bay / Long Island Sound.</div>';
     renderPdfCard(data);
     return;
   }

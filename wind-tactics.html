@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080e18">
-<title>Wind Context — NYC Harbor</title>
+<title>Wind Context — Oyster Bay</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
 <style>
 :root{--bg:#080e18;--card:#131f2e;--card2:#0c1520;--bdr:#1a2d42;--bdr2:#2a4060;--txt:#f0f4f8;--dim:#c4d0de;--mut:#8fa3b8;--fnt:#6b8299;--accent:#4fd1c5;--blue:#63b3ed;--orange:#ed8936;--green:#48bb78;--red:#f56565;--yellow:#ecc94b;--purple:#9f7aea;--mono:'SF Mono','Cascadia Code','JetBrains Mono','Fira Code',monospace}
@@ -56,7 +56,7 @@ canvas{display:block;border-radius:6px}
 <div class="hdr">
   <div class="hdr-row">
     <div>
-      <div class="hdr-label">⛵ NYC Harbor · Robbins Reef</div>
+      <div class="hdr-label">⛵ Oyster Bay · Kings Point</div>
       <div class="hdr-title">Wind Context</div>
       <div class="hdr-meta" id="hdr-updated">Loading…</div>
     </div>
@@ -86,7 +86,7 @@ canvas{display:block;border-radius:6px}
         <div class="stat-val" id="obs-gst">—</div>
       </div>
     </div>
-    <div style="font-size:9px;color:var(--fnt);text-align:center;padding:0 14px 10px" id="obs-meta">Robbins Reef · NOAA 6-min avg</div>
+    <div style="font-size:9px;color:var(--fnt);text-align:center;padding:0 14px 10px" id="obs-meta">Kings Point · NOAA 6-min avg</div>
   </div>
 
   <div class="sec-lbl">Recent Behavior</div>
@@ -148,14 +148,14 @@ canvas{display:block;border-radius:6px}
     </div>
   </div>
 
-  <div class="footer">Wind: NOAA Robbins Reef (8530973) · Gradient: Open-Meteo 850 hPa<br>Heuristic reference only — not a forecast, not for navigation · Thresholds are local rules of thumb · Refreshes every 10 min</div>
+  <div class="footer">Wind: NOAA Kings Point (8516945) · Gradient: Open-Meteo 850 hPa<br>Heuristic reference only — not a forecast, not for navigation · Thresholds are local rules of thumb · Refreshes every 10 min</div>
 </div>
 
 <script>
-const LAT = 40.6797, LON = -74.0288, ROB = '8530973';
+const LAT = 40.8732, LON = -73.5332, ROB = '8516945';
 const $ = id => document.getElementById(id);
 
-// Wind shear: Robbins Reef anemometer at 54 ft (16.46 m), J/80 mast 37 ft (11.28 m)
+// Wind shear: Kings Point anemometer at 54 ft (16.46 m), J/80 mast 37 ft (11.28 m)
 // Power law: v(z) = v_ref * (z/z_ref)^0.11  (open water exponent)
 const ROB_ANE_M = 16.46, MAST_J80_M = 11.28, MAST_M24_M = 8.81, SHEAR_ALPHA = 0.11;
 const MAST_FACTOR_J80 = Math.pow(MAST_J80_M / ROB_ANE_M, SHEAR_ALPHA); // ≈ 0.959
@@ -425,7 +425,7 @@ function renderEveningCharts() {
   $('obs-spd').style.color=wCSS(last.speed);
   $('obs-gst').textContent=last.gusts.toFixed(1)+' kt';
   $('obs-gst').style.color=wCSS(last.gusts);
-  $('obs-meta').textContent='Robbins Reef · Latest '+fmtT(last.time)+' · NOAA 6-min avg';
+  $('obs-meta').textContent='Kings Point · Latest '+fmtT(last.time)+' · NOAA 6-min avg';
   drawTacticsV($('cvDir'),windEvening,{key:'dir',unwrap:true,color:'#63b3ed',fill:'rgba(99,179,237,.12)',minM:5});
   drawTacticsV($('cvSpd'),windEvening,{key:'speed',gustKey:'gusts',unwrap:false,color:'#48bb78',fill:'rgba(72,187,120,.12)',minM:2});
 }
@@ -453,7 +453,7 @@ function renderShiftCard(data, gData, bodyId) {
       <div class="stat-box"><div class="stat-label">Osc Period</div><div class="stat-val">${a.period?a.period+' min':'—'}</div></div>
       <div class="stat-box"><div class="stat-label">Port / Stbd Lifts</div><div class="stat-val">${a.lifts.port}% · ${a.lifts.starboard}%</div></div>
     </div>
-    <div class="stat-meta">n = ${a.n} observations · 6-min intervals · Robbins Reef</div>`;
+    <div class="stat-meta">n = ${a.n} observations · 6-min intervals · Kings Point</div>`;
 }
 
 function renderContextCard(windData, gData) {
@@ -463,7 +463,7 @@ function renderContextCard(windData, gData) {
   if(!surface&&!grad.spd){el.innerHTML='<div class="state-box">Context unavailable — both data sources offline</div>';return;}
   if(!grad.spd){
     const mastSpd=surface?(surface.speed*MAST_FACTOR_J80).toFixed(1):'—';
-    el.innerHTML=`<div style="padding:12px 0"><div class="compare-col"><div class="stat-label">Robbins Reef<br><span style="font-size:9px;opacity:.7">54 ft sensor</span></div><div class="compare-val" style="color:${surface?wCSS(surface.speed):'var(--mut)'}">${surface?surface.speed.toFixed(1):'—'} kt</div><div class="stat-sub">${surface?cardinal(surface.dir)+' '+surface.dir.toFixed(0)+'°':'—'}</div></div><div style="margin-top:10px;font-size:11px;color:var(--fnt)">Gradient data unavailable — classification deferred</div></div>`;
+    el.innerHTML=`<div style="padding:12px 0"><div class="compare-col"><div class="stat-label">Kings Point<br><span style="font-size:9px;opacity:.7">54 ft sensor</span></div><div class="compare-val" style="color:${surface?wCSS(surface.speed):'var(--mut)'}">${surface?surface.speed.toFixed(1):'—'} kt</div><div class="stat-sub">${surface?cardinal(surface.dir)+' '+surface.dir.toFixed(0)+'°':'—'}</div></div><div style="margin-top:10px;font-size:11px;color:var(--fnt)">Gradient data unavailable — classification deferred</div></div>`;
     return;
   }
   if(!surface){
@@ -516,7 +516,7 @@ function renderContextCard(windData, gData) {
         <div class="stat-sub" style="font-size:9px">est.</div>
       </div>
       <div class="compare-col" style="padding:7px 4px">
-        <div class="stat-label" style="font-size:8px">Robbins Reef<br><span style="opacity:.7">54 ft sensor</span></div>
+        <div class="stat-label" style="font-size:8px">Kings Point<br><span style="opacity:.7">54 ft sensor</span></div>
         <div style="font-size:14px;font-weight:800;font-family:var(--mono);margin:3px 0 2px;color:${wCSS(surface.speed)}">${surface.speed.toFixed(1)} kt</div>
         <div class="stat-sub" style="font-size:9px">${cardinal(surface.dir)} ${surface.dir.toFixed(0)}°</div>
       </div>
@@ -528,7 +528,7 @@ function renderContextCard(windData, gData) {
     </div>
     <div class="diff-row" style="align-items:flex-start;flex-direction:column;gap:4px">
       <span style="font-size:11px">Dir differential: <strong style="color:${dColor}">${dirDiff.toFixed(0)}°</strong> <span style="color:var(--fnt);font-size:10px">surface vs. aloft · ${diffRange} (rule of thumb: &lt;20° low, 20–40° moderate, &gt;40° high)</span></span>
-      <span style="font-size:11px">Speed ratio: <strong style="color:${rColor}">${(ratio*100).toFixed(0)}%</strong> <span style="color:var(--fnt);font-size:10px">Robbins Reef ÷ aloft · ${ratioRange} (rule of thumb: &gt;60% strong, &lt;40% weak) · J/80 mast: ${(mastRatio*100).toFixed(0)}%</span></span>
+      <span style="font-size:11px">Speed ratio: <strong style="color:${rColor}">${(ratio*100).toFixed(0)}%</strong> <span style="color:var(--fnt);font-size:10px">Kings Point ÷ aloft · ${ratioRange} (rule of thumb: &gt;60% strong, &lt;40% weak) · J/80 mast: ${(mastRatio*100).toFixed(0)}%</span></span>
     </div>
     <div style="font-size:9px;color:var(--fnt);margin-top:8px;line-height:1.5">Mast estimates: power law α=0.11 from 54 ft sensor · Open-Meteo 850 hPa ${gradTs}</div>
     <div style="font-size:9px;color:var(--fnt);font-style:italic;margin-top:4px;line-height:1.5">Interpretive view — single aloft reference, one surface sensor. Use as sailing context, not a verdict.</div>`;

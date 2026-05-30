@@ -79,7 +79,7 @@ titles = [re.sub(r'<[^>]+>', '', t).strip() for t in raw_titles]
 expected_titles_fragments = [
     "This Week's LNM",
     "Active Notices",
-    "NYC Harbor Filter",
+    "Oyster Bay Filter",
     "NAVCEN Interactive Map",
     "Resources",
 ]
@@ -113,7 +113,7 @@ def card_state(card_title_frag):
     return ('collapsed' if collapsed else 'open'), caret_char
 
 open_cards   = ["This Week's LNM", "Active Notices"]
-closed_cards = ["NYC Harbor Filter", "NAVCEN Interactive Map", "Resources"]
+closed_cards = ["Oyster Bay Filter", "NAVCEN Interactive Map", "Resources"]
 
 for frag in open_cards:
     state, caret = card_state(frag)

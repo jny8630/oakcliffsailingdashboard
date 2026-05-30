@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080e18">
-<title>NYC Harbor Sailing</title>
+<title>Oyster Bay Sailing</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
 <link rel="manifest" href="manifest.json">
 <style>
@@ -84,7 +84,7 @@ canvas{display:block;border-radius:8px}
 
 <div class="hdr">
   <div class="hdr-row">
-    <div><div class="hdr-label">⛵ NYC Harbor</div><div class="hdr-title">Sailing Conditions</div></div>
+    <div><div class="hdr-label">⛵ Oyster Bay</div><div class="hdr-title">Sailing Conditions</div></div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
       <button class="btn" onclick="loadAll()"><span id="ri">↻</span> Refresh</button>
       <div class="hdr-meta" id="meta" style="text-align:right">Loading…</div>
@@ -105,14 +105,13 @@ canvas{display:block;border-radius:8px}
   <div class="glance">
     <div class="gl"><div class="gl-l">WIND</div><div class="gl-v" id="gw" style="color:var(--green)">—</div><div class="gl-s" id="gwd"></div></div>
     <div class="gl"><div class="gl-l">TEMP</div><div class="gl-v" id="gt">—</div><div class="gl-s" id="gts"></div></div>
-    <div class="gl"><div class="gl-l">TIDE</div><div id="gtd" style="font-size:13px;font-weight:800;color:var(--blue);margin-top:4px">—</div><div class="gl-s" id="gtn"></div></div>
   </div>
 
   <div id="alert-banner"></div>
 
   <!-- WIND -->
   <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--green),transparent)"></div>
-    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🌬️</span> Wind — Robbins Reef</div><span class="caret">▼</span></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🌬️</span> Wind — Kings Point</div><span class="caret">▼</span></div>
     <div class="card-body">
       <div class="wind-grid">
         <div><div class="bv" id="ws" style="color:var(--green)">—</div><div class="bv-l">kt sustained</div></div>
@@ -125,8 +124,8 @@ canvas{display:block;border-radius:8px}
         <div class="chart-legend"><span style="color:#48bb78">━</span> Sustained &nbsp;<span style="color:#ed893680">━</span> Gusts &nbsp;<span style="color:#ecc94b60">┈</span> Avg</div>
       </div>
       <div style="font-size:10px;color:var(--fnt);text-align:right;margin-top:6px" id="wtime"></div>
-      <a class="tbtn" href="https://forecast.weather.gov/MapClick.php?x=258&y=69&site=phi&zmx=1&zmy=1&map_x=257.5&map_y=69.13333129882812" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-bottom:6px;background:rgba(245,101,101,.08);border-color:rgba(245,101,101,.3);color:var(--red)">⚠ NWS Harbor Forecast &amp; Warnings ↗</a>
-      <a class="tbtn" href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8530973" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">View Full NOAA Station ↗</a>
+      <a class="tbtn" href="https://marine.weather.gov/MapClick.php?zoneid=ANZ335" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none;margin-bottom:6px;background:rgba(245,101,101,.08);border-color:rgba(245,101,101,.3);color:var(--red)">⚠ NWS Marine Forecast ANZ335 ↗</a>
+      <a class="tbtn" href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8516945" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">View Full NOAA Station ↗</a>
     </div>
   </div>
 
@@ -148,21 +147,6 @@ canvas{display:block;border-radius:8px}
     </div>
   </div>
 
-  <!-- TIDES -->
-  <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--blue),transparent)"></div>
-    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🌊</span> Tides — The Battery</div><span class="caret">▼</span></div>
-    <div class="card-body">
-      <div class="status-pill" style="background:rgba(99,179,237,.08);border:1px solid rgba(99,179,237,.15)">
-        <span class="dot" id="tdot" style="background:var(--blue);box-shadow:0 0 8px rgba(99,179,237,.5)"></span>
-        <span id="tstat" style="font-size:14px;font-weight:700;color:var(--blue)">Loading…</span>
-      </div>
-      <div id="tbar"></div>
-      <div id="tevents"></div>
-      <div id="tupcoming" class="upcoming hidden"><div class="upcoming-l">UPCOMING</div><div id="tulist"></div></div>
-      <div id="sunset-info"></div>
-    </div>
-  </div>
-
   <!-- BAROMETRIC PRESSURE -->
   <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,#78909c,transparent)"></div>
     <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🔵</span> Barometric Pressure</div><span class="caret">▼</span></div>
@@ -180,7 +164,7 @@ canvas{display:block;border-radius:8px}
         <div class="chart-title">PRESSURE — LAST 6 HOURS (mbar)</div>
         <canvas id="cvBaro" style="width:100%;height:130px"></canvas>
       </div>
-      <div style="font-size:9px;color:var(--fnt);text-align:right;margin-top:4px">NOAA Robbins Reef · 6-min data</div>
+      <div style="font-size:9px;color:var(--fnt);text-align:right;margin-top:4px">NOAA Kings Point · 6-min data</div>
     </div>
   </div>
 
@@ -206,15 +190,15 @@ canvas{display:block;border-radius:8px}
 
   <!-- RADAR -->
   <div class="card"><div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--red),transparent)"></div>
-    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>📡</span> Radar — NYC Harbor</div><span class="caret">▼</span></div>
+    <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>📡</span> Radar — Oyster Bay</div><span class="caret">▼</span></div>
     <div class="card-body">
       <button id="radar-btn" class="tbtn" style="font-size:13px;font-weight:600" onclick="toggleRadar()">Show Live Radar Map (Windy)</button>
       <div id="radar-wrap" class="hidden" style="margin-top:10px">
         <div id="radar-ct"></div>
         <div style="font-size:10px;color:var(--fnt);margin-top:4px;text-align:center">Windy.com interactive radar</div>
         <div class="radar-links">
-          <a href="https://www.windy.com/40.689/-74.045?radar,40.689,-74.045,10" target="_blank">Windy ↗</a>
-          <a href="https://www.accuweather.com/en/us/new-york/10007/weather-radar/349727" target="_blank">AccuWeather ↗</a>
+          <a href="https://www.windy.com/40.873/-73.533?radar,40.873,-73.533,10" target="_blank">Windy ↗</a>
+          <a href="https://radar.weather.gov/station/KOKX/standard" target="_blank">NWS KOKX ↗</a>
         </div>
       </div>
     </div>
@@ -225,13 +209,13 @@ canvas{display:block;border-radius:8px}
     <div class="card-hdr" onclick="toggle(this)"><div class="card-t"><span>🔗</span> Quick Links</div><span class="caret">▲</span></div>
     <div class="card-body collapsed">
       <div class="links-grid">
-        <a href="https://www.windy.com/40.689/-74.045?wind,40.689,-74.045,10" target="_blank" class="link-c"><div class="link-n">Windy HRRR</div><div class="link-d">Open in app</div></a>
-        <a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8518750" target="_blank" class="link-c"><div class="link-n">NOAA Tides</div><div class="link-d">The Battery</div></a>
-        <a href="https://www.usharbors.com/harbor/new-york/new-york-the-battery-ny/tides/" target="_blank" class="link-c"><div class="link-n">Battery Tides</div><div class="link-d">US Harbors</div></a>
-        <a href="https://tidesandcurrents.noaa.gov/noaacurrents/Predictions?id=NYH1905_6&d=2025-02-09&r=1&tz=LST%2FLDT" target="_blank" class="link-c"><div class="link-n">Currents Map</div><div class="link-d">NYC Harbor</div></a>
-        <a href="https://forecast.weather.gov/MapClick.php?x=258&y=69&site=phi&zmx=1&zmy=1&map_x=257.5&map_y=69.13333129882812" target="_blank" class="link-c"><div class="link-n">NOAA Marine</div><div class="link-d">Harbor forecast</div></a>
-        <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8530973" target="_blank" class="link-c"><div class="link-n">Robbins Reef</div><div class="link-d">NOAA station</div></a>
-        <a href="nyhops.html" class="link-c"><div class="link-n">NYHOPS Currents</div><div class="link-d">Manhattan Waters</div></a>
+        <a href="https://www.windy.com/40.873/-73.533?wind,40.873,-73.533,10" target="_blank" class="link-c"><div class="link-n">Windy HRRR</div><div class="link-d">Open in app</div></a>
+        <a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8516201" target="_blank" class="link-c"><div class="link-n">NOAA Tides</div><div class="link-d">Oyster Bay</div></a>
+        <a href="https://www.usharbors.com/harbor/new-york/oyster-bay-ny/tides/" target="_blank" class="link-c"><div class="link-n">Oyster Bay Tides</div><div class="link-d">US Harbors</div></a>
+        <a href="https://tidesandcurrents.noaa.gov/map/index.html?type=TidalCurrents&region=NY" target="_blank" class="link-c"><div class="link-n">Currents Map</div><div class="link-d">LIS / NY Area</div></a>
+        <a href="https://marine.weather.gov/MapClick.php?zoneid=ANZ335" target="_blank" class="link-c"><div class="link-n">NOAA Marine</div><div class="link-d">ANZ335 forecast</div></a>
+        <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8516945" target="_blank" class="link-c"><div class="link-n">Kings Point</div><div class="link-d">NOAA station</div></a>
+        <a href="nyhops.html" class="link-c"><div class="link-n">NYHOPS Currents</div><div class="link-d">Long Island Sound</div></a>
         <a href="lnm.html" class="link-c"><div class="link-n">LNM Digest</div><div class="link-d">Notice to Mariners</div></a>
       </div>
     </div>
@@ -241,8 +225,8 @@ canvas{display:block;border-radius:8px}
 </div>
 
 <script>
-const ST={BAT:'8518750',ROB:'8530973'};
-const NYC={lat:40.6892,lon:-74.0445};
+const ST={OYS:'8516201',KPT:'8516945'};
+const OB={lat:40.8732,lon:-73.5332};
 const $=id=>document.getElementById(id);
 const cardinal=d=>{if(d==null||isNaN(d))return'—';return['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'][Math.round(d/22.5)%16]};
 const fmtT=d=>d?d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/New_York'}):'—';
@@ -275,8 +259,8 @@ function toggleEl(id){$(id).classList.toggle('hidden')}
 
 async function loadAlerts() {
   try {
-    const r = await fetch('https://api.weather.gov/alerts/active?zone=ANZ338',
-      {headers:{'User-Agent':'(NYC Harbor Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}});
+    const r = await fetch('https://api.weather.gov/alerts/active?zone=ANZ335',
+      {headers:{'User-Agent':'(Oak Cliff Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}});
     if (!r.ok) return;
     const d = await r.json();
     const now = new Date();
@@ -294,7 +278,7 @@ async function loadAlerts() {
       const evtLC = evt.toLowerCase();
       const cls = evtLC.includes('warning') ? 'alert-warning' : evtLC.includes('watch') ? 'alert-watch' : 'alert-advisory';
       const col = evtLC.includes('warning') ? 'var(--red)' : evtLC.includes('watch') ? 'var(--orange)' : 'var(--yellow)';
-      const alertUrl = 'https://forecast.weather.gov/MapClick.php?x=258&y=69&site=phi&zmx=1&zmy=1&map_x=257.5&map_y=69.13333129882812';
+      const alertUrl = 'https://marine.weather.gov/MapClick.php?zoneid=ANZ335';
       return `<a href="${alertUrl}" target="_blank" rel="noopener" style="display:block;text-decoration:none"><div class="alert-banner ${cls}"><div class="alert-event" style="color:${col}">⚠ ${evt} ↗</div>${hl?`<div class="alert-hl">${hl}</div>`:''}${exp?`<div class="alert-exp">${exp}</div>`:''}</div></a>`;
     }).join('');
   } catch(e) { console.warn('Alerts:', e); }
@@ -305,7 +289,7 @@ function fmtAlertTime(iso) {
   } catch(_) { return ''; }
 }
 let radarOn=false;
-function toggleRadar(){radarOn=!radarOn;$('radar-wrap').classList.toggle('hidden',!radarOn);$('radar-btn').textContent=radarOn?'Hide Radar Map':'Show Live Radar Map (Windy)';if(radarOn&&!$('radar-ct').innerHTML)$('radar-ct').innerHTML='<iframe src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricWind=kt&metricTemp=°C&zoom=10&overlay=radar&product=radar&level=surface&lat=40.67&lon=-74.04" style="width:100%;height:340px;border:1px solid var(--bdr);border-radius:8px" frameborder="0"></iframe>'}
+function toggleRadar(){radarOn=!radarOn;$('radar-wrap').classList.toggle('hidden',!radarOn);$('radar-btn').textContent=radarOn?'Hide Radar Map':'Show Live Radar Map (Windy)';if(radarOn&&!$('radar-ct').innerHTML)$('radar-ct').innerHTML='<iframe src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricWind=kt&metricTemp=°C&zoom=10&overlay=radar&product=radar&level=surface&lat=40.87&lon=-73.53" style="width:100%;height:340px;border:1px solid var(--bdr);border-radius:8px" frameborder="0"></iframe>'}
 
 // ═══════════════════════════════════
 // FETCHERS
@@ -316,7 +300,7 @@ async function getJ(u){const r=await fetch(u);if(!r.ok)throw new Error(r.status)
 async function fetchWindHistory(){
   const now=new Date(),start=new Date(now.getTime()-2*3600000);
   const bd=fmt2(start)+' '+String(start.getHours()).padStart(2,'0')+':'+String(start.getMinutes()).padStart(2,'0');
-  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${encodeURIComponent(bd)}&range=3&station=${ST.ROB}&product=wind&units=english&time_zone=lst_ldt&format=json`);
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${encodeURIComponent(bd)}&range=3&station=${ST.KPT}&product=wind&units=english&time_zone=lst_ldt&format=json`);
   if(!d.data?.length)return null;
   return d.data.map(w=>({time:parseNOAA(w.t),speed:parseFloat(w.s),gusts:parseFloat(w.g),dir:parseFloat(w.d)})).filter(w=>w.time);
 }
@@ -324,19 +308,19 @@ async function fetchWindHistory(){
 async function fetchPressure(){
   const now=new Date(),start=new Date(now.getTime()-6.5*3600000);
   const bd=fmt2(start)+' '+String(start.getHours()).padStart(2,'0')+':'+String(start.getMinutes()).padStart(2,'0');
-  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${encodeURIComponent(bd)}&range=7&station=${ST.ROB}&product=air_pressure&units=metric&time_zone=lst_ldt&format=json`);
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${encodeURIComponent(bd)}&range=7&station=${ST.KPT}&product=air_pressure&units=metric&time_zone=lst_ldt&format=json`);
   if(!d.data?.length)return null;
   return d.data.map(p=>({time:parseNOAA(p.t),val:parseFloat(p.v)})).filter(p=>p.time&&!isNaN(p.val));
 }
 
 async function fetchWaterTemp(){
-  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=${ST.BAT}&product=water_temperature&datum=MLLW&units=english&time_zone=lst_ldt&format=json`);
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=${ST.OYS}&product=water_temperature&datum=MLLW&units=english&time_zone=lst_ldt&format=json`);
   if(!d.data?.[0])return null;const f=parseFloat(d.data[0].v);return{f:f.toFixed(1),c:((f-32)*5/9).toFixed(1)};
 }
 
 async function fetchTides(){
   const now=new Date(),s=new Date(now),e=new Date(now);s.setDate(s.getDate()-1);e.setDate(e.getDate()+2);
-  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${fmt2(s)}&end_date=${fmt2(e)}&station=${ST.BAT}&product=predictions&datum=MLLW&units=english&time_zone=lst_ldt&format=json&interval=hilo`);
+  const d=await getJ(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${fmt2(s)}&end_date=${fmt2(e)}&station=${ST.OYS}&product=predictions&datum=MLLW&units=english&time_zone=lst_ldt&format=json&interval=hilo`);
   if(!d.predictions?.length)return null;
   const tides=d.predictions.filter(p=>p.type).map(p=>({time:parseNOAA(p.t),type:p.type.toUpperCase(),height:parseFloat(p.v).toFixed(1)})).filter(t=>t.time).sort((a,b)=>a.time-b.time);
   const past=tides.filter(t=>t.time<now),future=tides.filter(t=>t.time>=now);
@@ -351,13 +335,13 @@ async function fetchTides(){
 }
 
 async function fetchSunset(){
-  const d=await getJ(`https://api.open-meteo.com/v1/forecast?latitude=${NYC.lat}&longitude=${NYC.lon}&daily=sunrise,sunset&timezone=America/New_York&forecast_days=1`);
+  const d=await getJ(`https://api.open-meteo.com/v1/forecast?latitude=${OB.lat}&longitude=${OB.lon}&daily=sunrise,sunset&timezone=America/New_York&forecast_days=1`);
   if(!d.daily?.sunset?.[0])return null;
   return{sunset:new Date(d.daily.sunset[0]),sunrise:new Date(d.daily.sunrise[0])};
 }
 
-async function fetchWeather(){return await getJ(`https://api.open-meteo.com/v1/gfs?latitude=${NYC.lat}&longitude=${NYC.lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m&hourly=cape&wind_speed_unit=kn&temperature_unit=celsius&timezone=America/New_York&forecast_hours=3&past_hours=0`)}
-async function fetchHRRR(){return await getJ(`https://api.open-meteo.com/v1/gfs?latitude=${NYC.lat}&longitude=${NYC.lon}&minutely_15=temperature_2m,precipitation,wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=kn&temperature_unit=celsius&timezone=America/New_York&forecast_minutely_15=72&past_minutely_15=4`)}
+async function fetchWeather(){return await getJ(`https://api.open-meteo.com/v1/gfs?latitude=${OB.lat}&longitude=${OB.lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m&hourly=cape&wind_speed_unit=kn&temperature_unit=celsius&timezone=America/New_York&forecast_hours=3&past_hours=0`)}
+async function fetchHRRR(){return await getJ(`https://api.open-meteo.com/v1/gfs?latitude=${OB.lat}&longitude=${OB.lon}&minutely_15=temperature_2m,precipitation,wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=kn&temperature_unit=celsius&timezone=America/New_York&forecast_minutely_15=72&past_minutely_15=4`)}
 
 // ═══════════════════════════════════
 // RULE OF TWELFTHS
@@ -503,7 +487,7 @@ function renderPressure(p){
   $('baro-3h').innerHTML=fc(d3)+' <span style="font-size:11px;color:var(--mut)">mbar</span>';
   $('baro-6h').innerHTML=fc(d6)+' <span style="font-size:11px;color:var(--mut)">mbar</span>';
   let t='Steady';if(d3>1.5)t='Rising rapidly ↑';else if(d3>.5)t='Rising ↑';else if(d3<-1.5)t='Falling rapidly ↓';else if(d3<-.5)t='Falling ↓';
-  $('baro-sub').textContent=t+' · Robbins Reef';drawBaroChart($('cvBaro'),p);
+  $('baro-sub').textContent=t+' · Kings Point';drawBaroChart($('cvBaro'),p);
 }
 
 function renderTides(t,sunData){
@@ -576,11 +560,10 @@ function renderForecast(hr){
 async function loadAll(){
   $('ri').textContent='⟳';
   try{
-    const[wh,wt,td,wx,hr,pr,ss]=await Promise.allSettled([
-      fetchWindHistory(),fetchWaterTemp(),fetchTides(),fetchWeather(),fetchHRRR(),fetchPressure(),fetchSunset()
+    const[wh,wt,wx,hr,pr]=await Promise.allSettled([
+      fetchWindHistory(),fetchWaterTemp(),fetchWeather(),fetchHRRR(),fetchPressure()
     ]);
     if(wh.status==='fulfilled')renderWind(wh.value);
-    if(td.status==='fulfilled')renderTides(td.value,ss.status==='fulfilled'?ss.value:null);
     if(wx.status==='fulfilled')renderWeather(wx.value,wt.status==='fulfilled'?wt.value:null);
     if(hr.status==='fulfilled')renderForecast(hr.value);
     if(pr.status==='fulfilled')renderPressure(pr.value);

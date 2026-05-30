@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080e18">
-<title>Manhattan Currents — Chart Overlay</title>
+<title>LIS Currents — Chart Overlay</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
@@ -46,7 +46,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
   <div class="hdr-row">
     <div>
       <div class="hdr-label">🌊 NYHOPS · Stevens Institute</div>
-      <div class="hdr-title">Manhattan Currents</div>
+      <div class="hdr-title">LIS Currents</div>
       <div style="font-size:11px;color:var(--dim);font-weight:600;margin-top:2px">NYHOPS Chart Overlay</div>
     </div>
     <a class="back-btn" href="index.html">← Dashboard</a>
@@ -74,6 +74,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const BASE_FRAME = 25;
+// TODO: verify NYHOPS LIS coverage bounds — Manhattan Waters bounds kept as placeholder
 const BOUNDS = [[40.632, -74.102], [40.785, -73.943]];
 const BASE_URL = 'https://hudson.dl.stevens-tech.edu/maritimeforecast/data/FORECAST/';
 
@@ -110,7 +111,7 @@ function probeDate(dateStr, frame) {
 
 // Leaflet map
 const map = L.map('map', {
-  center: [40.672, -74.034],
+  center: [40.873, -73.533],
   zoom: 13,
   minZoom: 10,
   maxZoom: 15,
@@ -142,19 +143,8 @@ L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
 
 // Buoys — OSM/USCG verified coordinates
 const BUOYS = [
-  {name:'G1',  lat:40.67970, lon:-74.02875, color:'#48bb78'},
-  {name:'G5',  lat:40.64571, lon:-74.04124, color:'#48bb78'},
-  {name:'G7',  lat:40.65467, lon:-74.03187, color:'#48bb78'},
-  {name:'G9',  lat:40.66357, lon:-74.02244, color:'#48bb78'},
-  {name:'G11', lat:40.67216, lon:-74.02401, color:'#48bb78'},
-  {name:'33',  lat:40.68392, lon:-74.04020, color:'#48bb78'},
-  {name:'31',  lat:40.66503, lon:-74.05259, color:'#48bb78'},
-  {name:'Y-A', lat:40.66661, lon:-74.02943, color:'#ecc94b'},
-  {name:'Y-C', lat:40.65095, lon:-74.04014, color:'#ecc94b'},
-  {name:'R26', lat:40.63427, lon:-74.05054, color:'#f56565'},
-  {name:'R28', lat:40.64411, lon:-74.05389, color:'#f56565'},
-  {name:'R30', lat:40.65547, lon:-74.05051, color:'#f56565'},
-  {name:'R32', lat:40.67164, lon:-74.04026, color:'#f56565'},
+  // TODO: add verified Oyster Bay / LIS buoy coordinates
+  {name:'OB',  lat:40.87320, lon:-73.53320, color:'#4fd1c5'},
 ];
 
 BUOYS.forEach(b => {

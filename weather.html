@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#080e18">
-<title>Weather Forecast — NYC Harbor</title>
+<title>Weather Forecast — Oyster Bay</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌦</text></svg>">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
@@ -92,7 +92,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 <div class="hdr">
   <div class="hdr-row">
     <div>
-      <div class="hdr-label">⛵ NYC Harbor · G1 Buoy</div>
+      <div class="hdr-label">⛵ Oyster Bay · Kings Point</div>
       <div class="hdr-title">Weather Forecast</div>
       <div class="hdr-meta" id="hdr-updated">Loading…</div>
     </div>
@@ -139,7 +139,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
   <div class="card" id="marine-ext-card" style="display:none">
     <div class="card-bar" style="background:linear-gradient(90deg,transparent,var(--bdr2),transparent)"></div>
     <div class="card-hdr" onclick="toggleMarineExt()" style="cursor:pointer;user-select:none">
-      <div class="card-t" style="color:var(--mut)">⚓ ANZ338 Extended Outlook</div>
+      <div class="card-t" style="color:var(--mut)">⚓ ANZ335 Extended Outlook</div>
       <span id="marine-ext-caret" style="color:var(--mut);font-size:12px">▶ Show</span>
     </div>
     <div class="card-body" id="marine-ext-body" style="display:none"></div>
@@ -176,8 +176,8 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const LAT = 40.6797;
-const LON = -74.0288;
+const LAT = 40.8732;
+const LON = -73.5332;
 
 let forecastData = null;
 let selectedHours = 4;
@@ -332,7 +332,7 @@ function setSelector(h) {
   renderForecast();
 }
 
-// ── NWS MARINE ZONE FORECAST (ANZ338) ───────────────────────────────────────
+// ── NWS MARINE ZONE FORECAST (ANZ335) ───────────────────────────────────────
 
 async function loadMarineForecast() {
   try {
@@ -351,9 +351,9 @@ async function loadMarineForecast() {
     const text = prodD.productText || '';
     const issued = prodD.issuanceTime || '';
 
-    // Step 3: extract ANZ338 section
-    const sectionMatch = text.match(/ANZ338[\s\S]*?(?=\nANZ\d{3}|\n\$\$)/);
-    if (!sectionMatch) throw new Error('ANZ338 not found in CWF');
+    // Step 3: extract ANZ335 section
+    const sectionMatch = text.match(/ANZ335[\s\S]*?(?=\nANZ\d{3}|\n\$\$)/);
+    if (!sectionMatch) throw new Error('ANZ335 not found in CWF');
     const section = sectionMatch[0];
 
     // Step 4: extract watch/warning/advisory headlines (appear before first .PERIOD block)
@@ -445,7 +445,7 @@ function renderMarineForecast() {
   ).join('');
   let nearHtml = watchHtml + buildRows(nearPeriods);
   if (note) nearHtml += `<div class="marine-note">${note}</div>`;
-  nearHtml += `<div class="marine-meta">Source: NWS OKX · New York Harbor (ANZ338) · Issued twice daily</div>`;
+  nearHtml += `<div class="marine-meta">Source: NWS OKX · Long Island Sound West (ANZ335) · Issued twice daily</div>`;
   $('marine-near-body').innerHTML = nearHtml;
 
   if (extPeriods.length > 0) {
@@ -467,7 +467,7 @@ function toggleMarineExt() {
 const RADAR_MAX_ZOOM = 7;
 
 function initMap() {
-  radarMap = L.map('radar-map', {center: [40.72, -74.05], zoom: 7, zoomControl: true});
+  radarMap = L.map('radar-map', {center: [40.87, -73.53], zoom: 7, zoomControl: true});
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
     maxZoom: 18
@@ -557,8 +557,8 @@ function toggleRadar() {
 
 async function loadAlerts() {
   try {
-    const r = await fetch('https://api.weather.gov/alerts/active?zone=ANZ338',
-      {headers:{'User-Agent':'(NYC Harbor Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}});
+    const r = await fetch('https://api.weather.gov/alerts/active?zone=ANZ335',
+      {headers:{'User-Agent':'(Oak Cliff Sailing Dashboard, jens.nachtigal@gmail.com)','Accept':'application/geo+json'}});
     if (!r.ok) return;
     const d = await r.json();
     const now = new Date();
