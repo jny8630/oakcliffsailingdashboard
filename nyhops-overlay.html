@@ -74,8 +74,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const BASE_FRAME = 25;
-// TODO: verify NYHOPS LIS coverage bounds — Manhattan Waters bounds kept as placeholder
-const BOUNDS = [[40.632, -74.102], [40.785, -73.943]];
+const BOUNDS = [[40.765, -73.847], [40.896, -73.638]];
 const BASE_URL = 'https://hudson.dl.stevens-tech.edu/maritimeforecast/data/FORECAST/';
 
 function yyyymmdd(d) {
@@ -97,7 +96,7 @@ function fmtRange(baseDate, offsetHours) {
 
 function imgUrl(dateStr, frame) {
   const year = dateStr.slice(0, 4);
-  return `${BASE_URL}${year}/${dateStr}/T${frame}manhspeedtop.png`;
+  return `${BASE_URL}${year}/${dateStr}/T${frame}wlisspeedtop.png`;
 }
 
 function probeDate(dateStr, frame) {

@@ -26,8 +26,8 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 .slot-badge{font-size:10px;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:4px;background:rgba(79,209,197,.15);color:var(--accent)}
 .slot-offset{font-size:11px;color:var(--mut)}
 .slot-frame{margin-left:auto;font-size:10px;color:var(--fnt);font-family:var(--mono)}
-.slot-img-wrap{overflow:hidden;height:400px;position:relative;background:var(--card2)}
-.slot-img{position:absolute;bottom:0;left:-15%;width:160%;display:block}
+.slot-img-wrap{overflow:hidden;position:relative;background:var(--card2);min-height:80px}
+.slot-img{width:100%;display:block}
 .slot-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:12px;letter-spacing:.05em}
 .slot-error{display:flex;align-items:center;justify-content:center;padding:20px;color:var(--red);font-size:12px;text-align:center}
 .cb{padding:8px 14px 10px}
@@ -86,7 +86,7 @@ function fmtRange(baseDate, offsetHours) {
 
 function imgUrl(dateStr, frame) {
   const year = dateStr.slice(0, 4);
-  return `${BASE}${year}/${dateStr}/T${frame}manhspeedtop.png`;
+  return `${BASE}${year}/${dateStr}/T${frame}wlisspeedtop.png`;
 }
 
 function probeDate(dateStr, frame) {
