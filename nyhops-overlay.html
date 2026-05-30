@@ -74,7 +74,7 @@ body{font-family:-apple-system,'SF Pro Display','Segoe UI',system-ui,sans-serif;
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const BASE_FRAME = 25;
-const BOUNDS = [[40.765, -73.847], [40.896, -73.638]];
+const BOUNDS = [[40.35, -73.85], [41.45, -71.5]];
 const BASE_URL = 'https://hudson.dl.stevens-tech.edu/maritimeforecast/data/FORECAST/';
 
 function yyyymmdd(d) {
@@ -96,7 +96,7 @@ function fmtRange(baseDate, offsetHours) {
 
 function imgUrl(dateStr, frame) {
   const year = dateStr.slice(0, 4);
-  return `${BASE_URL}${year}/${dateStr}/T${frame}wlisspeedtop.png`;
+  return `${BASE_URL}${year}/${dateStr}/T${frame}lisspeedtop.png`;
 }
 
 function probeDate(dateStr, frame) {
@@ -111,8 +111,8 @@ function probeDate(dateStr, frame) {
 // Leaflet map
 const map = L.map('map', {
   center: [40.873, -73.533],
-  zoom: 13,
-  minZoom: 10,
+  zoom: 10,
+  minZoom: 8,
   maxZoom: 15,
   zoomControl: true
 });
