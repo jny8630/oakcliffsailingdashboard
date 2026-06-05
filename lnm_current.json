@@ -1,84 +1,86 @@
 {
-  "week": 20,
+  "week": 22,
   "year": 2026,
-  "generated_utc": "2026-05-25T16:07:21Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01202026.pdf",
+  "generated_utc": "2026-06-05T17:50:25Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01222026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 22,
-      "year": 2026,
-      "reason": "not_posted"
-    },
-    {
-      "week": 21,
+      "week": 23,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
+      "chart": "13253",
+      "summary": "Duxbury Bay\nPlymouth Bay - Duxbury Marine Events MA \u2013 DUXBURY \u2013 BLESSING OF THE FLEET \u2013:30 PM to 5:30 PM in Duxbury Harbor.. The event will consist of approximately 50 vessels. The person responsible for on scene safety can be reached at 617-875-8097.\nFor more information, please contact Tim McKinney at 617-875-8097.: 2025-12-10 To: 2026-06-30 Location: 41-34-06.:.380W Sevenson Environmental\u2026",
+      "status": "TEMPORARY",
+      "since": "2025-12-10",
+      "location": "Duxbury Bay"
+    },
+    {
       "chart": null,
-      "summary": "Main Channel - East River Main Bridges From May 1, 2026 \u2013 December 31, 2026, Monday-Friday, with occasional Saturdays and Sundays, between 8:00 a.m. and Lat::00 p.m., a biennial bridge inspection using a traveler and rigging will be conducted on the Manhattan Bridge, mile 1.1 in the East River, New York City. The safety boat Kylie Anne (CT8893BM) will be on scene during inspection operations.\u2026",
+      "summary": "2024-11-06 To: 2026-12-25 Location: :Bridge Name: Borden Ave Bridge NEW YORK \u2013 EAST RIVER NEWTOWN CREEK \u2013 DUTCH KILLS \u2013 Bridge Or Emergency) Closure \u2013 The Borden Ave Bridge, mile 1.2, is closed due to vandalism. Vessels able to pass under the bridge in the closed Lon:\nposition may do so. Mariners with questions may contact Keith Burrows at (212) 839-3741, NYCDOT Director of Bridge -& Tunnel\u2026",
       "status": "ACTIVE",
-      "since": "2026-05-21",
+      "since": "2024-11-06",
       "location": "Main Channel - East River Main Bridges"
     },
     {
       "chart": null,
-      "summary": "2026-04-27 To:&. Equipment on scene will be the NORTHSTAR VOYAGER, monitoring VHF-FM CH 13 & 16. The\nBridges) VOYAGER is approximately 65 feet wide. Channel widths are approximately 800 feet, which provides ample room for vessel\ntransits on either side, even when the VOYAGER is positioned near the center of the channel. Exact clearance will vary\ndepending on the vessel\u2019s position at the time.\u2026",
+      "summary": "2026-03-20 Lat:: 2027-08-31 Location: 40-48-15..980W Trevcon Construction Company will be conducting demolition .) to Metro North Rail Bridge Lon:.)in position 40-48-15.1N, 073-55-50W, through August 2027, Monday through Friday, between 5:00am to 6:00pm. -quipment on scene will be multiple crane barges, and material barges, monitoring VHF-FM CH 13, 16, 65, &75. Floating Equipment will be\u2026",
       "status": "ACTIVE",
-      "since": "2026-04-27",
+      "since": "2026-03-20",
       "location": "Main Channel - East River"
     },
     {
-      "chart": null,
-      "summary": "2026-02-12 To: 2027-01-01 Location: 40-50-22..536W On February 16, 2026, Lat::00 am and 3:30 pm on weekdays, in-water bridge maintenance will be performed on the New Jersey Turnpike (117.6) IVO Piers three and six over Overpeck Creek, mile .68 in Ridgefield, Bergen County, New Jersey. This work will be completed in three non- Lon:\nconsecutive weeks. A 15 ft skip and a 60 ft X 160 ft platform will\u2026",
+      "chart": "13275",
+      "summary": "2025-07-08 To:. Underwood Seabrook-Hampton Harbor Bridge\nRegulated Navigation Zone replacement project. This rule is necessary to provide for the safety of life in the areas undergoing demolition and construction. The\nRNA will be enforced from July 1, 2025, through December 31, 2030, and will establish the following operating restrictions on vessels:\nNothing in this regulation relieves any\u2026",
       "status": "ACTIVE",
-      "since": "2026-02-12",
-      "location": "Newark Bay - Hackensack Bridges"
+      "since": "2025-07-08",
+      "location": "Hampton Harbor"
+    },
+    {
+      "chart": "13275",
+      "summary": "Weymouth Fore River - Marine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 SCORPION BOWL JR REGATTA \u2013 REGATTA \u2013:00 PM to 4:30 PM in and around the vicinity of Hingham Bay.\u2019-14\u2019. The person responsible for on scene safety can be reached at 617-803-8344. For more\ninformation, please contact Geoffrey Roth at 617-803-8344. Chart 13275\nWeymouth Fore River - Marine Events MA - HINGHAM BAY \u2013 HINGHAM BAY JUNIOR\u2026",
+      "status": "ACTIVE",
+      "since": "2026-07-01",
+      "location": "Weymouth Fore River - Marine Events MA \u2013 HINGHAM \u2013 HINGHAM B"
     },
     {
       "chart": null,
-      "summary": "To: Lat:: 40.74064, -74.08136 Bridge Name: Rt 7 Wittpenn Bridge n order to facilitate the transportation of spectators attending Deviation regional FIFA World Cup matches, the Wittpenn (Route 7) Bridge, mile 3.2 across the Hackensack River NJ, will not open for marine Lon:\ntraffic during the following time periods: From 5:00 a.m. Saturday, June 13, 2026, to 1:00 a.m. Sunday, June 14, 2026. From\u2026",
-      "status": "ACTIVE",
-      "since": "2026-04-21",
-      "location": "Newark Bay - Hackensack Bridges Newark Bay - Hackensack"
-    },
-    {
-      "chart": null,
-      "summary": "2024-09-12 To: 2039-12-01 Location: . In Esopus Creek, shoaling has occurred faster than anticipated at the\nmouth of the creek when passing between Saugerties Lighthouse and Hudson River Lighted Buoy 93. In Roundout Creek, there is\nshoaling at the mouth of the creek. Mariners should exercise caution when navigating these areas.\u00a7 165.T01-0336 Safety Zone; Hudson River, Manhattan, NY (a) Location.:\u2026",
-      "status": "ACTIVE",
-      "since": "2024-09-12",
-      "location": "Main Channel - Hudson"
-    },
-    {
-      "chart": null,
-      "summary": "2026-01-06 To:.: 40-45-20.32N 074-00-23.84W; 40-45-18.89N, 074-00-48.18W; 40-45-13.80N 074-00-48.64W;\n40-45-12.40N. 074-00-28.47W. The USCG has established a Safety Zone, 33 CFR 165.T01-0336 Safety Zone; Hudson River,\nManhattan, NY. Mariners transiting west of the safety zone should proceed at a speed to minimize potential wake or surge damage\nto the vessels working the construction area. There\u2026",
+      "summary": "Piscataqua River - Little Bridges Demolition activities have commenced to the General Sullivan Bridge across Little Bay, mile 0.1, between Newington and Dover NH Lat:. Work trestles have been constructed adjacent to the bridge from both banks, reducing the navigable channel to a width of 160 feet. A temporary work platform will be suspended from the bridge over the navigable channel on Lon:\nor\u2026",
       "status": "TEMPORARY",
-      "since": "2026-01-06",
-      "location": "Main Channel - Hudson"
+      "since": "2026-06-05",
+      "location": "Piscataqua River - Little Bridges"
     },
     {
       "chart": null,
-      "summary": "Kill Van Kull - Newark Bridges Construction will commence on June 1, 2026, to replace NJ Turnpike Authority\u2019s Newark Bay Bridge over Newark Bay at mile 3.8 between Lat:. From June 1, 2026, to April 1, 2027, contractors will be constructing a work trestle from the Bayonne shore of ewark Bay to the navigable channel. This work will not impede the navigable channel. Work hours will be 6:00 a.m. to\u2026",
+      "summary": "2025-10-01 To: 2026-06-26 Location: Bridge Name: Glen Lat:\u2013 NEW ROCHELLE HARBOR - Notice of Temporary Deviation - The Coast Guard has issued a temporary Deviation deviation for the Glen Island Temporary Bridge. Under this temporary deviation, the Glen Island Temporary Bridge will remain in the Lon:\nclosed position from October 2, 2025 through June 26, 2026. Mariners that can pass without a bridge\u2026",
       "status": "ACTIVE",
-      "since": "2026-04-27",
-      "location": "Kill Van Kull - Newark Bridges"
+      "since": "2025-10-01",
+      "location": "Middle Channel"
     },
     {
       "chart": null,
-      "summary": "2026-05-20 To::00am, May 20, 2026, to 8:00am, May 27, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D14: 18\u203254.499N, 22\u203233.644W; C15:\n19\u203225.110N, 21\u203241.185W; B17: 19\u203245.652N, 19\u203257.228W; B19: 19\u203225.511N, 18\u203214.273W; C18: 18\u203254.926N,\n19\u203206.757W; B01: 22\u203225.878N, 33\u203241.509W; D18: 18\u203214.268N,\u2026",
+      "summary": "North Channel\nNorth Channel Lighted Buoy 1 29449 LT EXT FD\nNorth Channel Lighted Buoy 3 29450 LT EXT FD\nNorth Channel Lighted Buoy 4 29455 LT EXT FD\nNorth Channel Buoy 6 29460 MISSING FD\nNorth Channel Lighted Buoy 8 29465 LT EXT FD\nNorth Channel Buoy 2 34670 OFF STATION FD\nBeach Channel - North Bridges From April 28, 2026, to August 30, 2026, between 9:00 a.m. and 3:00 p.m., contractors will be\u2026",
       "status": "ACTIVE",
-      "since": "2026-05-20",
-      "location": "Sector New York"
+      "since": "2026-04-07",
+      "location": "North Channel"
     },
     {
       "chart": null,
-      "summary": "2025-04-23 To: 2026-06-30 Location: Demolition of the S-32 Lat:.0 is in progress through June 30, 2026. There will be barge equipment operating IVO the bridge. For daily barge placement details, please contact Kevin Cummons at (609) 839-0595, Nick Scuderi at (609) Lon:. Updates will be provided, as they are available, in the D1 LNM and -on the project website at https: / /\u2026",
+      "summary": "Sector New York, Submerged Lands Act (SLA)\nEast Rockaway Inlet Lighted Buoy 3 31520 MISSING FD\nPrivate Discrepancies\nHighlands Light 35025 LT IMCH PA\nEmpire Offshore Wind WTG C12 604.:.196N, 073- .103W. THE VESSEL IS REPORTED TO BE WOODEN, 80 FEET LONG, WITH A BLACK TOP AND WHITE HULL. CURRENTLY NOT Lon:\nMARKED. ALL MARINERS ADVISED TO TRANSIT THE AREA WITH EXTREME CAUTION. -: 2026-06-03\u2026",
       "status": "ACTIVE",
-      "since": "2025-04-23",
-      "location": "Raritan Bay - Shrewsbury Bridges"
+      "since": "2026-06-03",
+      "location": "Sector New York, Submerged Lands Act (SLA)"
+    },
+    {
+      "chart": "13221",
+      "summary": "Kennebec River - Upper Kennebec Marine Events ME \u2013Old Hallowell Day \u2013 Hallowell \u2013 Fireworks Mariners are advised that the Old Hallowell Day Fireworks are scheduled to be held Lat:. The event will be held from 09:00 p.m. to 09:30 p.m. on July 18, 2026. Chart number: 13260. For event information contact: Steven Marson, (207)242-9013. Lon:\n-: 2024-10-23 To: 2027-05-31Lat:: 41-26-39..984W CT-THAMES\u2026",
+      "status": "ACTIVE",
+      "since": "2024-10-23",
+      "location": "Kennebec River - Upper Kennebec Marine Events ME \u2013Old Hallow"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
