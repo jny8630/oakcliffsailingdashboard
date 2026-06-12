@@ -1,86 +1,72 @@
 {
-  "week": 22,
+  "week": 23,
   "year": 2026,
-  "generated_utc": "2026-06-05T17:50:25Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01222026.pdf",
+  "generated_utc": "2026-06-12T18:03:10Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01232026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 23,
+      "week": 24,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
-      "chart": "13253",
-      "summary": "Duxbury Bay\nPlymouth Bay - Duxbury Marine Events MA \u2013 DUXBURY \u2013 BLESSING OF THE FLEET \u2013:30 PM to 5:30 PM in Duxbury Harbor.. The event will consist of approximately 50 vessels. The person responsible for on scene safety can be reached at 617-875-8097.\nFor more information, please contact Tim McKinney at 617-875-8097.: 2025-12-10 To: 2026-06-30 Location: 41-34-06.:.380W Sevenson Environmental\u2026",
-      "status": "TEMPORARY",
-      "since": "2025-12-10",
-      "location": "Duxbury Bay"
+      "chart": null,
+      "summary": "Main Channel - East River Main Bridges Structural repairs to the Brooklyn Bridge, over the East River at mile 0.8, have commenced and will be ongoing through at Lat:. Active work will occur between 8:00 a.m. and 2:00 p.m., Monday through Friday. The traveler will reduce the vertical clearance of the bridge by 17 feet. During work hours the Lon:\ntraveler can move with 2 hours\u2019 notice for vessels\u2026",
+      "status": "ACTIVE",
+      "since": "2026-05-11",
+      "location": "Main Channel - East River Main Bridges Structural repairs to"
     },
     {
       "chart": null,
-      "summary": "2024-11-06 To: 2026-12-25 Location: :Bridge Name: Borden Ave Bridge NEW YORK \u2013 EAST RIVER NEWTOWN CREEK \u2013 DUTCH KILLS \u2013 Bridge Or Emergency) Closure \u2013 The Borden Ave Bridge, mile 1.2, is closed due to vandalism. Vessels able to pass under the bridge in the closed Lon:\nposition may do so. Mariners with questions may contact Keith Burrows at (212) 839-3741, NYCDOT Director of Bridge -& Tunnel\u2026",
+      "summary": "2026-03-23 Lat:: 2028-11-04 Location: 40-42-34..388W Reicon will be conducting pile repair and rehabilitation operations.3N, 073-59-05.4W, from February 23, 2026, to November 3, 2028, Lon::00am to 2:00pm, local time. Equipment on scene will be a dive barge, monitoring VHF- -FM Ch 13 and is requesting mariners to minimize their wake, while operations are being conducted. : 2026-07-20 Lat::. The\u2026",
       "status": "ACTIVE",
-      "since": "2024-11-06",
-      "location": "Main Channel - East River Main Bridges"
-    },
-    {
-      "chart": null,
-      "summary": "2026-03-20 Lat:: 2027-08-31 Location: 40-48-15..980W Trevcon Construction Company will be conducting demolition .) to Metro North Rail Bridge Lon:.)in position 40-48-15.1N, 073-55-50W, through August 2027, Monday through Friday, between 5:00am to 6:00pm. -quipment on scene will be multiple crane barges, and material barges, monitoring VHF-FM CH 13, 16, 65, &75. Floating Equipment will be\u2026",
-      "status": "ACTIVE",
-      "since": "2026-03-20",
+      "since": "2026-03-23",
       "location": "Main Channel - East River"
     },
     {
-      "chart": "13275",
-      "summary": "2025-07-08 To:. Underwood Seabrook-Hampton Harbor Bridge\nRegulated Navigation Zone replacement project. This rule is necessary to provide for the safety of life in the areas undergoing demolition and construction. The\nRNA will be enforced from July 1, 2025, through December 31, 2030, and will establish the following operating restrictions on vessels:\nNothing in this regulation relieves any\u2026",
-      "status": "ACTIVE",
-      "since": "2025-07-08",
-      "location": "Hampton Harbor"
-    },
-    {
-      "chart": "13275",
-      "summary": "Weymouth Fore River - Marine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 SCORPION BOWL JR REGATTA \u2013 REGATTA \u2013:00 PM to 4:30 PM in and around the vicinity of Hingham Bay.\u2019-14\u2019. The person responsible for on scene safety can be reached at 617-803-8344. For more\ninformation, please contact Geoffrey Roth at 617-803-8344. Chart 13275\nWeymouth Fore River - Marine Events MA - HINGHAM BAY \u2013 HINGHAM BAY JUNIOR\u2026",
-      "status": "ACTIVE",
-      "since": "2026-07-01",
-      "location": "Weymouth Fore River - Marine Events MA \u2013 HINGHAM \u2013 HINGHAM B"
-    },
-    {
       "chart": null,
-      "summary": "Piscataqua River - Little Bridges Demolition activities have commenced to the General Sullivan Bridge across Little Bay, mile 0.1, between Newington and Dover NH Lat:. Work trestles have been constructed adjacent to the bridge from both banks, reducing the navigable channel to a width of 160 feet. A temporary work platform will be suspended from the bridge over the navigable channel on Lon:\nor\u2026",
+      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
       "status": "TEMPORARY",
-      "since": "2026-06-05",
-      "location": "Piscataqua River - Little Bridges"
+      "since": "2026-07-01",
+      "location": "Housatonic River"
     },
     {
       "chart": null,
-      "summary": "2025-10-01 To: 2026-06-26 Location: Bridge Name: Glen Lat:\u2013 NEW ROCHELLE HARBOR - Notice of Temporary Deviation - The Coast Guard has issued a temporary Deviation deviation for the Glen Island Temporary Bridge. Under this temporary deviation, the Glen Island Temporary Bridge will remain in the Lon:\nclosed position from October 2, 2025 through June 26, 2026. Mariners that can pass without a bridge\u2026",
+      "summary": "2024-10-02 To::00am to 3:00pm. Equipment on scene will be a crane and\nmaterial barges. Mariners are urged to use extreme caution and transit the area at their slowest safe speed to create minimum wake\nafter passing arrangements have been made.: 2026-04-09 To: 2027-04-09 Location: 41-37..#6 buoy near the Hyannis Channel has been identified in position .. Buoy is not marked.\nMariners urged to use\u2026",
+      "status": "TEMPORARY",
+      "since": "2024-10-02",
+      "location": "Main Channel - Kill Van"
+    },
+    {
+      "chart": "13275",
+      "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
       "status": "ACTIVE",
-      "since": "2025-10-01",
-      "location": "Middle Channel"
+      "since": "2025-04-16",
+      "location": "Private Discrepancies"
+    },
+    {
+      "chart": "13282",
+      "summary": "2026-05-17 To: 2026-07-18 Location: 42-46-26.:.716W Bridge Name: Basiliere Bridge From May 17, 2026, to July 17, 2026, between 7:00 a.m. and 3:00 p.m., paint removal will Or Fender Replacement take place outside the navigation channel on the Basiliere (Route 125) Bridge over Merrimack River at mile 19.4. Mariners Lon:\nrequiring additional information on this project can contact the contractor via\u2026",
+      "status": "ACTIVE",
+      "since": "2026-05-17",
+      "location": "Plum Island Sound - Merrimack Bridges"
     },
     {
       "chart": null,
-      "summary": "North Channel\nNorth Channel Lighted Buoy 1 29449 LT EXT FD\nNorth Channel Lighted Buoy 3 29450 LT EXT FD\nNorth Channel Lighted Buoy 4 29455 LT EXT FD\nNorth Channel Buoy 6 29460 MISSING FD\nNorth Channel Lighted Buoy 8 29465 LT EXT FD\nNorth Channel Buoy 2 34670 OFF STATION FD\nBeach Channel - North Bridges From April 28, 2026, to August 30, 2026, between 9:00 a.m. and 3:00 p.m., contractors will be\u2026",
+      "summary": "2024-12-16 To:. The safety zone is needed to protect personnel, vessels, and the\nRestriction marine environment from potential hazards associated with the bridge construction between December 2, 2024, through May 27,\n2027. When enforced, this regulation prohibits persons and vessels from being in the safety zone unless authorized by the Captain\nof the Port New York or a designated representative.\u2026",
       "status": "ACTIVE",
-      "since": "2026-04-07",
-      "location": "North Channel"
-    },
-    {
-      "chart": null,
-      "summary": "Sector New York, Submerged Lands Act (SLA)\nEast Rockaway Inlet Lighted Buoy 3 31520 MISSING FD\nPrivate Discrepancies\nHighlands Light 35025 LT IMCH PA\nEmpire Offshore Wind WTG C12 604.:.196N, 073- .103W. THE VESSEL IS REPORTED TO BE WOODEN, 80 FEET LONG, WITH A BLACK TOP AND WHITE HULL. CURRENTLY NOT Lon:\nMARKED. ALL MARINERS ADVISED TO TRANSIT THE AREA WITH EXTREME CAUTION. -: 2026-06-03\u2026",
-      "status": "ACTIVE",
-      "since": "2026-06-03",
-      "location": "Sector New York, Submerged Lands Act (SLA)"
+      "since": "2024-12-16",
+      "location": "New Rochelle Harbor North Approach"
     },
     {
       "chart": "13221",
-      "summary": "Kennebec River - Upper Kennebec Marine Events ME \u2013Old Hallowell Day \u2013 Hallowell \u2013 Fireworks Mariners are advised that the Old Hallowell Day Fireworks are scheduled to be held Lat:. The event will be held from 09:00 p.m. to 09:30 p.m. on July 18, 2026. Chart number: 13260. For event information contact: Steven Marson, (207)242-9013. Lon:\n-: 2024-10-23 To: 2027-05-31Lat:: 41-26-39..984W CT-THAMES\u2026",
+      "summary": "2024-10-23 To: 2027-05-31Lat:: 41-26-39..984W CT-THAMES RIVER-GALES FERRY Sterling Equipment, Inc, will be storing rental fleet barges in Construction (Excluding (Excluding position 41-26-39.5N 072-05-04.0W, until May 2027. Equipment on scene will be Spud Barges, Hopper Barge and Deck Barges, which will Lon:. Point of contact for this operation is Mark Quinn, who can be reached at -Manmade Reefs,\u2026",
       "status": "ACTIVE",
       "since": "2024-10-23",
-      "location": "Kennebec River - Upper Kennebec Marine Events ME \u2013Old Hallow"
+      "location": "Thames River - Upper Thames"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
