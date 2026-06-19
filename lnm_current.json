@@ -1,12 +1,12 @@
 {
-  "week": 23,
+  "week": 24,
   "year": 2026,
-  "generated_utc": "2026-06-12T18:03:10Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01232026.pdf",
+  "generated_utc": "2026-06-19T17:52:27Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01242026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 24,
+      "week": 25,
       "year": 2026,
       "reason": "not_posted"
     }
@@ -14,59 +14,66 @@
   "notices": [
     {
       "chart": null,
-      "summary": "Main Channel - East River Main Bridges Structural repairs to the Brooklyn Bridge, over the East River at mile 0.8, have commenced and will be ongoing through at Lat:. Active work will occur between 8:00 a.m. and 2:00 p.m., Monday through Friday. The traveler will reduce the vertical clearance of the bridge by 17 feet. During work hours the Lon:\ntraveler can move with 2 hours\u2019 notice for vessels\u2026",
+      "summary": "Main Channel - East River Main Bridges Fender repairs are ongoing to the 145th Street Bridge across the Harlem River, mile 2.8, in New York City. From March 25, Lat:\u00b0 Fender Replacement clearance. The West Channel of the bridge opening will not be obstructed. Active work on the fender system will occur 6:00 Lon:\na.m. to 2:30 p.m. Monday through Friday. Mariners requiring additional information on\u2026",
       "status": "ACTIVE",
       "since": "2026-05-11",
-      "location": "Main Channel - East River Main Bridges Structural repairs to"
-    },
-    {
-      "chart": null,
-      "summary": "2026-03-23 Lat:: 2028-11-04 Location: 40-42-34..388W Reicon will be conducting pile repair and rehabilitation operations.3N, 073-59-05.4W, from February 23, 2026, to November 3, 2028, Lon::00am to 2:00pm, local time. Equipment on scene will be a dive barge, monitoring VHF- -FM Ch 13 and is requesting mariners to minimize their wake, while operations are being conducted. : 2026-07-20 Lat::. The\u2026",
-      "status": "ACTIVE",
-      "since": "2026-03-23",
-      "location": "Main Channel - East River"
-    },
-    {
-      "chart": null,
-      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-07-01",
-      "location": "Housatonic River"
-    },
-    {
-      "chart": null,
-      "summary": "2024-10-02 To::00am to 3:00pm. Equipment on scene will be a crane and\nmaterial barges. Mariners are urged to use extreme caution and transit the area at their slowest safe speed to create minimum wake\nafter passing arrangements have been made.: 2026-04-09 To: 2027-04-09 Location: 41-37..#6 buoy near the Hyannis Channel has been identified in position .. Buoy is not marked.\nMariners urged to use\u2026",
-      "status": "TEMPORARY",
-      "since": "2024-10-02",
-      "location": "Main Channel - Kill Van"
+      "location": "Main Channel - East River Main Bridges Fender repairs"
     },
     {
       "chart": "13275",
-      "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
-      "status": "ACTIVE",
-      "since": "2025-04-16",
-      "location": "Private Discrepancies"
-    },
-    {
-      "chart": "13282",
-      "summary": "2026-05-17 To: 2026-07-18 Location: 42-46-26.:.716W Bridge Name: Basiliere Bridge From May 17, 2026, to July 17, 2026, between 7:00 a.m. and 3:00 p.m., paint removal will Or Fender Replacement take place outside the navigation channel on the Basiliere (Route 125) Bridge over Merrimack River at mile 19.4. Mariners Lon:\nrequiring additional information on this project can contact the contractor via\u2026",
-      "status": "ACTIVE",
-      "since": "2026-05-17",
-      "location": "Plum Island Sound - Merrimack Bridges"
+      "summary": "Weymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 SCORPION BOWL JR REGATTA \u2013 REGATTA \u2013:00 PM to 4:30 PM in and around the vicinity of Hingham Bay.\u2019-14\u2019. The person responsible for on scene safety can be reached at 617-803-8344. For more\ninformation, please contact Geoffrey Roth at 617-803-8344. Chart 13275\nWeymouth Fore River - HinghamMarine Events MA - HINGHAM BAY \u2013 HINGHAM\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-07-01",
+      "location": "Weymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HI"
     },
     {
       "chart": null,
-      "summary": "2024-12-16 To:. The safety zone is needed to protect personnel, vessels, and the\nRestriction marine environment from potential hazards associated with the bridge construction between December 2, 2024, through May 27,\n2027. When enforced, this regulation prohibits persons and vessels from being in the safety zone unless authorized by the Captain\nof the Port New York or a designated representative.\u2026",
+      "summary": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HARLEM RIVER - HUDSON RIVER \u2013. Approximately two to five\nparticipating swimmers will be assisted by a lead safety vessel in addition to one escort vessel and one escort kayak per every one to\ntwo swimmers. The swim events will start at either Pier A in Battery Park or Mill Rock, near East 90th St., Manhattan. They will proceed\nup the East\u2026",
+      "status": "ACTIVE",
+      "since": "2026-06-08",
+      "location": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HA"
+    },
+    {
+      "chart": null,
+      "summary": "Lighthouse Channel\nTemporary Changes\nLighthouse Channel Buoy 6 7735 REMOVED DUE TO ICE FD\nPortland Harbor - Lighthouse Bridges The U.S. Coast Guard has issued a temporary deviation from the regulation governing the Casco Bay Bridge at mile 1.5 over the Lat:. Under this deviation, the bridge will remain in the closed (Scheduled Or Emergency) position during the following tomes to rehabilitate the\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-06-05",
+      "location": "Lighthouse Channel"
+    },
+    {
+      "chart": "12354",
+      "summary": "2026-05-28 To: 2026-07-01 Location: 40-48-36.:\nLittle Neck Bay Construction \u00b0\u00b0. The project is scheduled from May 29 to July 1, 2026, operating daily from 6:00 AM Lon:\nConstruction (Excluding to 6:00 PM. Equipment on site will include a x dredge, a x pushboat, ten x scows, and a x aluminum -. Vessels can be contacted via radio frequencies 13 and 16. Navigation safety measures include a 60-minute\u2026",
+      "status": "ACTIVE",
+      "since": "2026-05-28",
+      "location": "Long Island Sound Western Part"
+    },
+    {
+      "chart": "13275",
+      "summary": "2024-08-30 To:\u2013 BLOSSOM ST EXT \u2013 LYNN 4TH OF JULY CELEBRATION \u2013:15 PM to 10:15 PM at Blossom St Ext in Lynn.. The person responsible for on scene safety can be reached at 978-432-3893.\nFor more information please contact Tara Hughgill at 603-532-8324. Chart 13275\nMain Channel\nGay Head Lighted Gong Buoy 31 15605 LT EXT FD\nRam Island Reef Lighted Bell Buoy 20 20110 MISSING FD\nPrivate\u2026",
+      "status": "ACTIVE",
+      "since": "2024-08-30",
+      "location": "Long Island Sound Western Part"
+    },
+    {
+      "chart": null,
+      "summary": "\u2013 Safety Zone \u2013 Bridge Construction Mariners are advised that a safety zone will be enforced\nMiddle for construction work on the Glen Island Approach Bridge. The safety zone will be enforced from 7 a.m. until 5 p.m.. The safety zone will only be enforced during periods when\nRegulated Navigation Zone construction operations at the Glen Island Bridge rehabilitation project are in progress. The\u2026",
       "status": "ACTIVE",
       "since": "2024-12-16",
       "location": "New Rochelle Harbor North Approach"
     },
     {
-      "chart": "13221",
-      "summary": "2024-10-23 To: 2027-05-31Lat:: 41-26-39..984W CT-THAMES RIVER-GALES FERRY Sterling Equipment, Inc, will be storing rental fleet barges in Construction (Excluding (Excluding position 41-26-39.5N 072-05-04.0W, until May 2027. Equipment on scene will be Spud Barges, Hopper Barge and Deck Barges, which will Lon:. Point of contact for this operation is Mark Quinn, who can be reached at -Manmade Reefs,\u2026",
+      "chart": null,
+      "summary": "Norwalk East Approach - Norwalk Bridges The Coast Guard has issued a temporary deviation from the regulation governing the operation of the WALK Bridge across the Lat:.1 to complete construction activities associated with the WALK bridge replacement project. Under this (Scheduled Or Emergency) temporary deviation the Walk Bridge may remain closed to mariners during the following time frames:\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-06-10",
+      "location": "Norwalk East Approach - Norwalk Bridges The Coast Guard"
+    },
+    {
+      "chart": null,
+      "summary": "2026-06-17 To::00am, June 17, 2026, to 8:00am, June 24, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D11: 19\u203224.606N, 25\u203208.100W; F17:\n17\u203203.018N, 20\u203201.227W; D10: 19\u203234.629N, 25\u203259.594W; B05: 21\u203245.973N, 30\u203215.333W; G16: 16\u203232.420N,\n20\u203253.667W; H16: 15\u203257.881N, 20\u203254.528W; D03:\u2026",
       "status": "ACTIVE",
-      "since": "2024-10-23",
-      "location": "Thames River - Upper Thames"
+      "since": "2026-06-17",
+      "location": "Sector New York"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
