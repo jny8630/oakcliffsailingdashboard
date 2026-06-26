@@ -1,78 +1,99 @@
 {
-  "week": 24,
+  "week": 25,
   "year": 2026,
-  "generated_utc": "2026-06-19T17:52:27Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01242026.pdf",
+  "generated_utc": "2026-06-26T17:43:38Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01252026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 25,
+      "week": 26,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
-      "chart": null,
-      "summary": "Main Channel - East River Main Bridges Fender repairs are ongoing to the 145th Street Bridge across the Harlem River, mile 2.8, in New York City. From March 25, Lat:\u00b0 Fender Replacement clearance. The West Channel of the bridge opening will not be obstructed. Active work on the fender system will occur 6:00 Lon:\na.m. to 2:30 p.m. Monday through Friday. Mariners requiring additional information on\u2026",
+      "chart": "13275",
+      "summary": "City Island Wreck Buoy WR6 25985 MISSING FD\nCobscook Bay\nPrivate Discrepancies\nORPC Cobscook Bay Lighted Buoy A 1013 MISSING PA\nCohasset Channel\nCohasset Harbor - Cohasset Marine Events MA \u2013 COHASSET \u2013 SANDY BEACH \u2013 COHASSET TRIATHLON \u2013..25 mile course. Swimmers will enter the water in 9 waves, never more than 200 swimmers in the water at any given time. The\nperson responsible for on scene safety\u2026",
       "status": "ACTIVE",
-      "since": "2026-05-11",
-      "location": "Main Channel - East River Main Bridges Fender repairs"
+      "since": "2025-05-08",
+      "location": "City Island Wreck Buoy WR6 25985 MISSING FD"
     },
     {
-      "chart": "13275",
-      "summary": "Weymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 SCORPION BOWL JR REGATTA \u2013 REGATTA \u2013:00 PM to 4:30 PM in and around the vicinity of Hingham Bay.\u2019-14\u2019. The person responsible for on scene safety can be reached at 617-803-8344. For more\ninformation, please contact Geoffrey Roth at 617-803-8344. Chart 13275\nWeymouth Fore River - HinghamMarine Events MA - HINGHAM BAY \u2013 HINGHAM\u2026",
+      "chart": null,
+      "summary": "2024-05-13 To: 2026-12-31 Location: Bridge Name: Lat:\u2013\u00b0 fender system to the Bronx and Queens Towers of the Throgs Neck Bridge across East River at mile 15.8 is in progress. HoursLon:\nof operation are from 7 a.m. to 5:30 p.m. daily. Crane and material barges will be operating along the perimeter of the Bronx -and Queens Towers. Any questions regarding this project can contact Steve Mejia via\u2026",
+      "status": "ACTIVE",
+      "since": "2024-05-13",
+      "location": "Main Channel - East River Main Bridges"
+    },
+    {
+      "chart": null,
+      "summary": "2026-06-22 To: 2026-06-27 Location: 40-42-26..350W Bridge Name: Lat::00 a.m. and 2:00 p.m., bridge travelers will be operated under the Manhattan Bridge over East River at mile 1.1 to perform bridge maintenance. Mariners requiring full vertical clearance can Lon:\ncontact the contractor via marine radio VHF-FM Ch.. The traveler platform will -be moved out of the navigable channel after work hours\u2026",
+      "status": "ACTIVE",
+      "since": "2026-06-22",
+      "location": "Main Channel - East River Main Bridges"
+    },
+    {
+      "chart": null,
+      "summary": "2022-01-03 To: 2026-12-30 Location: IPCP will be conducting esplanade, bulkhead, and park reconstruction, on the East River, Montgomery St to East 14th Street,\nfrom January 2022 to December 2026, 5-7 days a week, between 6:00am to 6:00pm. Equipment on scene will be Tugboat\nDEBRA QUINN, Inspection Boat, 290 x 40 Mooring Barges, 250 x 62 Gantry Crane Barge, Crawler Crane Barge, 150 x 60\u2026",
+      "status": "ACTIVE",
+      "since": "2022-01-03",
+      "location": "Main Channel - East River"
+    },
+    {
+      "chart": null,
+      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
       "status": "TEMPORARY",
       "since": "2026-07-01",
-      "location": "Weymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HI"
+      "location": "Additional MSI Categories"
     },
     {
-      "chart": null,
-      "summary": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HARLEM RIVER - HUDSON RIVER \u2013. Approximately two to five\nparticipating swimmers will be assisted by a lead safety vessel in addition to one escort vessel and one escort kayak per every one to\ntwo swimmers. The swim events will start at either Pier A in Battery Park or Mill Rock, near East 90th St., Manhattan. They will proceed\nup the East\u2026",
-      "status": "ACTIVE",
-      "since": "2026-06-08",
-      "location": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HA"
-    },
-    {
-      "chart": null,
-      "summary": "Lighthouse Channel\nTemporary Changes\nLighthouse Channel Buoy 6 7735 REMOVED DUE TO ICE FD\nPortland Harbor - Lighthouse Bridges The U.S. Coast Guard has issued a temporary deviation from the regulation governing the Casco Bay Bridge at mile 1.5 over the Lat:. Under this deviation, the bridge will remain in the closed (Scheduled Or Emergency) position during the following tomes to rehabilitate the\u2026",
+      "chart": "13221",
+      "summary": "2024-09-12 To:. Mariners are advised to proceed with caution while transiting the area.: 2024-10-02 To::00am to 3:00pm. Equipment on scene will be a crane and\nmaterial barges. Mariners are urged to use extreme caution and transit the area at their slowest safe speed to create minimum wake\nafter passing arrangements have been made.: 2026-06-26 To: 2026-07-04 Location: LARCHMONT, NY \u2013 LARCHMONT\u2026",
       "status": "TEMPORARY",
-      "since": "2026-06-05",
-      "location": "Lighthouse Channel"
+      "since": "2024-09-12",
+      "location": "Kickamuit River"
     },
     {
       "chart": "12354",
-      "summary": "2026-05-28 To: 2026-07-01 Location: 40-48-36.:\nLittle Neck Bay Construction \u00b0\u00b0. The project is scheduled from May 29 to July 1, 2026, operating daily from 6:00 AM Lon:\nConstruction (Excluding to 6:00 PM. Equipment on site will include a x dredge, a x pushboat, ten x scows, and a x aluminum -. Vessels can be contacted via radio frequencies 13 and 16. Navigation safety measures include a 60-minute\u2026",
-      "status": "ACTIVE",
-      "since": "2026-05-28",
-      "location": "Long Island Sound Western Part"
+      "summary": "2026-06-05 To: 2026-11-20 Location: 43-07-05..608W Bridge Name: General Lat:& Reed Inc. will be conducting bridge removal and temporary trestle construction operations in Little Bay, between Dover and Newington, NH, in position 43-07-04.56N, 070-49-34.59W. Construction will run from June 5, 2026, to November Lon:\n20, 2026, Monday through Saturday, between 6:30am to 6:30 pm, local time. Equipment\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-06-05",
+      "location": "Piscataqua River - Little Bridges"
     },
     {
       "chart": "13275",
-      "summary": "2024-08-30 To:\u2013 BLOSSOM ST EXT \u2013 LYNN 4TH OF JULY CELEBRATION \u2013:15 PM to 10:15 PM at Blossom St Ext in Lynn.. The person responsible for on scene safety can be reached at 978-432-3893.\nFor more information please contact Tara Hughgill at 603-532-8324. Chart 13275\nMain Channel\nGay Head Lighted Gong Buoy 31 15605 LT EXT FD\nRam Island Reef Lighted Bell Buoy 20 20110 MISSING FD\nPrivate\u2026",
+      "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
       "status": "ACTIVE",
-      "since": "2024-08-30",
-      "location": "Long Island Sound Western Part"
+      "since": "2025-04-16",
+      "location": "Little River Ledge Buoy 2 1085 HAZ"
+    },
+    {
+      "chart": "13275",
+      "summary": "Salem Channel - Manchester Marine Events MA \u2013 MANCHESTER \u2013 MANCHESTER HARBOR \u2013 MANCHESTER YC US 250th BOAT PARADE \u2013 PARADE \u2013:00 PM to 4:00 PM in and around Manchester Harbor.\u2019 -46\u2019 in length. The person responsible for on-scene safety can be\nreached at 781-354-4654 or on VHF channels 13, 16, or 78. For more information, please contact Mike Opal at 781-354-4654. Chart:\n13275\nSalem Channel -\u2026",
+      "status": "ACTIVE",
+      "since": "2026-05-15",
+      "location": "Salem Channel - Manchester Marine Events MA \u2013 MANCHESTER \u2013 M"
     },
     {
       "chart": null,
-      "summary": "\u2013 Safety Zone \u2013 Bridge Construction Mariners are advised that a safety zone will be enforced\nMiddle for construction work on the Glen Island Approach Bridge. The safety zone will be enforced from 7 a.m. until 5 p.m.. The safety zone will only be enforced during periods when\nRegulated Navigation Zone construction operations at the Glen Island Bridge rehabilitation project are in progress. The\u2026",
+      "summary": "2025-10-01 To: 2026-06-26 Location: Bridge Name: Glen Lat:\u2013 NEW ROCHELLE HARBOR - Notice of Temporary Deviation - The Coast Guard has issued a temporary Deviation deviation for the Glen Island Temporary Bridge. Under this temporary deviation, the Glen Island Temporary Bridge will remain in the Lon:\nclosed position from October 2, 2025 through June 26, 2026. Mariners that can pass without a bridge\u2026",
       "status": "ACTIVE",
-      "since": "2024-12-16",
-      "location": "New Rochelle Harbor North Approach"
+      "since": "2025-10-01",
+      "location": "Middle Channel"
     },
     {
       "chart": null,
-      "summary": "Norwalk East Approach - Norwalk Bridges The Coast Guard has issued a temporary deviation from the regulation governing the operation of the WALK Bridge across the Lat:.1 to complete construction activities associated with the WALK bridge replacement project. Under this (Scheduled Or Emergency) temporary deviation the Walk Bridge may remain closed to mariners during the following time frames:\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-06-10",
-      "location": "Norwalk East Approach - Norwalk Bridges The Coast Guard"
+      "summary": "2026-04-29 To: 2031-01-01 Location: 41-06-01..512W Bridge Name: Walk Lat:\u2013 NORWALK RIVER - General Construction \u2013 Connecticut Department of Transportation will continue work of the new Walk Bridge over the Norwalk River at mile 0.1 beginning May 1, 2026 through December 31, 2030. The contractor Lon:\nwill utilize work boats & barges in one channel (either East or West) at a time leaving the\u2026",
+      "status": "ACTIVE",
+      "since": "2026-04-29",
+      "location": "Norwalk East Approach - Norwalk Bridges"
     },
     {
       "chart": null,
-      "summary": "2026-06-17 To::00am, June 17, 2026, to 8:00am, June 24, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D11: 19\u203224.606N, 25\u203208.100W; F17:\n17\u203203.018N, 20\u203201.227W; D10: 19\u203234.629N, 25\u203259.594W; B05: 21\u203245.973N, 30\u203215.333W; G16: 16\u203232.420N,\n20\u203253.667W; H16: 15\u203257.881N, 20\u203254.528W; D03:\u2026",
+      "summary": "196N, 073- .103W. THE VESSEL IS REPORTED TO BE WOODEN, 80 FEET LONG, WITH A BLACK TOP AND WHITE HULL. CURRENTLY NOT Lon:\nMARKED. ALL MARINERS ADVISED TO TRANSIT THE AREA WITH EXTREME CAUTION. -: 2026-06-24 To::00am, June 24, 2026, to 8:00am, July 01, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N,\u2026",
       "status": "ACTIVE",
-      "since": "2026-06-17",
+      "since": "2026-06-24",
       "location": "Sector New York"
     }
   ],
