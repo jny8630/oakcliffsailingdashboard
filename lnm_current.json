@@ -1,99 +1,92 @@
 {
-  "week": 25,
+  "week": 26,
   "year": 2026,
-  "generated_utc": "2026-06-26T17:43:38Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01252026.pdf",
+  "generated_utc": "2026-07-03T17:20:18Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01262026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 26,
+      "week": 27,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
-      "chart": "13275",
-      "summary": "City Island Wreck Buoy WR6 25985 MISSING FD\nCobscook Bay\nPrivate Discrepancies\nORPC Cobscook Bay Lighted Buoy A 1013 MISSING PA\nCohasset Channel\nCohasset Harbor - Cohasset Marine Events MA \u2013 COHASSET \u2013 SANDY BEACH \u2013 COHASSET TRIATHLON \u2013..25 mile course. Swimmers will enter the water in 9 waves, never more than 200 swimmers in the water at any given time. The\nperson responsible for on scene safety\u2026",
-      "status": "ACTIVE",
-      "since": "2025-05-08",
-      "location": "City Island Wreck Buoy WR6 25985 MISSING FD"
+      "chart": "13223",
+      "summary": "2026-03-05 To:.. MARINERS ARE REQUESTED TO COOPERATE WITH\nPARTICIPATING VESSELS FOR THE SAFETY OF ALL. ANY CONCERNED TRAFFIC CAN CONTACT NAVY SUPPORT CRAFT ON VHF CHANNELS\n13,16. FOR MORE INFORMATION PLEASE CONTACT 401-832-6140.\nEast River Main Channel\nPrivate Discrepancies\nEast River Regulatory Light E 27246..: 2024-07-01 To: 2027-12-31 Location: Bridge Name: Lat:\u2013Construction at the RFK Bridge\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-03-05",
+      "location": "Eastern Approach - East Naval Activity"
     },
     {
       "chart": null,
-      "summary": "2024-05-13 To: 2026-12-31 Location: Bridge Name: Lat:\u2013\u00b0 fender system to the Bronx and Queens Towers of the Throgs Neck Bridge across East River at mile 15.8 is in progress. HoursLon:\nof operation are from 7 a.m. to 5:30 p.m. daily. Crane and material barges will be operating along the perimeter of the Bronx -and Queens Towers. Any questions regarding this project can contact Steve Mejia via\u2026",
-      "status": "ACTIVE",
-      "since": "2024-05-13",
-      "location": "Main Channel - East River Main Bridges"
-    },
-    {
-      "chart": null,
-      "summary": "2026-06-22 To: 2026-06-27 Location: 40-42-26..350W Bridge Name: Lat::00 a.m. and 2:00 p.m., bridge travelers will be operated under the Manhattan Bridge over East River at mile 1.1 to perform bridge maintenance. Mariners requiring full vertical clearance can Lon:\ncontact the contractor via marine radio VHF-FM Ch.. The traveler platform will -be moved out of the navigable channel after work hours\u2026",
+      "summary": "2026-06-22 To: 2026-07-18 Location: 40-49-41.:.680W Bridge Name: Macombs Dam Bridge From June 22, 2026, to July 17, 2026, between 6:00 a.m. and 2:30 p.m., two Or Fender Replacement barges will be moored adjacent either to the north end or south end of the fender system of the Macombs Dam Bridge over Lon:\nHarlem River at mile 3.2 to perform fender repairs. Marine traffic will have access through\u2026",
       "status": "ACTIVE",
       "since": "2026-06-22",
       "location": "Main Channel - East River Main Bridges"
     },
     {
       "chart": null,
-      "summary": "2022-01-03 To: 2026-12-30 Location: IPCP will be conducting esplanade, bulkhead, and park reconstruction, on the East River, Montgomery St to East 14th Street,\nfrom January 2022 to December 2026, 5-7 days a week, between 6:00am to 6:00pm. Equipment on scene will be Tugboat\nDEBRA QUINN, Inspection Boat, 290 x 40 Mooring Barges, 250 x 62 Gantry Crane Barge, Crawler Crane Barge, 150 x 60\u2026",
+      "summary": "2026-08-03 Lat:: 2026-10-05 Location: 40-41-49..892W Trevcon Construction Company LLC submitted a Local Notice to .S. Coast Guard First District for a marine construction project in New York\u2019s East Lon:. The project, scheduled from August 3 to October 5, 2026, involves the removal of the BBP Pier 4 Marine -Transfer Bridge, including steel structure removal, timber pile removal, and diver\u2026",
       "status": "ACTIVE",
-      "since": "2022-01-03",
+      "since": "2026-08-03",
       "location": "Main Channel - East River"
     },
     {
-      "chart": null,
-      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
+      "chart": "13275",
+      "summary": "Hingham Bay\nWeymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 HINGHAM BAY WEDNESDAY NIGHT RACES \u2013 REGATTA \u2013:00 PM to 8:. The event will consist of approximately 35 sailing vessels varying in length between 20\u2019-50\u2019. The person\nresponsible for on scene safety can be reached on VHF CH 68. For more information, please contact Geoffrey Roth at 617-803-8344. Chart\n13275\nWeymouth\u2026",
       "status": "TEMPORARY",
       "since": "2026-07-01",
-      "location": "Additional MSI Categories"
+      "location": "Hingham Bay"
     },
     {
-      "chart": "13221",
-      "summary": "2024-09-12 To:. Mariners are advised to proceed with caution while transiting the area.: 2024-10-02 To::00am to 3:00pm. Equipment on scene will be a crane and\nmaterial barges. Mariners are urged to use extreme caution and transit the area at their slowest safe speed to create minimum wake\nafter passing arrangements have been made.: 2026-06-26 To: 2026-07-04 Location: LARCHMONT, NY \u2013 LARCHMONT\u2026",
+      "chart": null,
+      "summary": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HARLEM RIVER - HUDSON RIVER \u2013. Approximately two to five\nparticipating swimmers will be assisted by a lead safety vessel in addition to one escort vessel and one escort kayak per every one to\ntwo swimmers. The swim events will start at either Pier A in Battery Park or Mill Rock, near East 90th St., Manhattan. They will proceed\nup the East\u2026",
+      "status": "ACTIVE",
+      "since": "2026-06-24",
+      "location": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HA"
+    },
+    {
+      "chart": null,
+      "summary": "2026-06-26 To: 2026-07-04 Location: LARCHMONT, NY \u2013 LARCHMONT HARBOR \u2013 LONG\nLarchmont Harbor East ISLAND SOUND - FIREWORKS SAFETY ZONE Details::00 p.m. until 10:30 p.m. The fireworks barge\nwill be in approximate position 55\u201944\u2019(WGS84) and the Safety Zone encompasses all waters within a 400-\nfoot radius from the barge. Vessels may not enter, remain in, or transit through the Safety Zone during the\u2026",
       "status": "TEMPORARY",
-      "since": "2024-09-12",
-      "location": "Kickamuit River"
+      "since": "2026-06-26",
+      "location": "Long Island Sound Western Part"
     },
     {
       "chart": "12354",
-      "summary": "2026-06-05 To: 2026-11-20 Location: 43-07-05..608W Bridge Name: General Lat:& Reed Inc. will be conducting bridge removal and temporary trestle construction operations in Little Bay, between Dover and Newington, NH, in position 43-07-04.56N, 070-49-34.59W. Construction will run from June 5, 2026, to November Lon:\n20, 2026, Monday through Saturday, between 6:30am to 6:30 pm, local time. Equipment\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-06-05",
-      "location": "Piscataqua River - Little Bridges"
+      "summary": "Long Island Sound Western Part - Bridges From June 24, 2026, to July 1, 2026, maintenance will be conducted to the approach spans of the Throgs Neck Bridge across the East Lat:\nLittle River, mile 13.8, using an Under Bridge Inspection Unit (snooper truck). Work hours are 10:00 p.m. to 5:00 a.m. This maintenance will . Mariners requiring full vertical clearance can contact in-scene supervisors on\u2026",
+      "status": "ACTIVE",
+      "since": "2024-09-13",
+      "location": "Long Island Sound Western Part - Bridges"
     },
     {
       "chart": "13275",
       "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
-      "status": "ACTIVE",
+      "status": "TEMPORARY",
       "since": "2025-04-16",
-      "location": "Little River Ledge Buoy 2 1085 HAZ"
+      "location": "Mount Sinai Harbor Buoy 10 26110 OFF STATION PA"
     },
     {
-      "chart": "13275",
-      "summary": "Salem Channel - Manchester Marine Events MA \u2013 MANCHESTER \u2013 MANCHESTER HARBOR \u2013 MANCHESTER YC US 250th BOAT PARADE \u2013 PARADE \u2013:00 PM to 4:00 PM in and around Manchester Harbor.\u2019 -46\u2019 in length. The person responsible for on-scene safety can be\nreached at 781-354-4654 or on VHF channels 13, 16, or 78. For more information, please contact Mike Opal at 781-354-4654. Chart:\n13275\nSalem Channel -\u2026",
+      "chart": "13282",
+      "summary": "2026-05-17 To: 2026-07-18 Location: 42-46-26.:.716W Bridge Name: Basiliere Bridge From May 17, 2026, to July 17, 2026, between 7:00 a.m. and 3:00 p.m., paint removal will Or Fender Replacement take place outside the navigation channel on the Basiliere (Route 125) Bridge over Merrimack River at mile 19.4. Mariners Lon:\nrequiring additional information on this project can contact the contractor via\u2026",
       "status": "ACTIVE",
-      "since": "2026-05-15",
-      "location": "Salem Channel - Manchester Marine Events MA \u2013 MANCHESTER \u2013 M"
-    },
-    {
-      "chart": null,
-      "summary": "2025-10-01 To: 2026-06-26 Location: Bridge Name: Glen Lat:\u2013 NEW ROCHELLE HARBOR - Notice of Temporary Deviation - The Coast Guard has issued a temporary Deviation deviation for the Glen Island Temporary Bridge. Under this temporary deviation, the Glen Island Temporary Bridge will remain in the Lon:\nclosed position from October 2, 2025 through June 26, 2026. Mariners that can pass without a bridge\u2026",
-      "status": "ACTIVE",
-      "since": "2025-10-01",
-      "location": "Middle Channel"
+      "since": "2026-05-17",
+      "location": "Plum Island Sound - Merrimack Bridges"
     },
     {
       "chart": null,
-      "summary": "2026-04-29 To: 2031-01-01 Location: 41-06-01..512W Bridge Name: Walk Lat:\u2013 NORWALK RIVER - General Construction \u2013 Connecticut Department of Transportation will continue work of the new Walk Bridge over the Norwalk River at mile 0.1 beginning May 1, 2026 through December 31, 2030. The contractor Lon:\nwill utilize work boats & barges in one channel (either East or West) at a time leaving the\u2026",
+      "summary": "2024-12-16 To:. The safety zone is needed to protect personnel, vessels, and the\nmarine environment from potential hazards associated with the bridge construction between December 2, 2024, through May 27,\n2027. When enforced, this regulation prohibits persons and vessels from being in the safety zone unless authorized by the Captain\nof the Port New York or a designated representative. DATES: This\u2026",
       "status": "ACTIVE",
-      "since": "2026-04-29",
-      "location": "Norwalk East Approach - Norwalk Bridges"
+      "since": "2024-12-16",
+      "location": "New Rochelle Harbor North Approach"
     },
     {
       "chart": null,
-      "summary": "196N, 073- .103W. THE VESSEL IS REPORTED TO BE WOODEN, 80 FEET LONG, WITH A BLACK TOP AND WHITE HULL. CURRENTLY NOT Lon:\nMARKED. ALL MARINERS ADVISED TO TRANSIT THE AREA WITH EXTREME CAUTION. -: 2026-06-24 To::00am, June 24, 2026, to 8:00am, July 01, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N,\u2026",
+      "summary": "196N, .103W. THE VESSEL IS REPORTED TO BE WOODEN, 80 FEET LONG, WITH A BLACK TOP AND WHITE HULL. CURRENTLY NOT Lon:\nMARKED. ALL MARINERS ADVISED TO TRANSIT THE AREA WITH EXTREME CAUTION. -: 2026-05-01 To: Lat:: 40-18-11..384W J.T. C;eary Inc. will be conducting pile driving operations in Long Branch, NJ, Construction (Excluding (Excluding in position 40-18-11.6N, 073-58-33.4W, from May 1, 2026,\u2026",
       "status": "ACTIVE",
-      "since": "2026-06-24",
+      "since": "2026-05-01",
       "location": "Sector New York"
     }
   ],
