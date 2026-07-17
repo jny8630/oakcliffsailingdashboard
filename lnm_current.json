@@ -1,51 +1,79 @@
 {
-  "week": 27,
+  "week": 28,
   "year": 2026,
-  "generated_utc": "2026-07-10T17:44:12Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01272026.pdf",
+  "generated_utc": "2026-07-17T17:07:19Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01282026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 28,
+      "week": 29,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
-      "chart": null,
-      "summary": "2026-06-15 To: 2027-01-01 Location: 40-48-01..420W Bridge Name: 125th Lat::00 a.m. and 4:00 p.m., a barge with manlift will be operated under 125th St. (RFK) Bridge over Harlem River at mile 1.3 to perform inspections. Mariners requiring full horizontal clearance Lon:\ncan contact the contractor via marine radio VHF-FM Ch.. The barge with manlift will be moved -out of the navigable channel after\u2026",
+      "chart": "13269",
+      "summary": "City Island\nCity Island Wreck Buoy WR6 25985 MISSING FD\nCobscook Bay\nPrivate Discrepancies\nORPC Cobscook Bay Lighted Buoy A 1013 MISSING PA\nCohasset Channel\nCohasset Harbor - Cohasset Marine Events MA \u2013 COHASSET \u2013 SANDY BEACH TO MINOT\u2019S LIGHT \u2013 MINOT LIGHT ROUNDABOUT \u2013 ROW \u2013:00 AM to 2:00 PM (Rain date of September 13, 2026)..5 mile row from Sandy Beach, Cohasset out and around Minot\u2019s Light and\u2026",
       "status": "ACTIVE",
-      "since": "2026-06-15",
+      "since": "2026-06-17",
+      "location": "City Island"
+    },
+    {
+      "chart": null,
+      "summary": "East River Regulatory Light C 27246.: 2024-07-01 To: 2027-12-31 Location: Bridge Name: Lat:\u2013Construction at the RFK Bridge across East River at mile 7.8 will commence on July 1, 2024. Hours of operation are during daylight hours. A temporary platform will be installed under the entire length and Lon:\nwidth of suspended span. The platform will reduce the vertical clearance by 4 feet plus 2 feet\u2026",
+      "status": "TEMPORARY",
+      "since": "2024-07-01",
+      "location": "East River Regulatory Light C 27246.2 STRUCT DEST PA"
+    },
+    {
+      "chart": null,
+      "summary": "2026-07-20 To: 2026-07-25 Location: 40-42-26..350W Bridge NamFrom Lat::00 a.m. and 2:00 p.m., bridge travelers will be operated under the Manhattan Bridge over East River at mile 1.1 to perform bridge maintenance. Mariners requiring full vertical clearance can contact the contractor via Lon:\nmarine radio VHF-FM Ch.. The traveler platform will be moved out of the -navigable channel after work\u2026",
+      "status": "ACTIVE",
+      "since": "2026-07-20",
       "location": "Main Channel - East River Main Bridges"
     },
     {
-      "chart": null,
-      "summary": "2026-08-03 Lat:: 2026-10-05 Location: 40-41-49..892W Trevcon Construction Company LLC submitted a Local Notice to .S. Coast Guard First District for a marine construction project in New York\u2019s East Lon:. The project, scheduled from August 3 to October 5, 2026, involves the removal of the BBP Pier 4 Marine -Transfer Bridge, including steel structure removal, timber pile removal, and diver\u2026",
-      "status": "ACTIVE",
-      "since": "2026-08-03",
-      "location": "Main Channel - East River"
-    },
-    {
-      "chart": null,
-      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
+      "chart": "13275",
+      "summary": "Hingham Bay\nWeymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 HINGHAM BAY WEDNESDAY NIGHT RACES \u2013 REGATTA \u2013:00 PM to 8:. The event will consist of approximately 35 sailing vessels varying in length between 20\u2019-50\u2019. The person\nresponsible for on scene safety can be reached on VHF CH 68. For more information, please contact Geoffrey Roth at 617-803-8344. Chart\n13275\nWeymouth\u2026",
       "status": "TEMPORARY",
       "since": "2026-07-01",
-      "location": "Additional MSI Categories"
+      "location": "Hingham Bay"
     },
     {
-      "chart": "12354",
-      "summary": "2026-04-17 To: 2026-11-01 Location: 40-47-57..920W Bridge Name: Throgs Neck Lat:\nLittle Bridge NEW YORK \u2013 EAST RIVER \u2013 Barge Placement \u2013Beginning April 21, 2026 through October 31, 2026, contractors will be .8. To perform this work contractors will be Lon:\nutilizing a barge 110\u2019x 32\u2019. At no time will the bridge be in the navigational channel. Mariners with any questions can contact Project\u2026",
+      "chart": null,
+      "summary": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HARLEM RIVER - HUDSON RIVER \u2013. Approximately two to five\nparticipating swimmers will be assisted by a lead safety vessel in addition to one escort vessel and one escort kayak per every one to\ntwo swimmers. The swim events will start at either Pier A in Battery Park or Mill Rock, near East 90th St., Manhattan. They will proceed\nup the East\u2026",
       "status": "ACTIVE",
-      "since": "2026-04-17",
-      "location": "Long Island Sound Western Part - Bridges"
+      "since": "2026-06-08",
+      "location": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HA"
+    },
+    {
+      "chart": "13221",
+      "summary": "Bridge across Reynolds Channel at mile 8.2. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20-foot by 40-foot work barge will be deployed in the navigable channel. Mariners requiring full Lon:. -Mariners are advised to exercise caution when transiting this area. :\nMeadowbrook Parkway Bridge across False Channel at mile 0.7. Work hours are 7:00 a.m. to 4:00 p.m.\u2026",
+      "status": "ACTIVE",
+      "since": "2024-09-12",
+      "location": "Jones Inlet"
     },
     {
       "chart": null,
       "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
       "status": "ACTIVE",
       "since": "2025-04-16",
-      "location": "Mount Sinai Jetty Hazard Daybeacon B null LT EXT PA"
+      "location": "Little River"
+    },
+    {
+      "chart": null,
+      "summary": "2026-07-06 To: 2026-10-30 Location: 40-57-24..412W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
+      "status": "ACTIVE",
+      "since": "2026-07-06",
+      "location": "Long Island Sound Eastern Part"
+    },
+    {
+      "chart": null,
+      "summary": "2026-05-17 To: 2026-07-18 Location: 42-46-26.:.716W Bridge Name: Basiliere Bridge From May 17, 2026, to July 17, 2026, between 7:00 a.m. and 3:00 p.m., paint removal will Or Fender Replacement take place outside the navigation channel on the Basiliere (Route 125) Bridge over Merrimack River at mile 19.4. Mariners Lon:\nrequiring additional information on this project can contact the contractor via\u2026",
+      "status": "ACTIVE",
+      "since": "2026-05-17",
+      "location": "Merrimack River"
     },
     {
       "chart": null,
@@ -55,17 +83,10 @@
       "location": "New Rochelle Harbor North Approach"
     },
     {
-      "chart": "13275",
-      "summary": "2026-07-02 To: 2026-08-31 Location: 41-07-10..520W Bridge Name: Lat:\nSaugatuck Saugatuck River Railroad Bridge CONNECTICUT \u2013 SAUGATUCK RIVER - Bridge Maintenance \u2013 From August 1, 2026 to August 31, :\nmile 1.1, at Westport, CT.. During this time work platforms will be installed decreasing the horizontal clearance by 10\u2019. Mariners -with any questions or concerns may contact Colton Gray at (929)\u2026",
-      "status": "ACTIVE",
-      "since": "2026-07-02",
-      "location": "Additional MSI Categories"
-    },
-    {
       "chart": null,
-      "summary": "2026-07-08 To::00am, July 08, 2026, to 8:00am, July 15, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D11: 19\u203224.606N, 25\u203208.100W; F17:\n17\u203203.018N, 20\u203201.227W; D10: 19\u203234.629N, 25\u203259.594W; B05: 21\u203245.973N, 30\u203215.333W; D03: 20\u203250.352N,\n32\u203200.051W; H15: 16\u203219.659N, 21\u203245.664W; F11:\u2026",
+      "summary": "2026-07-15 To::00am, July 15, 2026, to 8:00am, July 22, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D11: 19\u203224.606N, 25\u203208.100W; F17:\n17\u203203.018N, 20\u203201.227W; D10: 19\u203234.629N, 25\u203259.594W; B05: 21\u203245.973N, 30\u203215.333W; D03: 20\u203250.352N,\n32\u203200.051W; H15: 16\u203219.659N, 21\u203245.664W; F11:\u2026",
       "status": "ACTIVE",
-      "since": "2026-07-08",
+      "since": "2026-07-15",
       "location": "Sector New York"
     }
   ],
