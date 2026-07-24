@@ -1,12 +1,12 @@
 {
-  "week": 28,
+  "week": 29,
   "year": 2026,
-  "generated_utc": "2026-07-17T17:07:19Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01282026.pdf",
+  "generated_utc": "2026-07-24T17:25:22Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01292026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 29,
+      "week": 30,
       "year": 2026,
       "reason": "not_posted"
     }
@@ -28,66 +28,45 @@
     },
     {
       "chart": null,
-      "summary": "2026-07-20 To: 2026-07-25 Location: 40-42-26..350W Bridge NamFrom Lat::00 a.m. and 2:00 p.m., bridge travelers will be operated under the Manhattan Bridge over East River at mile 1.1 to perform bridge maintenance. Mariners requiring full vertical clearance can contact the contractor via Lon:\nmarine radio VHF-FM Ch.. The traveler platform will be moved out of the -navigable channel after work\u2026",
+      "summary": "2026-07-15 To: 2026-08-04 Location: 40-47-57..920W Bridge Name: Lat:\u00b0 Throgs Neck Bridge across the East River, mile 15.8, using an Under Bridge Inspection Unit (snooper truck). Work hours are Lon:\n10:00 p.m. to 5:00 a.m. This maintenance will not impede the navigation channel. Mariners requiring full vertical clearance -. Mariners are advised to exercise caution when transiting this area.:\u2026",
       "status": "ACTIVE",
-      "since": "2026-07-20",
+      "since": "2026-07-15",
       "location": "Main Channel - East River Main Bridges"
     },
     {
-      "chart": "13275",
-      "summary": "Hingham Bay\nWeymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 HINGHAM BAY WEDNESDAY NIGHT RACES \u2013 REGATTA \u2013:00 PM to 8:. The event will consist of approximately 35 sailing vessels varying in length between 20\u2019-50\u2019. The person\nresponsible for on scene safety can be reached on VHF CH 68. For more information, please contact Geoffrey Roth at 617-803-8344. Chart\n13275\nWeymouth\u2026",
+      "chart": null,
+      "summary": "2027-07-05 Location: Phoenix Marine Co. will be conducting diver\\. 34th St. Heliport, in position 40*44\u201936\u201dN-73*58\u201916\u201d W through\n40*44\u201922\u201dN-73*58\u201920\u201dW. Work will be conducted between 6:00am-2:00pm, from September 15, 2025 to July 5, 2027.\nEquipment on scene will be (1) crane barge, (1) material barge and (1) work platform barge monitoring VHF-CH 9.:.A.C. Industries, managed by Michal Mludzik.\u2026",
+      "status": "ACTIVE",
+      "since": "2025-09-01",
+      "location": "Main Channel - East River"
+    },
+    {
+      "chart": null,
+      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
       "status": "TEMPORARY",
       "since": "2026-07-01",
-      "location": "Hingham Bay"
+      "location": "Additional MSI Categories"
     },
     {
       "chart": null,
-      "summary": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HARLEM RIVER - HUDSON RIVER \u2013. Approximately two to five\nparticipating swimmers will be assisted by a lead safety vessel in addition to one escort vessel and one escort kayak per every one to\ntwo swimmers. The swim events will start at either Pier A in Battery Park or Mill Rock, near East 90th St., Manhattan. They will proceed\nup the East\u2026",
-      "status": "ACTIVE",
-      "since": "2026-06-08",
-      "location": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HA"
-    },
-    {
-      "chart": "13221",
-      "summary": "Bridge across Reynolds Channel at mile 8.2. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20-foot by 40-foot work barge will be deployed in the navigable channel. Mariners requiring full Lon:. -Mariners are advised to exercise caution when transiting this area. :\nMeadowbrook Parkway Bridge across False Channel at mile 0.7. Work hours are 7:00 a.m. to 4:00 p.m.\u2026",
-      "status": "ACTIVE",
-      "since": "2024-09-12",
-      "location": "Jones Inlet"
+      "summary": "2024-10-02 To::00am to 3:00pm. Equipment on scene will be a crane and material barges..: 2026-06-26 To: 2026-07-04 Location: LARCHMONT, NY \u2013 LARCHMONT HARBOR \u2013 LONG\nLarchmont Harbor East ISLAND SOUND - FIREWORKS SAFETY ZONE Details::00 p.m. until 10:30 p.m. The fireworks barge\nwill be in approximate position 55\u201944\u2019(WGS84) and the Safety Zone encompasses all waters within a 400-\nfoot radius from\u2026",
+      "status": "TEMPORARY",
+      "since": "2024-10-02",
+      "location": "Main Channel - Kill Van"
     },
     {
       "chart": null,
-      "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
-      "status": "ACTIVE",
-      "since": "2025-04-16",
-      "location": "Little River"
-    },
-    {
-      "chart": null,
-      "summary": "2026-07-06 To: 2026-10-30 Location: 40-57-24..412W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
-      "status": "ACTIVE",
-      "since": "2026-07-06",
-      "location": "Long Island Sound Eastern Part"
-    },
-    {
-      "chart": null,
-      "summary": "2026-05-17 To: 2026-07-18 Location: 42-46-26.:.716W Bridge Name: Basiliere Bridge From May 17, 2026, to July 17, 2026, between 7:00 a.m. and 3:00 p.m., paint removal will Or Fender Replacement take place outside the navigation channel on the Basiliere (Route 125) Bridge over Merrimack River at mile 19.4. Mariners Lon:\nrequiring additional information on this project can contact the contractor via\u2026",
-      "status": "ACTIVE",
-      "since": "2026-05-17",
-      "location": "Merrimack River"
-    },
-    {
-      "chart": null,
-      "summary": "2024-12-16 To:. The safety zone is needed to protect personnel, vessels, and the\nmarine environment from potential hazards associated with the bridge construction between December 2, 2024, through May 27,\n2027. When enforced, this regulation prohibits persons and vessels from being in the safety zone unless authorized by the Captain\nof the Port New York or a designated representative. DATES: This\u2026",
+      "summary": "New Rochelle Harbor North Approach - Bridges From June 26, 2026 - July 24, 2026, between 7:00 a.m. and 2:30 p.m. Monday through Friday, pier repairs will be conducted to the Lat:\nMiddle Glen Island Bridge across New Rochelle Harbor at mile 0.8. A barge with manlift will be in the channel during work hours. A :\nmoved out of the channel outside of work shifts. Mariners requiring full horizontal\u2026",
       "status": "ACTIVE",
       "since": "2024-12-16",
-      "location": "New Rochelle Harbor North Approach"
+      "location": "New Rochelle Harbor North Approach - Bridges"
     },
     {
       "chart": null,
-      "summary": "2026-07-15 To::00am, July 15, 2026, to 8:00am, July 22, 2026, Mariners are to avoid transiting within 500-meters of the following\nRestriction positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D11: 19\u203224.606N, 25\u203208.100W; F17:\n17\u203203.018N, 20\u203201.227W; D10: 19\u203234.629N, 25\u203259.594W; B05: 21\u203245.973N, 30\u203215.333W; D03: 20\u203250.352N,\n32\u203200.051W; H15: 16\u203219.659N, 21\u203245.664W; F11:\u2026",
+      "summary": "2026-07-15 To:\nConstruction (Excluding Construction 2026-09-30 Location: 40-34-04..776W 40-33-46..216W 40-28-16....112W H &\u2019s ocean outfall in Wantagh, New York, located in the Atlantic Ocean. The project, led by Jeffery Hawkins, will run\nfrom July 16 to September 30, 2026, operating Monday through Friday from 6:00 AM to 5:00 PM. Work will be conducted from a\ndive vessel, tug Manhasset Bay, and\u2026",
       "status": "ACTIVE",
       "since": "2026-07-15",
-      "location": "Sector New York"
+      "location": "NAVAREA IV/General/Marine"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
