@@ -1,86 +1,86 @@
 {
-  "week": 31,
+  "week": 32,
   "year": 2026,
-  "generated_utc": "2026-08-07T16:48:20Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01312026.pdf",
+  "generated_utc": "2026-08-14T16:48:48Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01322026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 32,
+      "week": 33,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
-      "chart": "13223",
-      "summary": "2026-03-05 To:.. MARINERS ARE REQUESTED TO COOPERATE WITH\nPARTICIPATING VESSELS FOR THE SAFETY OF ALL. ANY CONCERNED TRAFFIC CAN CONTACT NAVY SUPPORT CRAFT ON VHF CHANNELS\n13,16. FOR MORE INFORMATION PLEASE CONTACT 401-832-6140.\nEast Penobscot Bay\nIsle Au Haut Bay - East Penobscot Marine Events ME \u2013 East Penobscot Bay \u2013 Races Mariners are advised that Squadron Run #:00 a.m.to 10:00 a.m. starts in\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-03-05",
-      "location": "Eastern Approach - East Naval Activity"
+      "chart": "13276",
+      "summary": "2026-03-06 To: 2027-03-06 Location: 40-44-09.:.444W Shoaling has been reported of 3.0 feet at mean low low water in the vicinity of position 40-44-9.115N, 072-52- .447W. Mariners are advised to transit the area with extreme caution. Lon:\n-Beverly Channel\nSalem Channel - Beverly Marine Events MA \u2013 BEVERLY HARBOR \u2013 INDEPENDENCE PARK \u2013 BEVERLY 400th BATTLE REENACTMENT The Beverly 400 is hosting the\u2026",
+      "status": "ACTIVE",
+      "since": "2026-03-06",
+      "location": "Additional MSI Categories"
     },
     {
       "chart": null,
-      "summary": "2026-07-20 To: 2026-11-21 Location: 40-44-21..241W Bridge Name: Lat::00 a.m. to 3:00 p.m., contractors will be inspecting the Pulaski Bridge across Newtown Creek at mile 0.6, in Queens, NY. The contractor will Lon:\nbe utilizing a 60\u2019 Under Bridge Inspection Unit (UBIU) with 60\u2019 manlift. Mariners requiring full vertical clearance can contact -. Mariners are advised to exercise caution and reduce\u2026",
+      "summary": "Main Channel - East River Main Bridges From May 1, 2026 \u2013 December 31, 2026, Monday-Friday, with occasional Saturdays and Sundays, between 8:00 a.m. and Lat::00 p.m., a biennial bridge inspection using a traveler and rigging will be conducted on the Manhattan Bridge, mile 1.1 in the East River, New York City. The safety boat Kylie Anne (CT8893BM) will be on scene during inspection operations.\u2026",
       "status": "ACTIVE",
-      "since": "2026-07-20",
+      "since": "2026-06-15",
       "location": "Main Channel - East River Main Bridges"
     },
     {
       "chart": null,
-      "summary": "2022-01-03 To: 2026-12-30 Location: IPCP will be conducting esplanade, bulkhead, and park reconstruction, on the East River, Montgomery St to East 14th Street,\nfrom January 2022 to December 2026, 5-7 days a week, between 6:00am to 6:00pm. Equipment on scene will be Tugboat\nDEBRA QUINN, Inspection Boat, 290 x 40 Mooring Barges, 250 x 62 Gantry Crane Barge, Crawler Crane Barge, 150 x 60\u2026",
+      "summary": "2026-08-03 Lat:: 2026-10-05 Location: 40-41-48..920W Trevcon Construction Company LLC submitted a Local Notice to .S. Coast Guard First District for a marine construction project in New York\u2019s East Lon:. The project, scheduled from August 3 to October 5, 2026, involves the removal of the BBP Pier 4 Marine -Transfer Bridge, including steel structure removal, timber pile removal, and diver\u2026",
       "status": "ACTIVE",
-      "since": "2022-01-03",
+      "since": "2026-08-03",
       "location": "Main Channel - East River"
     },
     {
-      "chart": "13275",
-      "summary": "2026-08-04 To: Lat:: 40-37-29..484W Billion Oyster Project, Inc., have a planned environmental restoration :. The operation will utilize two vessels at the following coordinates: -. Marine communication will be available on VHF channels 13 and 16. No passing arrangements are required as the vessels will not impede navigation.\nHerring River\nPrivate Discrepancies\nHerring River Entrance Buoy 6 14165\u2026",
-      "status": "ACTIVE",
-      "since": "2026-08-04",
-      "location": "Grass Hassock Channel - Head Of"
+      "chart": null,
+      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-07-01",
+      "location": "Long Island Sound Eastern Part - Bridges"
     },
     {
       "chart": null,
       "summary": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HARLEM RIVER - HUDSON RIVER \u2013. Approximately two to five\nparticipating swimmers will be assisted by a lead safety vessel in addition to one escort vessel and one escort kayak per every one to\ntwo swimmers. The swim events will start at either Pier A in Battery Park or Mill Rock, near East 90th St., Manhattan. They will proceed\nup the East\u2026",
       "status": "ACTIVE",
-      "since": "2026-06-08",
+      "since": "2026-08-05",
       "location": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HA"
     },
     {
-      "chart": null,
-      "summary": "2026-06-26 To: 2026-07-04 Location: LARCHMONT, NY \u2013 LARCHMONT HARBOR \u2013 LONG\nLarchmont Harbor East ISLAND SOUND - FIREWORKS SAFETY ZONE Details::00 p.m. until 10:30 p.m. The fireworks barge\nwill be in approximate position 55\u201944\u2019(WGS84) and the Safety Zone encompasses all waters within a 400-\nfoot radius from the barge. Vessels may not enter, remain in, or transit through the Safety Zone during the\u2026",
+      "chart": "13221",
+      "summary": "Bridge across Reynolds Channel at mile 8.2. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20-foot by 40-foot work barge will be deployed in the navigable channel. Mariners requiring full Lon:. -Mariners are advised to exercise caution when transiting this area. :\nMeadowbrook Parkway Bridge across False Channel at mile 0.7. Work hours are 7:00 a.m. to 4:00 p.m.\u2026",
       "status": "ACTIVE",
-      "since": "2026-06-26",
-      "location": "Larchmont Harbor East Entrance"
+      "since": "2024-09-12",
+      "location": "Jones Inlet Lighted Buoy 16 30975 MISSING FD"
     },
     {
       "chart": null,
-      "summary": "2026-08-04 To: 2026-10-03 Location: 40-55-28..120W Aid Name: UCONN Oxygen Profiler Lat:\nLong Island Sound Western Lighted Research Buoy LLNR: 21423 Action: ESTABLISH WITH Fl Y 6s. :\n-: 2026-07-06 To: 2026-10-30 Location: 40-53-02..340W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2\u2026",
+      "summary": "2026-04-09 To: 2027-04-09 Location: 41-37..#6 buoy near the Hyannis Channel has been identified in position .. Buoy is not marked.\nMariners urged to use caution and maintain sharp lookout in area.\nLittle Bay\nPiscataqua River - Little Bridges Demolition activities have commenced to the General Sullivan Bridge across Little Bay, mile 0.1, between Newington and Dover NH Lat:. Work trestles have been\u2026",
       "status": "ACTIVE",
-      "since": "2026-08-04",
-      "location": "Long Island Sound Eastern Part - ATON Changes"
+      "since": "2026-04-09",
+      "location": "Lewis Bay"
+    },
+    {
+      "chart": "12354",
+      "summary": "2024-09-13 To:.\nReported Mariners are advised to proceed with caution while transiting the area.: 2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November :\nPequonnock River at mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be\u2026",
+      "status": "ACTIVE",
+      "since": "2024-09-13",
+      "location": "Shelter Island Sound South Channel - Little Peconic"
     },
     {
       "chart": null,
-      "summary": "Middle Bay\nJones Inlet - Middle Bridges From April 15, 2026, to December 15, 2027, NYSDOT will be conducting structural rehabilitation to the Meadowbrook Parkway Lat:.7. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20- foot by 40-foot work barge will be deployed in the navigable channel. Mariners requiring full horizontal clearance under the bridge Lon:.\u2026",
+      "summary": "2026-07-06 To: 2026-10-30 Location: 40-53-04..948W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
       "status": "ACTIVE",
-      "since": "2024-12-16",
-      "location": "Middle Bay"
-    },
-    {
-      "chart": "13275",
-      "summary": "2026-07-02 To: 2026-08-31 Location: 41-07-10..520W Bridge Name: Lat:\nSaugatuck Saugatuck River Railroad Bridge CONNECTICUT \u2013 SAUGATUCK RIVER - Bridge Maintenance \u2013 From August 1, 2026 to August 31, :\nmile 1.1, at Westport, CT.. During this time work platforms will be installed decreasing the horizontal clearance by 10\u2019. Mariners -with any questions or concerns may contact Colton Gray at (929)\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-07-02",
-      "location": "Saquatucket Harbor"
+      "since": "2026-07-06",
+      "location": "Long Island Sound Eastern Part"
     },
     {
       "chart": null,
-      "summary": "2026-08-05 To::00am, August 05, 2026, to 8:00am, August 12, 2026, Mariners are to avoid transiting within 500-meters of\nRestriction the following positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D11: 19\u203224.606N,\n25\u203208.100W; F17: 17\u203203.018N, 20\u203201.227W; D10: 19\u203234.629N, 25\u203259.594W; B05: 21\u203245.973N, 30\u203215.333W; D03:\n20\u203250.352N, 32\u203200.051W; H15: 16\u203219.659N, 21\u203245.664W; B06:\u2026",
+      "summary": "2024-09-13 To: 2039-12-22 Location: NY-LONG ISLAND SOUND \u2013MILTON HARBOR Severe Shoaling has been reported in Milton Harbor. Mariners are\nadvised to proceed with caution while transiting the area.: 2024-09-13 To: 2039-12-28 NY-SHINNECOCK BAY TO EAST ROCKAWAY INLET (Chart\nMoriches Navigation 12352)-MORICHES BAY-Update 2/8/.\u2019s risk. The most severe area of shoaling can be found between buoys 26 and\u2026",
       "status": "ACTIVE",
-      "since": "2026-08-05",
-      "location": "Sector New York"
+      "since": "2024-09-13",
+      "location": "Milton Harbor"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
