@@ -1,37 +1,44 @@
 {
-  "week": 33,
+  "week": 34,
   "year": 2026,
-  "generated_utc": "2026-08-21T16:26:29Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01332026.pdf",
+  "generated_utc": "2026-08-29T00:21:31Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01342026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 34,
+      "week": 35,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
+      "chart": "13276",
+      "summary": "Beverly Channel\nSalem Channel - Beverly Marine Events MA \u2013 BEVERLY HARBOR \u2013 INDEPENDENCE PARK \u2013 BEVERLY 400th BATTLE REENACTMENT The Beverly 400 is hosting the Beverly 400 \u2013:00 AM to 11:. The event will consist of two sailing vessels approximately 38.5\u2019 and 50\u2019 in length. The person responsible for on scene safety can be\nreached at 347-424-3173. For more information, please contact Scott White at\u2026",
+      "status": "ACTIVE",
+      "since": "2024-10-01",
+      "location": "Beverly Channel"
+    },
+    {
       "chart": null,
-      "summary": "Main Channel - East River Main Bridges From August 17, 2026, to August 21, 2026, between 10:00 a.m. and 2:00 p.m., a bridge traveler will be operated under the Lat:.3 to perform a bridge inspection. Mariners requiring full vertical clearance can contact the contractor via marine radio VHF-FM Ch.. The traveler platform will Lon:\nbe moved out of the navigable channel after work hours or when not in\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-08-18",
+      "summary": "2024-11-06 To: 2026-12-25 Location: :Bridge Name: Borden Ave Bridge NEW YORK \u2013 EAST RIVER NEWTOWN CREEK \u2013 DUTCH KILLS \u2013 Bridge Or Emergency) Closure \u2013 The Borden Ave Bridge, mile 1.2, is closed due to vandalism. Vessels able to pass under the bridge in the closed Lon:\nposition may do so. Mariners with questions may contact Keith Burrows at (212) 839-3741, NYCDOT Director of Bridge -& Tunnel\u2026",
+      "status": "ACTIVE",
+      "since": "2024-11-06",
       "location": "Main Channel - East River Main Bridges"
     },
     {
       "chart": null,
-      "summary": "2022-01-03 To: 2026-12-30 Location: IPCP will be conducting esplanade, bulkhead, and park reconstruction, on the East River, Montgomery St to East 14th Street,\nfrom January 2022 to December 2026, 5-7 days a week, between 6:00am to 6:00pm. Equipment on scene will be Tugboat\nDEBRA QUINN, Inspection Boat, 290 x 40 Mooring Barges, 250 x 62 Gantry Crane Barge, Crawler Crane Barge, 150 x 60\u2026",
+      "summary": "2026-08-03 Lat:: 2026-10-05 Location: 40-41-48..920W Trevcon Construction Company LLC submitted a Local Notice to .S. Coast Guard First District for a marine construction project in New York\u2019s East Lon:. The project, scheduled from August 3 to October 5, 2026, involves the removal of the BBP Pier 4 Marine -Transfer Bridge, including steel structure removal, timber pile removal, and diver\u2026",
       "status": "ACTIVE",
-      "since": "2022-01-03",
+      "since": "2026-08-03",
       "location": "Main Channel - East River"
     },
     {
-      "chart": null,
-      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-07-01",
-      "location": "Hog Island Channel"
+      "chart": "13275",
+      "summary": "2025-07-08 To:. Underwood Seabrook-Hampton Harbor Bridge\nRegulated Navigation Zone replacement project. This rule is necessary to provide for the safety of life in the areas undergoing demolition and construction. The\nRNA will be enforced from July 1, 2025, through December 31, 2030, and will establish the following operating restrictions on vessels:\nNothing in this regulation relieves any\u2026",
+      "status": "ACTIVE",
+      "since": "2025-07-08",
+      "location": "Hampton Harbor"
     },
     {
       "chart": "12354",
@@ -42,10 +49,10 @@
     },
     {
       "chart": null,
-      "summary": "Medomak River\nMedomak River Buoy 24 5130.: 2025-04-25 To:. Water depths in the vicinity of Menemsha Creek Buoy 4 (LLNR 15965) have been reported as low as 3..: 2026-03-26 To: 2026-09-22 Location: 41-21-15....552W 41-21-13..008W 41-21-06..852W 41-21-03....252W 41-20-34..204W 41-20-34..824W 41-20-52..728W 41-21-\n03..608W 41-21-05..788W 41-21-13..412W 41-21-15..488W Shoaling\nhas been reported in\u2026",
-      "status": "TEMPORARY",
-      "since": "2025-04-25",
-      "location": "Medomak River"
+      "summary": "2026-07-06 To: 2026-10-30 Location: 40-53-02..340W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
+      "status": "ACTIVE",
+      "since": "2026-07-06",
+      "location": "Long Island Sound Eastern Part"
     },
     {
       "chart": null,
@@ -53,6 +60,13 @@
       "status": "ACTIVE",
       "since": "2024-12-16",
       "location": "New Rochelle Harbor North Approach"
+    },
+    {
+      "chart": null,
+      "summary": "2026-08- Lat:: 2026-09-01 Location: 41-20-51..976W Construction operations on a floating work platform will .m. to 2:30 p.m. each day in the Thames River at the Lon:\u00b0 51N, 03W in New London, CT. Mariners are requested to maintain steerage and -transit the area at a no wake, minimum safe speed. Mariners may contact personnel on the work platform on VHF Channel 8 for further information.\nNewark\u2026",
+      "status": "ACTIVE",
+      "since": "2026-07-13",
+      "location": "New London Harbor"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
