@@ -1,72 +1,79 @@
 {
-  "week": 34,
+  "week": 35,
   "year": 2026,
-  "generated_utc": "2026-08-29T00:21:31Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01342026.pdf",
+  "generated_utc": "2026-09-04T18:46:23Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01352026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 35,
+      "week": 36,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
-      "chart": "13276",
-      "summary": "Beverly Channel\nSalem Channel - Beverly Marine Events MA \u2013 BEVERLY HARBOR \u2013 INDEPENDENCE PARK \u2013 BEVERLY 400th BATTLE REENACTMENT The Beverly 400 is hosting the Beverly 400 \u2013:00 AM to 11:. The event will consist of two sailing vessels approximately 38.5\u2019 and 50\u2019 in length. The person responsible for on scene safety can be\nreached at 347-424-3173. For more information, please contact Scott White at\u2026",
-      "status": "ACTIVE",
-      "since": "2024-10-01",
-      "location": "Beverly Channel"
+      "chart": "13223",
+      "summary": "2026-03-05 To:.. MARINERS ARE REQUESTED TO COOPERATE WITH PARTICIPATING VESSELS FOR THE\nSAFETY OF ALL. ANY CONCERNED TRAFFIC CAN CONTACT NAVY SUPPORT CRAFT ON VHF CHANNELS 13,16. FOR MORE INFORMATION\nPLEASE CONTACT 401-832-6140.\nEast River Main Channel\nPrivate Discrepancies\nEast River Regulatory Light C 27246.2 STRUCT DEST PA\nEast River Regulatory Light E 27246.: 2024-07-01 To: 2027-12-31\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-03-05",
+      "location": "East Passage"
     },
     {
       "chart": null,
-      "summary": "2024-11-06 To: 2026-12-25 Location: :Bridge Name: Borden Ave Bridge NEW YORK \u2013 EAST RIVER NEWTOWN CREEK \u2013 DUTCH KILLS \u2013 Bridge Or Emergency) Closure \u2013 The Borden Ave Bridge, mile 1.2, is closed due to vandalism. Vessels able to pass under the bridge in the closed Lon:\nposition may do so. Mariners with questions may contact Keith Burrows at (212) 839-3741, NYCDOT Director of Bridge -& Tunnel\u2026",
+      "summary": "2026-07-20 To: 2026-11-21 Location: 40-44-21..241W Bridge Name: Lat::00 a.m. to 3:00 p.m., contractors will be inspecting the Pulaski Bridge across Newtown Creek at mile 0.6, in Queens, NY. The contractor will Lon:\nbe utilizing a 60\u2019 Under Bridge Inspection Unit (UBIU) with 60\u2019 manlift. Mariners requiring full vertical clearance can contact -. Mariners are advised to exercise caution and reduce\u2026",
       "status": "ACTIVE",
-      "since": "2024-11-06",
+      "since": "2026-07-20",
       "location": "Main Channel - East River Main Bridges"
     },
     {
       "chart": null,
-      "summary": "2026-08-03 Lat:: 2026-10-05 Location: 40-41-48..920W Trevcon Construction Company LLC submitted a Local Notice to .S. Coast Guard First District for a marine construction project in New York\u2019s East Lon:. The project, scheduled from August 3 to October 5, 2026, involves the removal of the BBP Pier 4 Marine -Transfer Bridge, including steel structure removal, timber pile removal, and diver\u2026",
+      "summary": "2022-01-03 To: 2026-12-30 Location: IPCP will be conducting esplanade, bulkhead, and park reconstruction, on the East River, Montgomery St to East 14th Street,\nfrom January 2022 to December 2026, 5-7 days a week, between 6:00am to 6:00pm. Equipment on scene will be Tugboat\nDEBRA QUINN, Inspection Boat, 290 x 40 Mooring Barges, 250 x 62 Gantry Crane Barge, Crawler Crane Barge, 150 x 60\u2026",
       "status": "ACTIVE",
-      "since": "2026-08-03",
+      "since": "2022-01-03",
       "location": "Main Channel - East River"
     },
     {
-      "chart": "13275",
-      "summary": "2025-07-08 To:. Underwood Seabrook-Hampton Harbor Bridge\nRegulated Navigation Zone replacement project. This rule is necessary to provide for the safety of life in the areas undergoing demolition and construction. The\nRNA will be enforced from July 1, 2025, through December 31, 2030, and will establish the following operating restrictions on vessels:\nNothing in this regulation relieves any\u2026",
-      "status": "ACTIVE",
-      "since": "2025-07-08",
-      "location": "Hampton Harbor"
+      "chart": null,
+      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-07-01",
+      "location": "Hingham Harbor Approach"
     },
     {
-      "chart": "12354",
-      "summary": "2026-06-05 To: 2026-11-20 Location: 43-07-05..608W Bridge Name: General Lat:& Reed Inc. will be conducting bridge removal and temporary trestle construction operations in Little Bay, between Dover and Newington, NH, in position 43-07-04.56N, 070-49-34.59W. Construction will run from June 5, 2026, to November Lon:\n20, 2026, Monday through Saturday, between 6:30am to 6:30 pm, local time. Equipment\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-06-05",
-      "location": "Piscataqua River - Little Bridges"
+      "chart": "13221",
+      "summary": "2026-09-08 To: 2026-09-26 Location: 40-36-15..360W Bridge Name: Loop Lat:\nState Pkwy Bridge From September 8-25, 2026, Monday-Friday, 9:00 a.m.-3:00 p.m., NYCDOT will be performing bridge washing on the following bridges: - Meadowbrook State Parkway Bridge over False Channel at mile 0.7 - Meadowbrook State Parkway Lon:\nBridge over Fundy Channel at mile 2.7 - Meadowbrook State Parkway Bridge over\u2026",
+      "status": "ACTIVE",
+      "since": "2026-09-08",
+      "location": "Jones"
     },
     {
       "chart": null,
-      "summary": "2026-07-06 To: 2026-10-30 Location: 40-53-02..340W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
+      "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
+      "status": "ACTIVE",
+      "since": "2025-04-16",
+      "location": "Little River"
+    },
+    {
+      "chart": null,
+      "summary": "2026-07-06 To: 2026-10-30 Location: 40-57-24..972W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
       "status": "ACTIVE",
       "since": "2026-07-06",
       "location": "Long Island Sound Eastern Part"
     },
     {
       "chart": null,
-      "summary": "2024-12-16 To:. The safety zone is needed to protect personnel, vessels, and the\nRestriction marine environment from potential hazards associated with the bridge construction between December 2, 2024, through May 27,\n2027. When enforced, this regulation prohibits persons and vessels from being in the safety zone unless authorized by the Captain\nof the Port New York or a designated representative.\u2026",
+      "summary": "Jones Inlet - Middle Bridges From April 15, 2026, to December 15, 2027, NYSDOT will be conducting structural rehabilitation to the Meadowbrook Parkway Bridge Lat:.7. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20-foot by 40- foot work barge will be deployed in the navigable channel. Mariners requiring full horizontal clearance under the bridge may contact\u2026",
       "status": "ACTIVE",
-      "since": "2024-12-16",
-      "location": "New Rochelle Harbor North Approach"
+      "since": "2026-09-08",
+      "location": "Jones Inlet - Middle Bridges"
     },
     {
       "chart": null,
-      "summary": "2026-08- Lat:: 2026-09-01 Location: 41-20-51..976W Construction operations on a floating work platform will .m. to 2:30 p.m. each day in the Thames River at the Lon:\u00b0 51N, 03W in New London, CT. Mariners are requested to maintain steerage and -transit the area at a no wake, minimum safe speed. Mariners may contact personnel on the work platform on VHF Channel 8 for further information.\nNewark\u2026",
+      "summary": "2026-09-01 To::00am, September 02, 2026, to 8:00am, September 09, 2026, Mariners are to avoid transiting within 500-meters of the\nRestriction following positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D10: 19\u203234.629N, 25\u203259.594W;\nB05: 21\u203245.973N, 30\u203215.333W; D03: 20\u203250.352N, 32\u203200.051W; H15: 16\u203219.659N, 21\u203245.664W; B06: 21\u203235.981N,\n29\u203223.800W; D02: 21\u203212.870N, 32\u203251.312W; B08:\u2026",
       "status": "ACTIVE",
-      "since": "2026-07-13",
-      "location": "New London Harbor"
+      "since": "2026-09-01",
+      "location": "Sector New York"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
