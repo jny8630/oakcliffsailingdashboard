@@ -1,58 +1,86 @@
 {
-  "week": 35,
+  "week": 36,
   "year": 2026,
-  "generated_utc": "2026-09-04T18:46:23Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01352026.pdf",
+  "generated_utc": "2026-09-11T18:56:10Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01362026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 36,
+      "week": 37,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
-      "chart": "13223",
-      "summary": "2026-03-05 To:.. MARINERS ARE REQUESTED TO COOPERATE WITH PARTICIPATING VESSELS FOR THE\nSAFETY OF ALL. ANY CONCERNED TRAFFIC CAN CONTACT NAVY SUPPORT CRAFT ON VHF CHANNELS 13,16. FOR MORE INFORMATION\nPLEASE CONTACT 401-832-6140.\nEast River Main Channel\nPrivate Discrepancies\nEast River Regulatory Light C 27246.2 STRUCT DEST PA\nEast River Regulatory Light E 27246.: 2024-07-01 To: 2027-12-31\u2026",
+      "chart": null,
+      "summary": "2026-07-30 To: 2026-09-29 Location: 41-10-45..860WLat:: Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Temporary Deviation \u2013 The Coast Guard has issued (Scheduled Or Emergency) a temporary deviation from the regulation governing the operation of the Stratford Avenue Bridge across Pequonnock River at Lon:\nmile 0.1. Under this temporary deviation the Stratford Ave (Route 130) Bridge may\u2026",
       "status": "TEMPORARY",
-      "since": "2026-03-05",
-      "location": "East Passage"
+      "since": "2026-07-30",
+      "location": "Bridgeport Harbor"
+    },
+    {
+      "chart": "13223",
+      "summary": "2026-09-02 To: 2026-11-01 Location: 42-02-31..360W Aid Name: Duxbury Bay Lat:: 12727 Action: RELOCATE Lon:\n-: 2026-09-02 To: 2026-11-01 Location: 42-01-05..452W Aid Name: Duxbury Bay Lat:: 12690 Action: RELOCATE Lon:\n-: 2026-03-05 To:.. MARINERS ARE REQUESTED TO COOPERATE WITH PARTICIPATING VESSELS FOR THE\nSAFETY OF ALL. ANY CONCERNED TRAFFIC CAN CONTACT NAVY SUPPORT CRAFT ON VHF CHANNELS 13,16.\u2026",
+      "status": "ACTIVE",
+      "since": "2026-09-02",
+      "location": "Plymouth Bay - Duxbury ATON Changes"
     },
     {
       "chart": null,
-      "summary": "2026-07-20 To: 2026-11-21 Location: 40-44-21..241W Bridge Name: Lat::00 a.m. to 3:00 p.m., contractors will be inspecting the Pulaski Bridge across Newtown Creek at mile 0.6, in Queens, NY. The contractor will Lon:\nbe utilizing a 60\u2019 Under Bridge Inspection Unit (UBIU) with 60\u2019 manlift. Mariners requiring full vertical clearance can contact -. Mariners are advised to exercise caution and reduce\u2026",
+      "summary": "2024-11-06 To: 2026-12-25 Location: :Bridge Name: Borden Ave Bridge NEW YORK \u2013 EAST RIVER NEWTOWN CREEK \u2013 DUTCH KILLS \u2013 Bridge Or Emergency) Closure \u2013 The Borden Ave Bridge, mile 1.2, is closed due to vandalism. Vessels able to pass under the bridge in the closed Lon:\nposition may do so. Mariners with questions may contact Keith Burrows at (212) 839-3741, NYCDOT Director of Bridge -& Tunnel\u2026",
       "status": "ACTIVE",
-      "since": "2026-07-20",
+      "since": "2024-11-06",
       "location": "Main Channel - East River Main Bridges"
     },
     {
       "chart": null,
-      "summary": "2022-01-03 To: 2026-12-30 Location: IPCP will be conducting esplanade, bulkhead, and park reconstruction, on the East River, Montgomery St to East 14th Street,\nfrom January 2022 to December 2026, 5-7 days a week, between 6:00am to 6:00pm. Equipment on scene will be Tugboat\nDEBRA QUINN, Inspection Boat, 290 x 40 Mooring Barges, 250 x 62 Gantry Crane Barge, Crawler Crane Barge, 150 x 60\u2026",
+      "summary": "2026-03-20 Lat:: 2027-08-31 Location: 40-48-15..980W Trevcon Construction Company will be conducting demolition .) to Metro North Rail Bridge Lon:.)in position 40-48-15.1N, 073-55-50W, through August 2027, Monday through Friday, between 5:00am to 6:00pm. -quipment on scene will be multiple crane barges, and material barges, monitoring VHF-FM CH 13, 16, 65, &75. Floating Equipment will be\u2026",
       "status": "ACTIVE",
-      "since": "2022-01-03",
+      "since": "2026-03-20",
       "location": "Main Channel - East River"
     },
     {
       "chart": null,
-      "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
-      "status": "TEMPORARY",
-      "since": "2026-07-01",
-      "location": "Hingham Harbor Approach"
+      "summary": "A.C. Industries, managed by Michal Mludzik. Operations are\nscheduled to begin May 27, 2026, and continue through September 2028, taking place Monday through Friday from 0600 to\n1600 hours, dependent on tidal conditions. The site will utilize a 120x55 deck barge equipped with an MLC-150 crane, and\nmarine radio communications will be available via channel 16 (hail) and channel 78 (monitor). The\u2026",
+      "status": "ACTIVE",
+      "since": "2026-05-26",
+      "location": "Main Channel - East River"
     },
     {
-      "chart": "13221",
-      "summary": "2026-09-08 To: 2026-09-26 Location: 40-36-15..360W Bridge Name: Loop Lat:\nState Pkwy Bridge From September 8-25, 2026, Monday-Friday, 9:00 a.m.-3:00 p.m., NYCDOT will be performing bridge washing on the following bridges: - Meadowbrook State Parkway Bridge over False Channel at mile 0.7 - Meadowbrook State Parkway Lon:\nBridge over Fundy Channel at mile 2.7 - Meadowbrook State Parkway Bridge over\u2026",
+      "chart": null,
+      "summary": "2026-10-08 To: 2027-01-22 Location: 40.75343, -74.09542 Bridge Name: Amtrak Portal Bridge Lat:\nDemolition of the Amtrak Portal Drawbridge across Hackensack River at mile 5.0 will commence on October 9, 2026. To accommodate the demolition of the drawbridge superstructure, the Coast Guard has issued a temporary deviation from the regulation governing the Lon:\noperation of the moveable bridge. Under\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-10-08",
+      "location": "Hackensack"
+    },
+    {
+      "chart": "13275",
+      "summary": "Hingham Bay\nBumkin Island Lighted Buoy 1 11945 WATCHING PROPERLY FD 2026-09-08\nWeymouth Fore River - HinghamMarine Events MA \u2013 HINGHAM \u2013 HINGHAM BAY \u2013 HINGHAM BAY WEDNESDAY NIGHT RACES \u2013 REGATTA \u2013:00 PM to 8:. The event will consist of approximately 35 sailing vessels varying in length between 20\u2019-50\u2019. The person\nresponsible for on scene safety can be reached on VHF CH 68. For more information,\u2026",
       "status": "ACTIVE",
-      "since": "2026-09-08",
-      "location": "Jones"
+      "since": "2026-07-01",
+      "location": "Hingham Bay"
+    },
+    {
+      "chart": "12335",
+      "summary": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HARLEM RIVER - HUDSON RIVER \u2013. Approximately two to five\nparticipating swimmers will be assisted by a lead safety vessel in addition to one escort vessel and one escort kayak per every one to\ntwo swimmers. The swim events will start at either Pier A in Battery Park or Mill Rock, near East 90th St., Manhattan. They will proceed\nup the East\u2026",
+      "status": "ACTIVE",
+      "since": "2026-09-06",
+      "location": "Main Channel - Hudson Marine Events LNM NY - EAST RIVER - HA"
+    },
+    {
+      "chart": "12354",
+      "summary": "2026-10-19 To: Lat:. The work is scheduled for October 19 Lon:. The work location is listed at -. Equipment on scene will include the dredge Pronckai and supporting tugs. Vessels may contact the project team on VHF radio channel 66, and passing arrangements require vessels to call on channel 66 and provide 15\nminutes\u2019 notice so equipment can move as needed to avoid impeding navigation.\nLinekin\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-10-19",
+      "location": "Portland Harbor - Lighthouse"
     },
     {
       "chart": null,
       "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
       "status": "ACTIVE",
       "since": "2025-04-16",
-      "location": "Little River"
+      "location": "Logan Airport Security Zone Buoy 16 11033 OFF STATION PA"
     },
     {
       "chart": null,
@@ -63,10 +91,17 @@
     },
     {
       "chart": null,
-      "summary": "Jones Inlet - Middle Bridges From April 15, 2026, to December 15, 2027, NYSDOT will be conducting structural rehabilitation to the Meadowbrook Parkway Bridge Lat:.7. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20-foot by 40- foot work barge will be deployed in the navigable channel. Mariners requiring full horizontal clearance under the bridge may contact\u2026",
+      "summary": "\u2013 Safety Zone \u2013 Bridge Construction Mariners are advised that a safety zone will be enforced\nMiddle for construction work on the Glen Island Approach Bridge. The safety zone will be enforced from 7 a.m. until 5 p.m.. The safety zone will only be enforced during periods when construction\nRegulated Navigation Zone operations at the Glen Island Bridge rehabilitation project are in progress. The\u2026",
       "status": "ACTIVE",
-      "since": "2026-09-08",
-      "location": "Jones Inlet - Middle Bridges"
+      "since": "2024-12-16",
+      "location": "New Rochelle Harbor North Approach"
+    },
+    {
+      "chart": null,
+      "summary": "2026-01-29 Lat:: 2027-03-01 Location: 40-00-08..288W Trevcon Construction Company, LLC. Will be conducting installation && Underdeck Concrete Lon:.900N, 074-4-30.313W, from March 1, 2026, to February 28, -2027, between 5:00am to 7:00pm. Equipment on scene will be Two Barge (180\u2019 x 60\u2019), Two Barges (140\u2019 x 50\u2019), One Barge (90\u2019 x 30\u2019), All moving of vessels to occur by tugboat; vessels will be\u2026",
+      "status": "ACTIVE",
+      "since": "2026-01-29",
+      "location": "Port Jefferson Harbor"
     },
     {
       "chart": null,
