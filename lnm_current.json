@@ -1,12 +1,12 @@
 {
-  "week": 37,
+  "week": 38,
   "year": 2026,
-  "generated_utc": "2026-09-18T18:49:18Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01372026.pdf",
+  "generated_utc": "2026-09-25T19:46:13Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01382026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 38,
+      "week": 39,
       "year": 2026,
       "reason": "not_posted"
     }
@@ -14,38 +14,38 @@
   "notices": [
     {
       "chart": null,
-      "summary": "To: Location: Lat:\n40.763469, -73.945833 Bridge Name: Roosevelt Island Bridge Roosevelt Island Bridge- East River Security Zone September 9, 2026 through September 20, 2026 The U.S. Coast Guard will enforce a Security Zone on the East River between East 36th Lon:\u00b0 eptember 26, 2026. This action has been requested by the U. S. Secret Service to protect visiting dignitaries during the U. . General\u2026",
-      "status": "ACTIVE",
-      "since": "2026-09-20",
-      "location": "East River"
+      "summary": "2026-07-30 To: 2026-09-29 Location: 41-10-45..860WLat:: Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Temporary Deviation \u2013 The Coast Guard has issued (Scheduled Or Emergency) a temporary deviation from the regulation governing the operation of the Stratford Avenue Bridge across Pequonnock River at Lon:\nmile 0.1. Under this temporary deviation the Stratford Ave (Route 130) Bridge may\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-07-30",
+      "location": "Booth Bay"
     },
     {
       "chart": null,
-      "summary": "2022-01-03 To: 2026-12-30 Location: IPCP will be conducting esplanade, bulkhead, and park reconstruction, on the East River, Montgomery St to East 14th Street,\nfrom January 2022 to December 2026, 5-7 days a week, between 6:00am to 6:00pm. Equipment on scene will be Tugboat\nDEBRA QUINN, Inspection Boat, 290 x 40 Mooring Barges, 250 x 62 Gantry Crane Barge, Crawler Crane Barge, 150 x 60\u2026",
+      "summary": "2026-07-20 To: 2026-11-21 Location: 40-44-21..241W Bridge Name: Pulaski Lat::00 a.m. to 3:00 p.m., contractors will be inspecting the Pulaski Bridge across Newtown Creek at mile 0.6, in Queens, NY. The contractor will be utilizingLon:\na 60\u2019 Under Bridge Inspection Unit (UBIU) with 60\u2019 manlift. Mariners requiring full vertical clearance can contact the contractor -. Mariners are advised to\u2026",
       "status": "ACTIVE",
-      "since": "2022-01-03",
+      "since": "2026-07-20",
+      "location": "Main Channel - East River Main Bridges"
+    },
+    {
+      "chart": null,
+      "summary": "2026-09-20 To: 2026-09-27 United Nations General Assembly 81: Security Zones 1.\u2013 26, 2026, the U.S. Coast Guard will enforce security zones on the East River near the United Nations\nHeadquarters, and near the Wall Street Heliport..164(a) (4,5, and 6). The Wall Street Heliport security zone encompasses a section of all navigable waters just south of\nWall Street, Manhattan. More detailed\u2026",
+      "status": "ACTIVE",
+      "since": "2026-09-20",
       "location": "Main Channel - East River"
     },
     {
-      "chart": "13221",
-      "summary": "2026-09-08 To: 2026-09-26 Location: 40-36-15..360W Bridge Name: Loop Lat:\nState Pkwy Bridge From September 8-25, 2026, Monday-Friday, 9:00 a.m.-3:00 p.m., NYCDOT will be performing bridge washing on the following bridges: - Meadowbrook State Parkway Bridge over False Channel at mile 0.7 - Meadowbrook State Parkway Lon:\nBridge over Fundy Channel at mile 2.7 - Meadowbrook State Parkway Bridge over\u2026",
+      "chart": null,
+      "summary": "2026-09-08 To: Lat:: 40-48-05..992W Mariners are advised that Trevcon Construction Company LLC will :. Operations are scheduled daily from 0500 to 1800 in the vicinity of -48\u203206\u2033N, 53\u203223\u2033W. Applicable chart number is US5NYCFH. Equipment on scene will include a crane barge, material barge,and diving equipment. Mariners transiting the area are requested to exercise caution, proceed at safe speed,\u2026",
       "status": "ACTIVE",
       "since": "2026-09-08",
-      "location": "Jones"
+      "location": "Main Channel - East River"
     },
     {
       "chart": null,
       "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
       "status": "ACTIVE",
       "since": "2025-04-16",
-      "location": "Little River"
-    },
-    {
-      "chart": null,
-      "summary": "2026-07-06 To: 2026-10-30 Location: 40-57-24..972W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
-      "status": "ACTIVE",
-      "since": "2026-07-06",
-      "location": "Long Island Sound Eastern Part"
+      "location": "Mount Sinai Jetty Hazard Daybeacon A null LT EXT PA"
     },
     {
       "chart": null,
@@ -56,17 +56,24 @@
     },
     {
       "chart": null,
-      "summary": "2026-10-01 To: 2026-12-31 Location: 41-15-52..276W Lat:\nPart - North Channel SaybrookConstruction Mariners are advised that, in compliance with Department of the Army Permit No. NAE-2021-03025, Tilcon Connecticut, Inc. plans to To New (Excluding conduct maintenance dredging at 1 Forest Road, Branford, Connecticut, within Long Island Sound. The work is expected to commence and Lon:. Operations\u2026",
+      "summary": "2026-11-01To:#2 and Graving Dock #3... Mariners are advised to transit the area at the slowest safe speed, minimize wake, and proceed\nwith caution. Project vessels will monitor VHF-FM Channels 16 and 13, with a designated working channel to be established. Passing\narrangements should be coordinated via VHF radio, or in advance by telephone when necessary, and approximately 30 minutes may\u2026",
       "status": "ACTIVE",
-      "since": "2026-10-01",
-      "location": "Chimney Corner Reef Buoy 20 21600 OFF"
+      "since": "2026-11-01",
+      "location": "Long Island Sound Eastern Part -Marine"
     },
     {
       "chart": null,
-      "summary": "Sector New York, Submerged Lands Act (SLA)\nPrivate Discrepancies\nHighlands Light 35025 LT IMCH PA\nEmpire Offshore Wind WTG C12 604.: 2026-09-09 To::00am, September 09, 2026, to 8:00am, September 16, 2026, Mariners are to avoid transiting within 500-meters of\nRestriction the following positions: C09: 20\u203225.307N, 26\u203250.160W; E08: 18\u203257.671N, 27\u203243.888W; D10: 19\u203234.629N, 25\u203259.594W;\nB05: 21\u203245.973N,\u2026",
+      "summary": "2026-10-01 To: 2026-12-31 Location: 41-15-52..276W Lat:\nPart - North Channel SaybrookConstruction Mariners are advised that, in compliance with Department of the Army Permit No. NAE-2021-03025, Tilcon Connecticut, Inc. plans to To New (Excluding conduct maintenance dredging at 1 Forest Road, Branford, Connecticut, within Long Island Sound. The work is expected to commence and Lon:. Operations\u2026",
       "status": "ACTIVE",
-      "since": "2026-09-09",
-      "location": "Sector New York, Submerged Lands Act (SLA)"
+      "since": "2026-10-01",
+      "location": "North Channel Saybrook To New Haven"
+    },
+    {
+      "chart": null,
+      "summary": "2026-05-01 To: 2027- Lat:: 40-18-11..384W J.T. Cleary Inc. will be conducting pile driving operations in Long Branch, NJ, in Construction (Excluding (Excluding position 40-18-11.6N, 073-58-33.4W, from May 1, 2026, to April 30, 2027, Monday through Friday, between 5:00am to 6:00pm. Lon:. -Manmade Reefs, Riprap, : 2025-12-10 To:: Southeast Corner: 40o28\u201938.09N, 073o53\u201940.95W; Northeast Corner:\u2026",
+      "status": "ACTIVE",
+      "since": "2026-05-01",
+      "location": "Sector New York"
     }
   ],
   "disclaimer": "Extracted from USCG D1 LNM via keyword filtering. Verify against source PDF before underway."
