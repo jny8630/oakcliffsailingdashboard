@@ -1,36 +1,36 @@
 {
-  "week": 39,
+  "week": 40,
   "year": 2026,
-  "generated_utc": "2026-10-02T20:17:22Z",
-  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01392026.pdf",
+  "generated_utc": "2026-10-09T20:29:51Z",
+  "pdf_url": "https://www.navcen.uscg.gov/sites/default/files/pdf/lnms/lnm01402026.pdf",
   "model": "text-parser",
   "skipped": [
     {
-      "week": 40,
+      "week": 41,
       "year": 2026,
       "reason": "not_posted"
     }
   ],
   "notices": [
     {
+      "chart": "13223",
+      "summary": "2026-03-05 To:. OPERATIONS WILL BE CONDUCTED MONDAY THRU FRIDAY 0700-1700. MARINERS ARE REQUESTED TO COOPERATE WITH\nPARTICIPATING VESSELS FOR THE SAFETY OF ALL. ANY CONCERNED TRAFFIC CAN CONTACT NAVY SUPPORT CRAFT ON VHF\nCHANNELS 13,16. FOR MORE INFORMATION PLEASE CONTACT 401-832-6140.\nEast River Main Channel\nPrivate Discrepancies\nEast River Regulatory Light E 27246..: 2024-07-01 To: 2027-12-31\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-03-05",
+      "location": "Eastern Approach - East Naval Activity"
+    },
+    {
       "chart": null,
-      "summary": "2024-05-13 To: 2026-12-31 Location: Bridge Name: Lat:\u2013\u00b0 fender system to the Bronx and Queens Towers of the Throgs Neck Bridge across East River at mile 15.8 is in progress. HoursLon:\nof operation are from 7 a.m. to 5:30 p.m. daily. Crane and material barges will be operating along the perimeter of the Bronx -and Queens Towers. Any questions regarding this project can contact Steve Mejia via\u2026",
+      "summary": "2026-08-24 To: 2026-10-17 Location: 40-42-49..960W Bridge Name: Lat::00 am to 4:00 pm Monday through Friday, a bridge traveler will be operated under Williamsburg Bridge across East River at mile 2.3, in Brooklyn, NY to perform a bridge Lon:\ninspection. Safety boat CT8893BM will be on scene during inspection operations. Mariners requiring full vertical clearance -can contact the contractor via\u2026",
       "status": "ACTIVE",
-      "since": "2024-05-13",
+      "since": "2026-08-24",
       "location": "Main Channel - East River Main Bridges"
     },
     {
       "chart": null,
-      "summary": "2026-09-30 To: 2026-10-03 Location: 40-48-50..160W Bridge Name: Lat::00 am to 2:00 pm, a barge with manlift will beutilized to inspect Madison Ave. Bridge across Harlem River at mile 2.3, in New York, NY. Mariners requiring full horizontal Lon:. Mariners are advised -to exercise caution and reduce wake when transiting the area. : 2026-09-29 To: 2026-12-31 Location: 40.727531, -73.92891 Bridge\u2026",
+      "summary": "2026-07-20 Lat::. The project, managed by Grace Industries LLC, will take place at coordinates -from July 20, 2026, through December 31, 2026. Operations are scheduled Monday through Saturday, 6:00 AM to 6:00 PM, with cranes and material barges present at the site. Mariners in the area are advised to use slow speed (\u201cslowbell\u201d) near the\ncrane operations and may contact the operation via marine\u2026",
       "status": "ACTIVE",
-      "since": "2026-09-30",
-      "location": "Main Channel - East River Main Bridges"
-    },
-    {
-      "chart": null,
-      "summary": "2026-09-08 Lat:: 2027-06-30 Location: 40-48-05..992W Mariners are advised that Trevcon Construction Company LLC will :. Operations are scheduled daily from 0500 to 1800 in the -vicinity of 48\u203206\u2033N, 53\u203223\u2033W. Applicable chart number is US5NYCFH. Equipment on scene will include a crane barge, material barge, and diving equipment. Mariners transiting the area are requested to exercise caution,\u2026",
-      "status": "ACTIVE",
-      "since": "2026-09-08",
+      "since": "2026-07-20",
       "location": "Main Channel - East River"
     },
     {
@@ -38,63 +38,49 @@
       "summary": "2026-07-01 To: 2027-12-31 Location: 41-12-19.:\nHousatonic 34.776W Bridge Name: Devon Railroad Bridge CONNECTICUT \u2013 HOUSATONIC RIVER \u2013 Bridge Repairs \u2013 Beginning July 20, 2026, :\nOr Fender Replacement 3.9. Contractor will be utilizing a barge in the navigational channel that will reduce the horizontal clearance to 41\u2019-6\u201d as well as -installing a platform under the bridge outside of the\u2026",
       "status": "TEMPORARY",
       "since": "2026-07-01",
-      "location": "Housatonic River"
+      "location": "Hog Island Channel"
     },
     {
-      "chart": "13221",
-      "summary": "Bridge across Reynolds Channel at mile 8.2. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20-foot by 40-foot work barge will be deployed in the navigable channel. Mariners requiring full Lon:. -Mariners are advised to exercise caution when transiting this area. :\nMeadowbrook Parkway Bridge across False Channel at mile 0.7. Work hours are 7:00 a.m. to 4:00 p.m.\u2026",
-      "status": "ACTIVE",
-      "since": "2024-09-12",
-      "location": "Jones"
+      "chart": "12354",
+      "summary": "2026-10-19 To: Lat:. The work is scheduled for October 19 Lon:. The work location is listed at -. Equipment on scene will include the dredge Pronckai and supporting tugs. Vessels may contact the project team on VHF radio channel 66, and passing arrangements require vessels to call on channel 66 and provide 15\nminutes\u2019 notice so equipment can move as needed to avoid impeding navigation.\nLittle\u2026",
+      "status": "TEMPORARY",
+      "since": "2026-10-19",
+      "location": "Portland Harbor - Lighthouse"
     },
     {
       "chart": null,
       "summary": "2025-04-16 To: 2026-12-01 Location: Bridge Name: Lat:\nIsland Sound Eastern Stratford Ave Bridge CONNECTICUT \u2013 PEQUONNOCK RIVER \u2013 Bridge Rehab \u2013 From April 21, 2025 through November 30, :\nat mile 0.1. This truck is required for rehabilitation of the bridge. The work platform will not be in the navigational channel. -Questions may be directed to Superintendent Wesley Sousa Santos at (860) 622-8410.\u2026",
       "status": "ACTIVE",
       "since": "2025-04-16",
-      "location": "Little River"
+      "location": "Logan Airport Security Zone Buoy 16 11033 OFF STATION PA"
     },
     {
       "chart": null,
-      "summary": "2026-07-06 To: 2026-10-30 Location: 40-57-24..972W The Lat:\nLong Island Sound Western Navigation University of Connecticut Marine Sciences will conduct scientific research in New York Long Island Sound from July 2 to October 30, . The project involves the deployment of four autonomous respiration chambers at four specific stations: Station 1 at Lon:\u00b0Station 2 at Station 3 at and Station 4 at -.\u2026",
-      "status": "ACTIVE",
-      "since": "2026-07-06",
-      "location": "Long Island Sound Eastern Part"
-    },
-    {
-      "chart": "13275",
-      "summary": "Marblehead Channel - Marblehead Marine Events MA \u2013 MARBLEHEAD \u2013 MARBLEHEAD HARBOR \u2013 EASTERN YACHT CLUB PUMPKIN PURSUIT RACE 2 \u2013:00 PM to 4:. The event will consist of approximately 15 sailing vessels varying in length between 30\u2019-50\u2019 in length. The person responsible for\non-scene safety can be reached at 617-678-4174. For more information, please contact Jack Cochrane at 617-678-4174. Chart\u2026",
+      "summary": "2026-11-04 To: 2026-11-22 The U.S.. Operations will take place 12 hours per day using the U.S.. The work area is in the vicinity of and\n. Mariners are requested to use caution when transiting the area, proceed at a safe speed, and make\npassing arrangements with the dredge as needed. The dredge may be contacted on VHF-FM channels 13 and 16 and will move on\ndemand with notification to avoid\u2026",
       "status": "ACTIVE",
       "since": "2026-11-04",
-      "location": "Marblehead Channel - Marblehead Marine Events MA \u2013 MARBLEHEA"
+      "location": "Additional MSI Categories"
     },
     {
       "chart": null,
-      "summary": "Jones Inlet - Middle Bridges From April 15, 2026, to December 15, 2027, NYSDOT will be conducting structural rehabilitation to the Meadowbrook Parkway Lat:.7. Work hours are 7:00 a.m. to 4:00 p.m. Monday through Friday. During work hours, a 20- foot by 40-foot work barge will be deployed in the navigable channel. Mariners requiring full horizontal clearance under the bridge Lon:. Mariners are\u2026",
+      "summary": "2024-12-16 To:. The safety zone is needed to protect personnel, vessels, and the\nRestriction marine environment from potential hazards associated with the bridge construction between December 2, 2024, through May 27,\n2027. When enforced, this regulation prohibits persons and vessels from being in the safety zone unless authorized by the Captain\nof the Port New York or a designated representative.\u2026",
       "status": "ACTIVE",
       "since": "2024-12-16",
-      "location": "Jones Inlet - Middle Bridges"
+      "location": "New Rochelle Harbor North Approach"
     },
     {
       "chart": "13246",
-      "summary": "2026-08-18 To: 2026-11-16 Location: 40-40-05.:\nConstruction (Excluding Construction 02.916W Cashman Dredging and Marine Contracting Co., will be conducting work associated with the EPA Superfund Gowanus Canal . The operation involves transferring sediment and debris from smaller Lon:\nBridges) hopper barges to larger hopper barges for delivery to the Clean Earth Claremont Processing Facility in\u2026",
+      "summary": "2026-09-21 To: 2026-\nConstruction (Excluding Construction 10-31 H & L Contracting details emergency repairs to underwater diffusers at the Cedar Creek Wastewater Treatment Plant\u2019. The project, led by Jeffery Hawkins, will run from July 16 to October 31,\nManmade Reefs, Riprap, Bridges) 2026, operating Monday through Friday from 6:00 AM to 5:00 PM.. The operation involves installing location\u2026",
       "status": "ACTIVE",
-      "since": "2026-08-18",
+      "since": "2026-09-21",
       "location": "NAVAREA IV/General/Marine"
     },
     {
       "chart": null,
-      "summary": "2024-09-13 To: 2039-12-21 Location: NJ-\nNAVESINK RIVER Recent surveys have shown significant shoaling in the Navesink River. Shoaling exists across the entire reach\nbeginning at the entrance to the Navesink River to Navesink River Buoy 24. Least depths of 2.3 feet to 5.8 feet extending into\nchannel and throughout the waterway. Navigation of the area requires extreme caution due to the encroaching\u2026",
+      "summary": "2026-10-01 To: 2026-12-31 Location: 41-15-52..276W Lat:\nPart - North Channel SaybrookConstruction Mariners are advised that, in compliance with Department of the Army Permit No. NAE-2021-03025, Tilcon Connecticut, Inc. plans to To New (Excluding conduct maintenance dredging at 1 Forest Road, Branford, Connecticut, within Long Island Sound. The work is expected to commence and Lon:. Operations\u2026",
       "status": "ACTIVE",
-      "since": "2024-09-13",
-      "location": "Shrewsbury River - Navesink"
-    },
-    {
-      "chart": null,
-      "summary": "2026-04-29 To: 2031-01-01 Location: 41-06-01..512W Bridge Name: Walk Lat:\u2013 NORWALK RIVER - General Construction \u2013 Connecticut Department of Transportation will continue work of the new Walk Bridge over the Norwalk River at mile 0.1 beginning May 1, 2026 through December 31, 2030. The contractor Lon:\nwill utilize work boats & barges in one channel (either East or West) at a time leaving the\u2026",
-      "status": "ACTIVE",
-      "since": "2026-04-29",
-      "location": "Norwalk East Approach - Norwalk Bridges"
+      "since": "2026-10-01",
+      "location": "Long Island Sound Eastern"
     },
     {
       "chart": null,
